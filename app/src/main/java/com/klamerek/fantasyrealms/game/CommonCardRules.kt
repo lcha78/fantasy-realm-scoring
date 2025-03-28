@@ -729,7 +729,7 @@ object AllRules {
             }
         ),
         phoenixDeluxeEdition to listOf(
-            RuleAboutCard(listOf(Effect.PENALTY, Effect.BLANK)) { // TODO check if works
+            RuleAboutCard(listOf(Effect.PENALTY, Effect.BLANK)) {
                 if (it.atLeastOneHandCardOf(Suit.FLOOD)) it.filterNotBlankedHandCards { card ->
                     card.hasSameNameThan(phoenixDeluxeEdition)
                 } else emptyList()

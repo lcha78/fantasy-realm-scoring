@@ -177,8 +177,7 @@ object CardDefinitions {
             cards.removeAll { it.name() == wildfireDeluxeEdition.name() }
             cards += wildfireDeluxeEdition
 
-//            return listOf(wildfireDeluxeEdition, candle)
-            if (phoenixJester) { // TODO
+            if (phoenixJester) {
                 cards.removeAll { it.name() == phoenixDeluxeEdition.name() }
                 cards += phoenixDeluxeEdition
             }

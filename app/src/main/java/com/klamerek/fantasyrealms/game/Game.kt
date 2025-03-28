@@ -224,8 +224,9 @@ class Game(
     private fun applyBlankingRule(rule: RuleAboutCard?) {
         if (rule?.tags?.contains(Effect.BLANK) == true) {
             rule.logic.invoke(this)
-                .filter { potentialCard -> !potentialCard.rules().contains(unblankable) }
-                .forEach { cardToBlank ->
+                .filter { potentialCard ->
+                    potentialCard.rules().none { it is RuleAboutEffect && it.logic.invoke(this) == Effect.UNBLANKABLE }
+                }.forEach { cardToBlank ->
                     cardToBlank.blanked = true
                 }
         }

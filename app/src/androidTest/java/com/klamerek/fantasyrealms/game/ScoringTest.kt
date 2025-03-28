@@ -862,4 +862,82 @@ class ScoringTest {
         Assertions.assertEquals(10, game.score())
     }
 
+    @DisplayName("Deluxe Edition Wildfire")
+    @Test
+    fun deluxe_edition_wildfire() {
+        val baseGame = Game(deluxeEdition = false)
+        baseGame.add(wildfire)
+        baseGame.add(leprechaun)
+        baseGame.calculate()
+        Assertions.assertEquals(40, baseGame.score(), "Wildfire should blank Leprechaun (OUTSIDER) in the base game")
+
+        val deluxeEdition = Game(deluxeEdition = true)
+        deluxeEdition.add(wildfireDeluxeEdition)
+        deluxeEdition.add(leprechaun)
+        deluxeEdition.calculate()
+        Assertions.assertEquals(40 + 20, deluxeEdition.score(), "Wildfire should not blank Leprechaun (OUTSIDER) in the Deluxe Edition")
+    }
+
+    @DisplayName("Phoenix Deluxe Edition blanked with Flood")
+    @Test
+    fun phoenix_deluxe_edition_blanked_with_flood() {
+        val game = Game(deluxeEdition = true)
+        game.add(phoenixDeluxeEdition)
+        game.add(island)
+        game.calculate()
+        Assertions.assertEquals(14, game.score())
+    }
+
+    @DisplayName("Phoenix Deluxe Edition penalty cleared")
+    @Test
+    fun phoenix_deluxe_edition_penalty_cleared() {
+        val game = Game(deluxeEdition = true)
+        game.add(phoenixDeluxeEdition)
+        game.add(island)
+        game.applySelection(island, phoenixDeluxeEdition)
+        game.calculate()
+        Assertions.assertEquals(14 + 14, game.score())
+    }
+
+    @DisplayName("Phoenix Deluxe Edition may not be blanked by another card")
+    @Test
+    fun phoenix_deluxe_edition_may_not_be_blanked_by_another_card() {
+        val game = Game(deluxeEdition = true)
+        game.add(phoenixDeluxeEdition)
+        game.add(demon)
+        game.calculate()
+        Assertions.assertEquals(14 + 45, game.score())
+    }
+
+    @DisplayName("Phoenix Deluxe Edition may not blank any other card")
+    @Test
+    fun phoenix_deluxe_edition_may_not_blank_any_other_card() {
+        val game = Game(deluxeEdition = true)
+        game.add(phoenixDeluxeEdition)
+        game.add(warDirigible)
+        game.add(celestialKnights)
+        game.calculate()
+        Assertions.assertEquals(14 + 35 + 12, game.score())
+    }
+
+    @DisplayName("Phoenix Deluxe Edition also counts as flame and weather")
+    @Test
+    fun phoenix_deluxe_edition_counts_as_flame_and_weather() {
+        val game = Game(deluxeEdition = true)
+        game.add(phoenixDeluxeEdition)
+        game.add(enchantress)
+        game.calculate()
+        Assertions.assertEquals(14 + (5 + 5), game.score())
+    }
+
+    @DisplayName("Phoenix Deluxe Edition does not count as flame or weather in discard area")
+    @Test
+    fun phoenix_deluxe_edition_does_not_count_as_flame_or_weather_in_discard() {
+        DiscardArea.instance.game().add(phoenixDeluxeEdition)
+        val game = Game(deluxeEdition = true)
+        game.add(darkQueen)
+        game.add(ghoul)
+        game.calculate()
+        Assertions.assertEquals((10 + 0) + (8 + 4), game.score())
+    }
 }
