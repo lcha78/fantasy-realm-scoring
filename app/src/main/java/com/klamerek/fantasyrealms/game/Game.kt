@@ -137,10 +137,6 @@ class Game(val noScoring: Boolean = false) {
         while(iterator.hasNext()) {
             val card = iterator.next()
 
-            if(count > maxLength) {
-                count = 7
-            }
-
             if(card.value() == (previous.value() + 1)) {
                 count++
             } else {
@@ -149,6 +145,10 @@ class Game(val noScoring: Boolean = false) {
             }
 
             previous = card
+        }
+
+        if(count > maxLength) {
+            count = 7
         }
 
         if(count >= minLength) {
