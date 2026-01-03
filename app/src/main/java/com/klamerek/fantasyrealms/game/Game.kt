@@ -5,7 +5,6 @@ import com.klamerek.fantasyrealms.*
 import com.klamerek.fantasyrealms.util.Constants
 import com.klamerek.fantasyrealms.util.Constants.MAX_HAND_SIZE
 import com.klamerek.fantasyrealms.util.Preferences
-import java.lang.Integer.max
 import kotlin.math.min
 
 /**
@@ -104,6 +103,7 @@ class Game(val noScoring: Boolean = false) {
     fun containsHandCards(vararg cardExpected: CardDefinition) = handCardsNotBlanked()
         .map { it.name() }.containsAll(cardExpected.toList().map { it.name() })
 
+    /*
     fun longestSuite(): Int {
         val sorted = handCardsNotBlanked().sortedBy { card -> card.value() }
         var maxCount = 1
@@ -119,6 +119,43 @@ class Game(val noScoring: Boolean = false) {
             previousValue = card.value()
         }
         return maxCount
+    }
+
+     */
+
+    fun countStreets(): ArrayList<Int> {
+        val sorted = handCardsNotBlanked().sortedBy { card -> card.value() }
+        val minLength = 3
+        val maxLength = 7
+        val streets = ArrayList<Int>()
+        var count = 1
+        var previous = sorted.get(0)
+
+        val sortedShortList = sorted.subList(1, sorted.size)
+        val iterator = sortedShortList.iterator()
+
+        while(iterator.hasNext()) {
+            val card = iterator.next()
+
+            if(count > maxLength) {
+                count = 7
+            }
+
+            if(card.value() == (previous.value() + 1)) {
+                count++
+            } else {
+                streets.add(count)
+                count = 1
+            }
+
+            previous = card
+        }
+
+        if(count >= minLength) {
+            streets.add(count)
+        }
+
+        return streets
     }
 
     fun largestSuitWithDifferentNames(): Int {
