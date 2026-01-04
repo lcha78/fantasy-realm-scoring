@@ -112,7 +112,7 @@ object AllRules {
          */
         gemOfOrder to listOf(
           RuleAboutScore(listOf(Effect.BONUS)) {
-            val streets = it.countStreets()
+            val streets = it.countStreetsWithSideCards()
             val map = mapOf(3 to 10, 4 to 30, 5 to 60, 6 to 100, 7 to 150)
             var score = 0
             for(street in streets) {

@@ -123,14 +123,14 @@ class Game(val noScoring: Boolean = false) {
 
      */
 
-    fun countStreets(): ArrayList<Int> {
+    /*
+    fun countStreets(): List<Int> {
         val sorted = handCardsNotBlanked().sortedBy { card -> card.value() }
         val minLength = 3
         val maxLength = 7
         val streets = ArrayList<Int>()
         var count = 1
         var previous = sorted.get(0)
-
         val sortedShortList = sorted.subList(1, sorted.size)
         val iterator = sortedShortList.iterator()
 
@@ -155,7 +155,72 @@ class Game(val noScoring: Boolean = false) {
             streets.add(count)
         }
 
+        val result = countStreetsWithSideCards()
+
         return streets
+    }
+
+     */
+
+    fun countStreetsWithSideCards(): List<Int> {
+        val sorted = handCardsNotBlanked().sortedBy { card -> card.value() }
+        val seen = mutableSetOf<Int>()
+        val mainCardStack = ArrayList<Card>()
+        val sideCardStack = ArrayList<Card>()
+        println("sorted $sorted")
+
+        for(card in sorted) {
+            if(seen.add(card.value())) {
+                mainCardStack.add(card)
+            }
+            else {
+                sideCardStack.add(card)
+            }
+        }
+
+        val mainCardResult = countCardsByBaseValue(mainCardStack)
+        val sideCardResult = countCardsByBaseValue(sideCardStack)
+
+        return mainCardResult + sideCardResult
+    }
+
+    private fun countCardsByBaseValue(_cards: ArrayList<Card>): ArrayList<Int> {
+        if(_cards.size < 2) return ArrayList<Int>()
+
+        var count = 1
+        var previous = _cards[0]
+        val cards = _cards.subList(1, _cards.size)
+        val minimumCards = 3
+        val maximumCards = 7
+        val result = ArrayList<Int>()
+        val iterator = cards.iterator()
+
+        while(iterator.hasNext()) {
+            val card = iterator.next()
+            if (card.value() == (previous.value() + 1)) {
+                count++
+            } else {
+                if(count > maximumCards) {
+                    count = 7
+                }
+
+                if(count >= minimumCards) {
+                    result.add(count)
+                }
+                count = 1
+            }
+            previous = card
+        }
+
+        if(count > maximumCards) {
+            count = 7
+        }
+
+        if(count >= minimumCards) {
+            result.add(count)
+        }
+
+        return result
     }
 
     fun largestSuitWithDifferentNames(): Int {
