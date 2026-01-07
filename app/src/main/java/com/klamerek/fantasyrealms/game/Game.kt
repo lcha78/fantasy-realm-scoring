@@ -6,6 +6,7 @@ import com.klamerek.fantasyrealms.util.Constants
 import com.klamerek.fantasyrealms.util.Constants.MAX_HAND_SIZE
 import com.klamerek.fantasyrealms.util.Preferences
 import kotlin.math.min
+import kotlin.math.max
 
 /**
  * List of cards (player hand) wth scoring calculation
@@ -103,7 +104,10 @@ class Game(val noScoring: Boolean = false) {
     fun containsHandCards(vararg cardExpected: CardDefinition) = handCardsNotBlanked()
         .map { it.name() }.containsAll(cardExpected.toList().map { it.name() })
 
-    /*
+    /**
+     * Old method for counting a street for Gem Of Order
+     * @deprecated
+     */
     fun longestSuite(): Int {
         val sorted = handCardsNotBlanked().sortedBy { card -> card.value() }
         var maxCount = 1
@@ -121,53 +125,15 @@ class Game(val noScoring: Boolean = false) {
         return maxCount
     }
 
+    /**
+     * Improved counting of streets for Gem Of Order.
+     * @return List - Collection of street lengths
      */
-
-    /*
-    fun countStreets(): List<Int> {
-        val sorted = handCardsNotBlanked().sortedBy { card -> card.value() }
-        val minLength = 3
-        val maxLength = 7
-        val streets = ArrayList<Int>()
-        var count = 1
-        var previous = sorted.get(0)
-        val sortedShortList = sorted.subList(1, sorted.size)
-        val iterator = sortedShortList.iterator()
-
-        while(iterator.hasNext()) {
-            val card = iterator.next()
-
-            if(card.value() == (previous.value() + 1)) {
-                count++
-            } else {
-                streets.add(count)
-                count = 1
-            }
-
-            previous = card
-        }
-
-        if(count > maxLength) {
-            count = 7
-        }
-
-        if(count >= minLength) {
-            streets.add(count)
-        }
-
-        val result = countStreetsWithSideCards()
-
-        return streets
-    }
-
-     */
-
     fun countStreetsWithSideCards(): List<Int> {
         val sorted = handCardsNotBlanked().sortedBy { card -> card.value() }
         val seen = mutableSetOf<Int>()
         val mainCardStack = ArrayList<Card>()
         val sideCardStack = ArrayList<Card>()
-        println("sorted $sorted")
 
         for(card in sorted) {
             if(seen.add(card.value())) {
