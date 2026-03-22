@@ -191,7 +191,7 @@
     <string name="collector_rules">BÔNUS: +10 se você tiver 3 cartas do mesmo naipe, +40 para 4 cartas, +100 para 5 cartas.</string>
     <string name="beastmaster_rules">BÔNUS: +9 para cada Fera. ANULA as penalidades de todas as Feras.</string>
     <string name="warlock_lord_rules">PENALIDADE: -10 para cada Líder e cada outro Mago.</string>
-    <string name="dungeon_rules">BÔNUS: +10 para a primeira carta de Morto-vivo, Fera e Artefato. +5 para cada carta adicional desses naipes e para o Necromante, Lorde Bruxo e Demônio.</string>
+    <string name="dungeon_rules">BÔNUS: +10 para la primeira carta de Morto-vivo, Fera e Artefato. +5 para cada carta adicional desses naipes e para o Necromante, Lorde Bruxo e Demônio.</string>
     <string name="castle_rules">BÔNUS: +10 para a primeira carta de Líder, Exército, Terreno e para a primeira Edificação adicional. +5 para cada outra Edificação adicional.</string>
     <string name="crypt_rules">BÔNUS: A soma da força base de todos os Mortos-vivos.\nPENALIDADE: ZERA todos os Líderes.</string>
     <string name="chapel_rules">BÔNUS: +40 se você tiver exatamente 2 cartas de um destes naipes: Líder, Mago, Forasteiro e Morto-vivo.</string>
