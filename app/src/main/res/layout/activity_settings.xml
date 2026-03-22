@@ -63,7 +63,7 @@
                 <Spinner
                     android:id="@+id/languageSpinner"
                     android:layout_width="180dp"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
                     android:layout_marginEnd="25dp"
                     android:layout_weight="1"
                     android:background="@drawable/layout_corners_shape"
@@ -104,7 +104,7 @@
                 <Spinner
                     android:id="@+id/scanModeSpinner"
                     android:layout_width="180dp"
-                    android:layout_height="25dp"
+                    android:layout_height="28dp"
                     android:layout_marginEnd="25dp"
                     android:layout_weight="1"
                     android:background="@drawable/layout_corners_shape"
