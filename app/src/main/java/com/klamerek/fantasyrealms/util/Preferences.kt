@@ -121,5 +121,133 @@ object Preferences {
         )!!
     }
 
+    fun savePlayers(context: Context, players: List<com.klamerek.fantasyrealms.game.Player>) {
+        val sharedPref = sharedPreferences(context)
+        with(sharedPref.edit()) {
+            putString(context.getString(R.string.saved_players), serializePlayers(players))
+            apply()
+        }
+    }
+
+    fun loadPlayers(context: Context): List<com.klamerek.fantasyrealms.game.Player> {
+        val sharedPref = sharedPreferences(context)
+        val serialized = sharedPref.getString(context.getString(R.string.saved_players), null)
+        return if (serialized != null) deserializePlayers(context, serialized) else emptyList()
+    }
+
+    fun saveDiscardArea(context: Context, game: com.klamerek.fantasyrealms.game.Game) {
+        val sharedPref = sharedPreferences(context)
+        with(sharedPref.edit()) {
+            putString(context.getString(R.string.saved_discard), serializeGame(game))
+            apply()
+        }
+    }
+
+    fun loadDiscardArea(context: Context): com.klamerek.fantasyrealms.game.Game? {
+        val sharedPref = sharedPreferences(context)
+        val serialized = sharedPref.getString(context.getString(R.string.saved_discard), null)
+        return if (serialized != null) deserializeGame(context, serialized) else null
+    }
+
+    private fun serializePlayers(players: List<com.klamerek.fantasyrealms.game.Player>): String {
+        val jsonArray = org.json.JSONArray()
+        players.forEach { player ->
+            val jsonPlayer = org.json.JSONObject()
+            jsonPlayer.put("name", player.name())
+            jsonPlayer.put("game", serializeGame(player.game()))
+            jsonArray.put(jsonPlayer)
+        }
+        return jsonArray.toString()
+    }
+
+    private fun deserializePlayers(context: Context, serialized: String): List<com.klamerek.fantasyrealms.game.Player> {
+        val players = mutableListOf<com.klamerek.fantasyrealms.game.Player>()
+        try {
+            val jsonArray = org.json.JSONArray(serialized)
+            for (i in 0 until jsonArray.length()) {
+                val jsonPlayer = jsonArray.getJSONObject(i)
+                val name = jsonPlayer.getString("name")
+                val gameSerialized = jsonPlayer.getString("game")
+                val game = deserializeGame(context, gameSerialized)
+                players.add(com.klamerek.fantasyrealms.game.Player(name, game))
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return players
+    }
+
+    private fun serializeGame(game: com.klamerek.fantasyrealms.game.Game): String {
+        val jsonGame = org.json.JSONObject()
+        jsonGame.put("deluxe", game.deluxeEdition)
+        jsonGame.put("noScoring", game.noScoring)
+
+        val handCards = org.json.JSONArray()
+        game.handCards().forEach { handCards.put(it.definition.id) }
+        jsonGame.put("handCards", handCards)
+
+        val tableCards = org.json.JSONArray()
+        game.cards().filter { it.definition.position() == com.klamerek.fantasyrealms.game.CardPosition.TABLE }
+            .forEach { tableCards.put(it.definition.id) }
+        jsonGame.put("tableCards", tableCards)
+
+        val selections = org.json.JSONArray()
+        com.klamerek.fantasyrealms.game.CardDefinitions.getAll().forEach { definition ->
+            if (game.hasManualEffect(definition)) {
+                val cardSelected = game.ruleEffectCardSelectionAbout(definition).firstOrNull()
+                val suitSelected = game.ruleEffectSuitSelectionAbout(definition).firstOrNull()
+                if (cardSelected != null || suitSelected != null) {
+                    val jsonSelection = org.json.JSONObject()
+                    jsonSelection.put("sourceId", definition.id)
+                    cardSelected?.let { jsonSelection.put("cardSelectedId", it.id) }
+                    suitSelected?.let { jsonSelection.put("suitSelected", it.name) }
+                    selections.put(jsonSelection)
+                }
+            }
+        }
+        jsonGame.put("selections", selections)
+
+        return jsonGame.toString()
+    }
+
+    private fun deserializeGame(context: Context, serialized: String): com.klamerek.fantasyrealms.game.Game {
+        val jsonGame = org.json.JSONObject(serialized)
+        val deluxe = jsonGame.optBoolean("deluxe", getDeluxeEdition(context))
+        val noScoring = jsonGame.optBoolean("noScoring", false)
+        val game = com.klamerek.fantasyrealms.game.Game(deluxe, noScoring)
+
+        val allCards = com.klamerek.fantasyrealms.game.CardDefinitions.getAllById()
+
+        val handCards = jsonGame.getJSONArray("handCards")
+        for (i in 0 until handCards.length()) {
+            allCards[handCards.getInt(i)]?.let { game.add(it) }
+        }
+
+        val tableCards = jsonGame.optJSONArray("tableCards")
+        if (tableCards != null) {
+            for (i in 0 until tableCards.length()) {
+                allCards[tableCards.getInt(i)]?.let { game.add(it) }
+            }
+        }
+
+        val selections = jsonGame.optJSONArray("selections")
+        if (selections != null) {
+            for (i in 0 until selections.length()) {
+                val jsonSelection = selections.getJSONObject(i)
+                val sourceId = jsonSelection.getInt("sourceId")
+                val cardSelectedId = if (jsonSelection.has("cardSelectedId")) jsonSelection.getInt("cardSelectedId") else null
+                val suitSelectedName = if (jsonSelection.has("suitSelected")) jsonSelection.getString("suitSelected") else null
+
+                val source = allCards[sourceId]
+                val cardSelected = if (cardSelectedId != null) allCards[cardSelectedId] else null
+                val suitSelected = if (suitSelectedName != null) com.klamerek.fantasyrealms.game.Suit.valueOf(suitSelectedName) else null
+
+                game.applySelection(source, cardSelected, suitSelected)
+            }
+        }
+
+        return game
+    }
+
 
 }

@@ -37,6 +37,8 @@
     <string name="deluxe_edition_label">Deluxe Edition:</string>
     <string name="buildings_outsiders_undead_label">Buildings, outsiders and undead:</string>
     <string name="cursed_items_label">Cursed items:</string>
+    <string name="saved_players" translatable="false">saved_players</string>
+    <string name="saved_discard" translatable="false">saved_discard</string>
     <string name="discard_area">Discard area</string>
     <!-- Effects and Suits -->
     <string name="effect_bonus">BONUS</string>

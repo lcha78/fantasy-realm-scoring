@@ -157,6 +157,11 @@ class HandSelectionActivity : CustomActivity() {
         }
     }
 
+    private fun save() {
+        Preferences.savePlayers(baseContext, Player.all)
+        Preferences.saveDiscardArea(baseContext, DiscardArea.instance.game())
+    }
+
     @SuppressLint("NotifyDataSetChanged")
     @Deprecated(message = "Have to migrate onActivityResult usage")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -186,6 +191,7 @@ class HandSelectionActivity : CustomActivity() {
 
         refreshGameSessionLabels()
         adapter.notifyDataSetChanged()
+        save()
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -197,6 +203,7 @@ class HandSelectionActivity : CustomActivity() {
 
             adapter.notifyDataSetChanged()
             refreshGameSessionLabels()
+            save()
         }
     }
 
@@ -209,6 +216,7 @@ class HandSelectionActivity : CustomActivity() {
 
             adapter.notifyDataSetChanged()
             refreshGameSessionLabels()
+            save()
         }
     }
 

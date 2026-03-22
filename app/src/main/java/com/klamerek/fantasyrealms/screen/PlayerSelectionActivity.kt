@@ -161,12 +161,18 @@ class PlayerSelectionActivity : CustomActivity() {
         }
     }
 
+    private fun save() {
+        Preferences.savePlayers(baseContext, Player.all)
+        Preferences.saveDiscardArea(baseContext, DiscardArea.instance.game())
+    }
+
     @SuppressLint("NotifyDataSetChanged")
     @Subscribe
     fun addPlayer(event: PlayerCreationEvent) {
         runOnUiThread {
             Player.all.add(Player(event.name, Game(deluxeEdition = Preferences.getDeluxeEdition(baseContext))))
             adapter.notifyDataSetChanged()
+            save()
         }
     }
 
@@ -176,6 +182,7 @@ class PlayerSelectionActivity : CustomActivity() {
         runOnUiThread {
             Player.all[event.index].setName(event.name)
             adapter.notifyDataSetChanged()
+            save()
         }
     }
 
@@ -185,6 +192,7 @@ class PlayerSelectionActivity : CustomActivity() {
         runOnUiThread {
             Player.all.removeAt(event.index)
             adapter.notifyDataSetChanged()
+            save()
         }
     }
 
@@ -195,6 +203,7 @@ class PlayerSelectionActivity : CustomActivity() {
         runOnUiThread {
             Player.all.clear()
             adapter.notifyDataSetChanged()
+            save()
         }
     }
 
@@ -204,6 +213,7 @@ class PlayerSelectionActivity : CustomActivity() {
         runOnUiThread {
             Player.all.forEach { it.game().clear() }
             adapter.notifyDataSetChanged()
+            save()
         }
     }
 
