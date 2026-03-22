@@ -33,6 +33,7 @@ class ScanActivity : CustomActivity(), CameraUseCase {
     private lateinit var imageCapture: ImageCapture
     private lateinit var recognizer: CardTitleRecognizer
     private lateinit var binding: ActivityScanBinding
+    private var camera: Camera? = null
 
     override fun onDestroy() {
         super.onDestroy()
@@ -56,6 +57,14 @@ class ScanActivity : CustomActivity(), CameraUseCase {
             binding.cameraPreview.visibility = View.GONE
             scan()
         }
+        binding.flashButton.setOnClickListener {
+            val flashMode = camera?.cameraInfo?.torchState?.value == TorchState.ON
+            camera?.cameraControl?.enableTorch(!flashMode)
+        }
+    }
+
+    override fun onCameraReady(camera: Camera) {
+        this.camera = camera
     }
 
     class CardDetectedEvent(val indexes: List<Int>)

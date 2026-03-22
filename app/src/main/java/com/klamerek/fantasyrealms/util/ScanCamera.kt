@@ -34,6 +34,7 @@ interface CameraUseCase {
     fun getActivity(): ComponentActivity
     fun getCameraPreview(): Preview.SurfaceProvider
     fun getMainCameraUseCase(): UseCase
+    fun onCameraReady(camera: androidx.camera.core.Camera) {}
 
 }
 
@@ -94,12 +95,13 @@ private fun startCamera(cameraUseCase: CameraUseCase) {
             cameraProvider.unbindAll()
 
             // Bind use cases to camera
-            cameraProvider.bindToLifecycle(
+            val camera = cameraProvider.bindToLifecycle(
                 cameraUseCase.getActivity(),
                 cameraSelector,
                 preview,
                 cameraUseCase.getMainCameraUseCase()
             )
+            cameraUseCase.onCameraReady(camera)
 
         } catch (exc: Exception) {
             Log.e(Camera.TAG, "Use case binding failed", exc)
