@@ -6,10 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.activity.ComponentActivity
-import androidx.camera.core.ExperimentalGetImage
-import androidx.camera.core.ImageAnalysis
-import androidx.camera.core.Preview
-import androidx.camera.core.UseCase
+import androidx.camera.core.*
 import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -37,6 +34,7 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
     private lateinit var recognizer: CardTitleRecognizer
     private lateinit var binding: ActivityOnTheFlyScanBinding
     private lateinit var adapter: ChipsDetectedAdapter
+    private var camera: androidx.camera.core.Camera? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,6 +78,11 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
             closingIntent.putExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID, answer)
             setResult(Constants.RESULT_OK, closingIntent)
             finishAfterTransition()
+        }
+
+        binding.flashButton.setOnClickListener {
+            val flashMode = camera?.cameraInfo?.torchState?.value == TorchState.ON
+            camera?.cameraControl?.enableTorch(!flashMode)
         }
     }
 
@@ -126,6 +129,10 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
             }
         }
         return imageAnalysis
+    }
+
+    override fun onCameraReady(camera: androidx.camera.core.Camera) {
+        this.camera = camera
     }
 
     override fun onRequestPermissionsResult(
