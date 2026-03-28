@@ -15,7 +15,7 @@ android {
         minSdk 26
         targetSdk 36
         versionCode 34
-        versionName '0.35'
+        versionName '0.36'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -93,7 +93,16 @@ android {
             enableAndroidTestCoverage true
         }
     }
+
     namespace 'com.klamerek.fantasyrealms'
+}
+
+androidComponents {
+    onVariants(selector().withBuildType("release"), { variant ->
+        variant.outputs.forEach { output ->
+            output.outputFileName.set("Fantasy_Realms_Scoring.apk")
+        }
+    })
 }
 
 dependencies {
