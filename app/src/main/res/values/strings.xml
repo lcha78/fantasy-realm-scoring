@@ -18,7 +18,7 @@
     <string name="clear_button">Clear</string>
     <string name="scan_help_label">Tip: only card titles are mandatory</string>
     <string name="base">BASE</string>
-    <string name="disclaimer" translatable="false">v0.34\n(Scan may not work with non latin alphabet)\nFound a bug? Want to contribute? Contact me: <a href="https://github.com/benjamin-klamerek/fantasy-realm-scoring">github</a> or <a href="mailto:benjamin.klamerek@gmail.com">email</a>\n\nIcons made by Freepik and Smashicons from <a href="www.flaticon.com">www.flaticon.com</a></string>
+    <string name="disclaimer" translatable="false">v0.36\nFound a bug? Want to contribute? Contact me: <a href="https://github.com/benjamin-klamerek/fantasy-realm-scoring">github</a> or <a href="mailto:benjamin.klamerek@gmail.com">email</a>\n\nIcons made by Freepik and Smashicons from <a href="www.flaticon.com">www.flaticon.com</a></string>
     <string name="done">Done</string>
     <string name="scan_mode_label" translatable="false">Scan mode:</string>
     <string name="language_label">Language:</string>
@@ -37,6 +37,8 @@
     <string name="deluxe_edition_label">Deluxe Edition:</string>
     <string name="buildings_outsiders_undead_label">Buildings, outsiders and undead:</string>
     <string name="cursed_items_label">Cursed items:</string>
+    <string name="ocr_matching_score_threshold_label" translatable="false">OCR matching score threshold:</string>
+    <string name="ocr_difference_length_threshold_label" translatable="false">OCR difference length threshold:</string>
     <string name="saved_players" translatable="false">saved_players</string>
     <string name="saved_discard" translatable="false">saved_discard</string>
     <string name="discard_area">Discard area</string>

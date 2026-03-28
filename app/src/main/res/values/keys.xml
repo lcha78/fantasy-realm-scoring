@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="preference_file_key" translatable="false">com.klamerek.preference_file_key</string>
+    <string name="preference_file_key" translatable="false">com.klamerek.fantasyrealms.PREFERENCE_FILE_KEY</string>
     <string name="saved_language" translatable="false">saved_language</string>
     <string name="scan_mode" translatable="false">scan_mode</string>
     <string name="display_card_number" translatable="false">display_card_number</string>
@@ -9,4 +9,6 @@
     <string name="buildings_outsiders_undead" translatable="false">buildings_outsiders_undead</string>
     <string name="display_chip_color_on_search" translatable="false">display_chip_color_on_search</string>
     <string name="deluxe_edition" translatable="false">deluxe_edition</string>
+    <string name="ocr_matching_score_threshold" translatable="false">ocr_matching_score_threshold</string>
+    <string name="ocr_difference_length_threshold" translatable="false">ocr_difference_length_threshold</string>
 </resources>

@@ -44,6 +44,8 @@ class SettingsActivity : CustomActivity() {
         binding.displayChipColorOnSearchCheckBox.isChecked =
             Preferences.getDisplayChipColorOnSearch(baseContext)
         binding.deluxeEditionCheckBox.isChecked = Preferences.getDeluxeEdition(baseContext)
+        binding.ocrMatchingScoreEditText.setText(Preferences.getMatchingCardScoreThreshold(baseContext).toString())
+        binding.ocrDifferenceLengthEditText.setText(Preferences.getDifferenceLengthInNameThreshold(baseContext).toString())
 
         val initialValue = getCardScopeId()
 
@@ -68,10 +70,6 @@ class SettingsActivity : CustomActivity() {
                 baseContext,
                 binding.displayCardNumberCheckBox.isChecked
             )
-            Preferences.saveDisplayCardNumberInPreferences(
-                baseContext,
-                binding.displayCardNumberCheckBox.isChecked
-            )
             Preferences.saveBuildingsOutsidersUndeadInPreferences(
                 baseContext,
                 binding.withBuildingsOutsidersUndeadCheckBox.isChecked
@@ -91,6 +89,14 @@ class SettingsActivity : CustomActivity() {
             Preferences.saveDeluxeEditionInPreferences(
                 baseContext,
                 binding.deluxeEditionCheckBox.isChecked
+            )
+            Preferences.saveMatchingCardScoreThresholdInPreferences(
+                baseContext,
+                binding.ocrMatchingScoreEditText.text.toString().toIntOrNull() ?: 90
+            )
+            Preferences.saveDifferenceLengthInNameThresholdInPreferences(
+                baseContext,
+                binding.ocrDifferenceLengthEditText.text.toString().toIntOrNull() ?: 0
             )
             removeCardOutOfScope(initialValue)
             finishAfterTransition()

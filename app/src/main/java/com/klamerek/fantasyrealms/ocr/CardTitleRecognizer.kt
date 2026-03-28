@@ -10,10 +10,10 @@ import com.google.mlkit.vision.text.TextRecognition
 import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import com.klamerek.fantasyrealms.game.*
 import com.klamerek.fantasyrealms.normalize
-import com.klamerek.fantasyrealms.util.Constants
 import com.klamerek.fantasyrealms.util.LocaleManager
 import com.klamerek.fantasyrealms.util.LocaleManager.french
 import com.klamerek.fantasyrealms.util.LocaleManager.russian
+import com.klamerek.fantasyrealms.util.Preferences
 import me.xdrop.fuzzywuzzy.FuzzySearch
 import java.util.*
 import kotlin.math.abs
@@ -23,7 +23,7 @@ import kotlin.math.abs
  * Recognize title card from images and provide list of card (ids) identified
  *
  */
-class CardTitleRecognizer(context: Context) {
+class CardTitleRecognizer(val context: Context) {
 
     private val recognizer = TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS)
     private val cardByCleanedName = initCardByCleanedNameMap(context)
@@ -74,7 +74,7 @@ class CardTitleRecognizer(context: Context) {
      * @property score              score obtained
      * @property matchingKey        best matching key with input
      */
-    class MatchingResult(
+    inner class MatchingResult(
         private val input: String,
         val bestCardResult: CardDefinition,
         val score: Int,
@@ -84,15 +84,15 @@ class CardTitleRecognizer(context: Context) {
         /**
          * A match is considered valid when :
          * <ul>
-         *     <li> matching text length difference is inferior to 4 </li>
-         *     <li> score is greater than 75 </li>
+         *     <li> matching text length difference is inferior to the threshold </li>
+         *     <li> score is greater than the threshold </li>
          *     <li> best card result is not "empty" </li>
          * <ul>
          *
          */
         fun isAcceptable() =
-            abs(input.length - matchingKey.length) < Constants.DIFFERENCE_LENGTH_IN_NAME_THRESHOLD &&
-                    score > Constants.MATCHING_CARD_SCORE_THRESHOLD &&
+            abs(input.length - matchingKey.length) <= Preferences.getDifferenceLengthInNameThreshold(context) &&
+                    score >= Preferences.getMatchingCardScoreThreshold(context) &&
                     bestCardResult != empty
 
     }

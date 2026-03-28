@@ -121,6 +121,36 @@ object Preferences {
         )!!
     }
 
+    fun getMatchingCardScoreThreshold(context: Context): Int {
+        return sharedPreferences(context).getInt(
+            context.getString(R.string.ocr_matching_score_threshold),
+            Constants.MATCHING_CARD_SCORE_THRESHOLD
+        )
+    }
+
+    fun saveMatchingCardScoreThresholdInPreferences(context: Context, threshold: Int) {
+        val sharedPref = sharedPreferences(context)
+        with(sharedPref.edit()) {
+            putInt(context.getString(R.string.ocr_matching_score_threshold), threshold)
+            apply()
+        }
+    }
+
+    fun getDifferenceLengthInNameThreshold(context: Context): Int {
+        return sharedPreferences(context).getInt(
+            context.getString(R.string.ocr_difference_length_threshold),
+            Constants.DIFFERENCE_LENGTH_IN_NAME_THRESHOLD
+        )
+    }
+
+    fun saveDifferenceLengthInNameThresholdInPreferences(context: Context, threshold: Int) {
+        val sharedPref = sharedPreferences(context)
+        with(sharedPref.edit()) {
+            putInt(context.getString(R.string.ocr_difference_length_threshold), threshold)
+            apply()
+        }
+    }
+
     fun savePlayers(context: Context, players: List<com.klamerek.fantasyrealms.game.Player>) {
         val sharedPref = sharedPreferences(context)
         with(sharedPref.edit()) {

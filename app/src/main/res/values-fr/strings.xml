@@ -22,8 +22,11 @@
     <string name="display_card_number_label">Afficher numéro de carte :</string>
     <string name="remove_already_selected_label">Retirer cartes déjà sélectionnées:</string>
     <string name="display_chip_color_on_search_label">Forcer couleur pour sélection:</string>
+    <string name="deluxe_edition_label">Édition Deluxe :</string>
     <string name="buildings_outsiders_undead_label">Bâtiments, Extérieurs et Morts-vivants :</string>
     <string name="cursed_items_label">Objets Maudits :</string>
+    <string name="ocr_matching_score_threshold_label">Seuil de score de correspondance OCR :</string>
+    <string name="ocr_difference_length_threshold_label">Seuil de différence de longueur OCR :</string>
     <string name="discard_area">Défausse</string>
     <!-- Effets et Familles -->
     <string name="effect_bonus">BONUS</string>

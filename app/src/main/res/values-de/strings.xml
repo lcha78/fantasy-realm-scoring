@@ -20,6 +20,14 @@
     <string name="done">Fertig</string>
     <string name="language_label">Sprache:</string>
     <string name="display_card_number_label">Kartennummer anzeigen:</string>
+    <string name="remove_already_selected_label">Bereits ausgewählte Karten entfernen:</string>
+    <string name="display_chip_color_on_search_label">Kartenfarbe anzeigen:</string>
+    <string name="deluxe_edition_label">Deluxe-Edition:</string>
+    <string name="buildings_outsiders_undead_label">Gebäude/Outsider/Untote</string>
+    <string name="cursed_items_label">Verfluchte Gegenstände</string>
+    <string name="ocr_matching_score_threshold_label">OCR-Übereinstimmungsschwellenwert:</string>
+    <string name="ocr_difference_length_threshold_label">OCR-Längenunterschiedsschwellenwert:</string>
+    <string name="discard_area">Ablagebereich</string>
     <!-- Effects and Suits -->
     <string name="effect_bonus">BONUS</string>
     <string name="effect_clear">AUFHEBEN</string>
@@ -36,6 +44,10 @@
     <string name="suit_weather">Wetter</string>
     <string name="suit_wild">Joker</string>
     <string name="suit_wizard">Zauberer</string>
+    <string name="suit_building">Gebäude</string>
+    <string name="suit_outsider">Outsider</string>
+    <string name="suit_undead">Untoter</string>
+    <string name="suit_cursed_item">Verfluchter Gegenstand</string>
     <!-- Card names -->
     <string name="rangers">Waldläufer</string>
     <string name="elven_archers">Elbenschützen</string>
@@ -162,14 +174,6 @@
     <string name="warlock_lord_rules">STRAFE: -10 für jeden Anführer und/oder anderen Zauberer</string>
     <string name="jester_rules">BONUS: +3 für jede andere Karte mit ungerader Basisstärke ODER +50 wenn alle Karten eine ungerade Basisstärke haben</string>
     <string name="clear_button">Löschen</string>
-    <string name="discard_area">Ablagebereich</string>
-    <string name="display_chip_color_on_search_label">Kartenfarbe anzeigen:</string>
-    <string name="buildings_outsiders_undead_label">Gebäude/Outsider/Untote</string>
-    <string name="cursed_items_label">Verfluchte Gegenstände</string>
-    <string name="suit_building">Gebäude</string>
-    <string name="suit_outsider">Outsider</string>
-    <string name="suit_undead">Untoter</string>
-    <string name="suit_cursed_item">Verfluchter Gegenstand</string>
     <string name="dungeon">Verlies</string>
     <string name="castle">Burg</string>
     <string name="crypt">Gruft</string>
@@ -225,7 +229,7 @@
     <string name="lich_rules">BONUS: +10 für Totenbeschwörer und jeden anderen Untoten. \nUntote können nicht BLOCKIERT werden.</string>
     <string name="death_knight_rules">BONUS: +7 für jede Waffe und/oder Armee im Ablagebereich.</string>
     <string name="bell_tower_rules2">BONUS: +15 mit mindestens einem Zauberer oder Untoten.</string>
-    <string name="fountain_of_life_rules2">BONUS: Addiere die Basisstärke einer beliebigen Waffe, Gebäude, Flut, Flamme, Land oder Wetter in deiner Hand.</string>
+    <string name="fountain_of_life_rules2">BONUS: Addiere die Basisstärke einer beliebigen Waffe, Gebäude, Flut, Flamme, Land oder Wetter in deiner hand.</string>
     <string name="great_flood_rules2">STRAFE: BLOCKIERT alle Armeen, alle Gebäude, alle Länder außer Gebirge und alle Flammen außer Blitz.</string>
     <string name="rangers_rules2">BONUS: +10 für jedes Land und Gebäude. \nHEBT das Wort Armee von allen Strafen AUF.</string>
     <string name="necromancer_rules2">BONUS: Du darfst am Spielende eine Armee, Anführer, Zauberer, Bestie oder Untote aus dem Ablagebereich auf Deine Hand nehmen. \nUntote können nicht BLOCKIERT werden.</string>
@@ -256,5 +260,4 @@
     <string name="lantern_rules">ERSETZT ZUG: Wähle eine Farbe. Ziehe solange vom Stapel, bis Du eine Karte dieser Farbe (Joker zählen nicht als diese Farbe) oder insgesamt 10 Karten gezogen hast. \nWenn Du eine Karte der Farbe gezogen hast, behalte sie und lege eine andere Karte aus Deiner Hand ab. Zeige die anderen gezogenen Karten und mische sie zurück in den Stapel.</string>
     <string name="portal_rules">JEDERZEIT: Lege in diesem Zug keine Karte ab. \n(Ab sofort hast Du eine zusätzliche Karte auf der Hand)</string>
     <string name="wishing_ring_rules">JEDERZEIT: Schau Dir die Karten des Nachziehstapels an und lege eine beliebige Karte als oberste auf den Stapel. (Du darfst dies auch direkt bevor Du eine Karte ziehst tun.) \n Mische den Stapel am Ende Deines Zugs.</string>
-    <string name="remove_already_selected_label">Bereits ausgewählte Karten entfernen:</string>
 </resources>
