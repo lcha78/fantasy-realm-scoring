@@ -121,7 +121,8 @@ class ShapeShifterSelection : CardSelection(shapeshifter) {
         CardDefinitions.get(
             buildingsOutsidersUndead = false,
             cursedItems = false,
-            deluxeEdition = game.deluxeEdition
+            wildfireDeluxe = game.wildfireDeluxe,
+            phoenixDeluxe = game.phoenixDeluxe
         ).filter { definition ->
             definition.isOneOf(
                 Suit.ARTIFACT,
@@ -152,7 +153,8 @@ class ShapeShifterV2Selection : CardSelection(shapeshifterV2) {
         CardDefinitions.get(
             buildingsOutsidersUndead = true,
             cursedItems = false,
-            deluxeEdition = game.deluxeEdition
+            wildfireDeluxe = game.wildfireDeluxe,
+            phoenixDeluxe = game.phoenixDeluxe
         ).filter { definition ->
             definition.isOneOf(
                 Suit.ARTIFACT,
@@ -184,7 +186,8 @@ class MirageSelection : CardSelection(mirage) {
         CardDefinitions.get(
             buildingsOutsidersUndead = false,
             cursedItems = false,
-            deluxeEdition = game.deluxeEdition
+            wildfireDeluxe = game.wildfireDeluxe,
+            phoenixDeluxe = game.phoenixDeluxe
         ).filter { definition ->
             definition.isOneOf(
                 Suit.ARMY,
@@ -215,7 +218,8 @@ class MirageV2Selection : CardSelection(mirageV2) {
         CardDefinitions.get(
             buildingsOutsidersUndead = true,
             cursedItems = false,
-            deluxeEdition = game.deluxeEdition
+            wildfireDeluxe = game.wildfireDeluxe,
+            phoenixDeluxe = game.phoenixDeluxe
         ).filter { definition ->
             definition.isOneOf(
                 Suit.ARMY,

@@ -170,7 +170,10 @@ class PlayerSelectionActivity : CustomActivity() {
     @Subscribe
     fun addPlayer(event: PlayerCreationEvent) {
         runOnUiThread {
-            Player.all.add(Player(event.name, Game(deluxeEdition = Preferences.getDeluxeEdition(baseContext))))
+            Player.all.add(Player(event.name, Game(
+                wildfireDeluxe = Preferences.getWildfireDeluxeEdition(baseContext),
+                phoenixDeluxe = Preferences.getPhoenixDeluxeEdition(baseContext)
+            )))
             adapter.notifyDataSetChanged()
             save()
         }

@@ -26,8 +26,9 @@ object CardDefinitions {
     fun get(context: Context): List<CardDefinition> {
         val buildingsOutsidersUndead = Preferences.getBuildingsOutsidersUndead(context)
         val cursedItems = Preferences.getCursedItems(context)
-        val deluxeEdition = Preferences.getDeluxeEdition(context)
-        return get(buildingsOutsidersUndead, cursedItems, deluxeEdition)
+        val wildfireDeluxeEdition = Preferences.getWildfireDeluxeEdition(context)
+        val phoenixDeluxeEdition = Preferences.getPhoenixDeluxeEdition(context)
+        return get(buildingsOutsidersUndead, cursedItems, wildfireDeluxeEdition, phoenixDeluxeEdition)
     }
 
     private fun getCardsV2(): List<CardDefinition> {
@@ -157,7 +158,12 @@ object CardDefinitions {
         phoenixDeluxeEdition
     )
 
-    fun get(buildingsOutsidersUndead: Boolean, cursedItems: Boolean, deluxeEdition: Boolean): List<CardDefinition> {
+    fun get(
+        buildingsOutsidersUndead: Boolean,
+        cursedItems: Boolean,
+        wildfireDeluxe: Boolean,
+        phoenixDeluxe: Boolean
+    ): List<CardDefinition> {
         val phoenixJester = true // Possibility to add a setting in the future
 
         val cards = getBaseCards().toMutableList()
@@ -173,18 +179,19 @@ object CardDefinitions {
 
         if (cursedItems) cards += getCursedItems()
 
-        if (deluxeEdition) {
+        if (wildfireDeluxe) {
             cards.removeAll { it.name() == wildfireDeluxeEdition.name() }
             cards += wildfireDeluxeEdition
+        }
 
-            if (phoenixJester) {
-                cards.removeAll { it.name() == phoenixDeluxeEdition.name() }
-                cards += phoenixDeluxeEdition
-            }
+        if (phoenixDeluxe && phoenixJester) {
+            cards.removeAll { it.name() == phoenixDeluxeEdition.name() }
+            cards += phoenixDeluxeEdition
         }
 
         return cards
     }
+
 }
 
 /**

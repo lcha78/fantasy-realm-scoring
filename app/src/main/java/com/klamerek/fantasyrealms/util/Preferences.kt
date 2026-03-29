@@ -76,17 +76,32 @@ object Preferences {
         }
     }
 
-    fun getDeluxeEdition(context: Context): Boolean {
+    fun getWildfireDeluxeEdition(context: Context): Boolean {
         return sharedPreferences(context).getBoolean(
-            context.getString(R.string.deluxe_edition),
+            context.getString(R.string.wildfire_deluxe_edition),
             false
         )
     }
 
-    fun saveDeluxeEditionInPreferences(context: Context, activate: Boolean) {
+    fun saveWildfireDeluxeEditionInPreferences(context: Context, activate: Boolean) {
         val sharedPref = sharedPreferences(context)
         with(sharedPref.edit()) {
-            putBoolean(context.getString(R.string.deluxe_edition), activate)
+            putBoolean(context.getString(R.string.wildfire_deluxe_edition), activate)
+            apply()
+        }
+    }
+
+    fun getPhoenixDeluxeEdition(context: Context): Boolean {
+        return sharedPreferences(context).getBoolean(
+            context.getString(R.string.phoenix_deluxe_edition),
+            false
+        )
+    }
+
+    fun savePhoenixDeluxeEditionInPreferences(context: Context, activate: Boolean) {
+        val sharedPref = sharedPreferences(context)
+        with(sharedPref.edit()) {
+            putBoolean(context.getString(R.string.phoenix_deluxe_edition), activate)
             apply()
         }
     }
@@ -209,7 +224,8 @@ object Preferences {
 
     private fun serializeGame(game: com.klamerek.fantasyrealms.game.Game): String {
         val jsonGame = org.json.JSONObject()
-        jsonGame.put("deluxe", game.deluxeEdition)
+        jsonGame.put("wildfireDeluxe", game.wildfireDeluxe)
+        jsonGame.put("phoenixDeluxe", game.phoenixDeluxe)
         jsonGame.put("noScoring", game.noScoring)
 
         val handCards = org.json.JSONArray()
@@ -242,9 +258,10 @@ object Preferences {
 
     private fun deserializeGame(context: Context, serialized: String): com.klamerek.fantasyrealms.game.Game {
         val jsonGame = org.json.JSONObject(serialized)
-        val deluxe = jsonGame.optBoolean("deluxe", getDeluxeEdition(context))
+        val wildfireDeluxe = jsonGame.optBoolean("wildfireDeluxe", false)
+        val phoenixDeluxe = jsonGame.optBoolean("phoenixDeluxe", false)
         val noScoring = jsonGame.optBoolean("noScoring", false)
-        val game = com.klamerek.fantasyrealms.game.Game(deluxe, noScoring)
+        val game = com.klamerek.fantasyrealms.game.Game(wildfireDeluxe, phoenixDeluxe, noScoring)
 
         val allCards = com.klamerek.fantasyrealms.game.CardDefinitions.getAllById()
 

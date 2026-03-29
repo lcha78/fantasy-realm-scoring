@@ -34,6 +34,8 @@
     <string name="remove_already_selected_label">Retirer les cartes déjà sélectionnées :</string>
     <string name="display_chip_color_on_search_label">Afficher la couleur pour sélection :</string>
     <string name="deluxe_edition_label">Édition Deluxe :</string>
+    <string name="wildfire_deluxe_edition_label">Feu de forêt (Édition Deluxe) :</string>
+    <string name="phoenix_deluxe_edition_label">Phénix (Édition Deluxe) :</string>
     <string name="buildings_outsiders_undead_label">Bâtiments, Extérieurs et Morts-vivants :</string>
     <string name="cursed_items_label">Objets Maudits :</string>
     <string name="ocr_matching_score_threshold_label">Seuil de score de correspondance OCR :</string>
@@ -164,7 +166,7 @@
     <string name="world_tree_rules">BONUS : + 50 si toutes les cartes non MASQUÉES appartiennent à des familles différentes.</string>
     <string name="book_of_changes_rules">BONUS : Vous pouvez changer la famille d\'une autre carte. Son nom ainsi que ses bonus et malus restent les mêmes.</string>
     <string name="shield_of_keth_rules">BONUS : + 15 avec n\'importe quel Seigneur. OU + 40 avec un Seigneur et l\'Épée de Keth.</string>
-    <string name="gem_of_order_rules">BONUS : + 10 pour une suite de 3 cartes, + 30 pour une suite de 4 cartes, + 60 pour une suite de 5 cartes, + 100 pour une suite de 6 cartes, + 150 pour une suite de 7 cartes. (En référence à la force de base des cartes.)</string>
+    <string name="dqem_of_order_rules">BONUS : + 10 pour une suite de 3 cartes, + 30 pour une suite de 4 cartes, + 60 pour une suite de 5 cartes, + 100 pour une suite de 6 cartes, + 150 pour une suite de 7 cartes. (En référence à la force de base des cartes.)</string>
     <string name="warhorse_rules">BONUS : + 14 avec n\'importe quel Seigneur ou Sorcier.</string>
     <string name="unicorn_rules">BONUS : + 30 avec la Princesse. OU + 15 avec l\'Impératrice, la Reine, ou l\'Enchanteresse.</string>
     <string name="hydra_rules">BONUS : + 28 avec le Marécage.</string>

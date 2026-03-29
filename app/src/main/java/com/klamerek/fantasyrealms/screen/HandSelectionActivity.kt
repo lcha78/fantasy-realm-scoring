@@ -128,7 +128,10 @@ class HandSelectionActivity : CustomActivity() {
                 Player.all.add(
                     Player(
                         Player.generateNextPlayerName(),
-                        Game(deluxeEdition = Preferences.getDeluxeEdition(baseContext))
+                        Game(
+                            wildfireDeluxe = Preferences.getWildfireDeluxeEdition(baseContext),
+                            phoenixDeluxe = Preferences.getPhoenixDeluxeEdition(baseContext)
+                        )
                     )
                 )
                 Player.all[0]

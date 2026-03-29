@@ -13,7 +13,8 @@ import kotlin.math.max
  *
  */
 class Game(
-    val deluxeEdition: Boolean,
+    val wildfireDeluxe: Boolean,
+    val phoenixDeluxe: Boolean,
     val noScoring: Boolean = false
 ) {
 
@@ -37,7 +38,7 @@ class Game(
     }
 
     fun handCardsNotBlanked(): Collection<Card> {
-        return handCards.filter { card -> !card.blanked || card.definition == phoenix }
+        return handCards.filter { card -> !card.blanked || card.definition == phoenix || card.definition == phoenixDeluxeEdition }
     }
 
     fun add(cardDefinition: CardDefinition) {

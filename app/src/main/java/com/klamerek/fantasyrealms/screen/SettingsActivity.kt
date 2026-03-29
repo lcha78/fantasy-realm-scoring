@@ -36,7 +36,8 @@ class SettingsActivity : CustomActivity() {
             withCursedItemsCheckBox.isChecked = Preferences.getCursedItems(baseContext)
             displayChipColorOnSearchCheckBox.isChecked =
                 Preferences.getDisplayChipColorOnSearch(baseContext)
-            deluxeEditionCheckBox.isChecked = Preferences.getDeluxeEdition(baseContext)
+            wildfireDeluxeEditionCheckBox.isChecked = Preferences.getWildfireDeluxeEdition(baseContext)
+            phoenixDeluxeEditionCheckBox.isChecked = Preferences.getPhoenixDeluxeEdition(baseContext)
             ocrMatchingScoreEditText.setText(
                 Preferences.getMatchingCardScoreThreshold(baseContext).toString()
             )
@@ -85,9 +86,13 @@ class SettingsActivity : CustomActivity() {
                     baseContext,
                     binding.removeAlreadySelectedCheckBox.isChecked
                 )
-                saveDeluxeEditionInPreferences(
+                saveWildfireDeluxeEditionInPreferences(
                     baseContext,
-                    binding.deluxeEditionCheckBox.isChecked
+                    binding.wildfireDeluxeEditionCheckBox.isChecked
+                )
+                savePhoenixDeluxeEditionInPreferences(
+                    baseContext,
+                    binding.phoenixDeluxeEditionCheckBox.isChecked
                 )
                 saveMatchingCardScoreThresholdInPreferences(
                     baseContext,
@@ -133,6 +138,7 @@ class SettingsActivity : CustomActivity() {
     private fun getCardScopeId() =
         binding.withBuildingsOutsidersUndeadCheckBox.isChecked.toInt().toString() +
                 binding.withCursedItemsCheckBox.isChecked.toInt().toString() +
-                binding.deluxeEditionCheckBox.isChecked.toInt().toString()
+                binding.wildfireDeluxeEditionCheckBox.isChecked.toInt().toString() +
+                binding.phoenixDeluxeEditionCheckBox.isChecked.toInt().toString()
 
 }
