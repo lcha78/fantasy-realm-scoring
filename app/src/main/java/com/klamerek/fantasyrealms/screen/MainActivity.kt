@@ -8,6 +8,8 @@ import android.graphics.drawable.AnimatedVectorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.provider.Settings
+import android.text.method.LinkMovementMethod
+import com.klamerek.fantasyrealms.BuildConfig
 import com.klamerek.fantasyrealms.R
 import com.klamerek.fantasyrealms.databinding.ActivityMainBinding
 import com.klamerek.fantasyrealms.util.Constants
@@ -22,6 +24,11 @@ class MainActivity : CustomActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        //Needed to make clickable links effective
+        binding.disclaimerLabel.movementMethod = LinkMovementMethod.getInstance()
+
+        binding.versionLabel.text = getString(R.string.version_label, BuildConfig.VERSION_NAME)
 
         binding.startButton.setOnClickListener {
             val playerSelectionIntent = Intent(this, PlayerSelectionActivity::class.java)

@@ -8,17 +8,6 @@
     android:orientation="vertical"
     tools:context=".screen.SettingsActivity">
 
-    <!-- The layout preview doesn't seem to display the line breaks correctly but it works on my device -->
-    <TextView
-        android:id="@+id/disclaimerLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:gravity="center"
-        android:text="@string/disclaimer"
-        android:textAlignment="center"
-        android:textColor="?android:attr/textColorPrimary" />
-
     <ScrollView
         android:id="@+id/mainScrollView"
         android:layout_width="match_parent"

@@ -18,7 +18,8 @@
     <string name="clear_button">Clear</string>
     <string name="scan_help_label">Tip: only card titles are mandatory</string>
     <string name="base">BASE</string>
-    <string name="disclaimer" translatable="false">v0.36\nFound a bug? Want to contribute? Contact me: <a href="https://github.com/benjamin-klamerek/fantasy-realm-scoring">github</a> or <a href="mailto:benjamin.klamerek@gmail.com">email</a>\n\nIcons made by Freepik and Smashicons from <a href="www.flaticon.com">www.flaticon.com</a></string>
+    <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Version %1$s</string>
     <string name="done">Done</string>
     <string name="scan_mode_label" translatable="false">Scan mode:</string>
     <string name="language_label">Language:</string>
