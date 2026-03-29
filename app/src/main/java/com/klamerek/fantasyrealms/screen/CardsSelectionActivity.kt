@@ -3,6 +3,7 @@ package com.klamerek.fantasyrealms.screen
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.core.view.children
@@ -27,8 +28,7 @@ class CardsSelectionActivity : CustomActivity() {
         val view = binding.root
         setContentView(view)
 
-        input =
-            intent.getSerializableExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID) as CardsSelectionExchange
+        input = getExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID) ?: CardsSelectionExchange()
 
         invertSelectionColorMode(baseContext)
         updateVisibleChips(baseContext)
@@ -41,10 +41,8 @@ class CardsSelectionActivity : CustomActivity() {
         updateMainButtonStatus()
 
         if (Preferences.getDisplayCardNumber(baseContext)) {
-            binding.chipGroup.children.toList().forEach {
-                (it as? Chip)?.text =
-                    CardDefinitions.getAllById()[it.tag.toString().toIntOrNull() ?: 0]?.nameWithId()
-                        ?: ""
+            binding.chipGroup.children.filterIsInstance<Chip>().forEach { chip ->
+                chip.text = CardDefinitions.getAllById()[chip.tag.toString().toIntOrNull() ?: 0]?.nameWithId() ?: ""
             }
         }
 
@@ -53,11 +51,11 @@ class CardsSelectionActivity : CustomActivity() {
             val answer = CardsSelectionExchange()
             answer.source = CARD_LIST_SOURCE_MANUAL
             answer.cardInitiator = input.cardInitiator
-            answer.cardsSelected = cardChips().filter { chip -> chip.isChecked }
-                .map { chip -> chip.tag }.mapNotNull { tag -> Integer.valueOf(tag.toString()) }
+            answer.cardsSelected = cardChips().filter { it.isChecked }
+                .mapNotNull { it.tag?.toString()?.toIntOrNull() }
                 .toMutableList()
-            answer.suitsSelected = suitChips().filter { chip -> chip.isChecked }
-                .mapNotNull { chip -> chip.tag.toString() }.toMutableList()
+            answer.suitsSelected = suitChips().filter { it.isChecked }
+                .mapNotNull { it.tag?.toString() }.toMutableList()
             closingIntent.putExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID, answer)
             setResult(Constants.RESULT_OK, closingIntent)
             finishAfterTransition()
@@ -65,14 +63,21 @@ class CardsSelectionActivity : CustomActivity() {
 
     }
 
+    private inline fun <reified T : Serializable> getExtra(name: String): T? {
+        @Suppress("DEPRECATION")
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getSerializableExtra(name, T::class.java)
+        } else {
+            intent.getSerializableExtra(name) as? T
+        }
+    }
+
     private fun invertSelectionColorMode(context: Context) {
         if (Preferences.getDisplayChipColorOnSearch(context)) {
             cardChips().plus(suitChips()).forEach { chip ->
-                run {
-                    chip.chipBackgroundColor = chip.chipBackgroundColor?.revertChipColorState()
-                    chip.setTextColor(chip.textColors.revertChipColorState())
-                    chip.chipStrokeColor = chip.chipStrokeColor?.revertChipColorState()
-                }
+                chip.chipBackgroundColor = chip.chipBackgroundColor?.revertChipColorState()
+                chip.setTextColor(chip.textColors.revertChipColorState())
+                chip.chipStrokeColor = chip.chipStrokeColor?.revertChipColorState()
             }
         }
     }
@@ -86,10 +91,10 @@ class CardsSelectionActivity : CustomActivity() {
         val isChipVisible = { tag: String ->
             var visible = activeDefinitions.contains(tag)
             if (Preferences.getRemoveAlreadySelected(baseContext)) {
-                visible = visible && !alreadySelected.contains(Integer.valueOf(tag))
+                visible = visible && !alreadySelected.contains(tag.toIntOrNull() ?: -1)
             }
             if (input.selectionMode != Constants.CARD_LIST_SELECTION_MODE_DEFAULT) {
-                visible = input.cardsScope.contains(Integer.valueOf(tag))
+                visible = input.cardsScope.contains(tag.toIntOrNull() ?: -1)
             }
             visible
         }
@@ -150,26 +155,25 @@ class CardsSelectionActivity : CustomActivity() {
         when (input.selectionMode) {
             Constants.CARD_LIST_SELECTION_MODE_DEFAULT -> binding.addCardsButton.isEnabled = true
             Constants.CARD_LIST_SELECTION_MODE_ONE_CARD ->
-                binding.addCardsButton.isEnabled = cardChips().count { chip -> chip.isChecked } == 1
+                binding.addCardsButton.isEnabled = cardChips().count { it.isChecked } == 1
             Constants.CARD_LIST_SELECTION_MODE_ONE_CARD_AND_SUIT ->
                 binding.addCardsButton.isEnabled =
-                    cardChips().count { chip -> chip.isChecked } == 1 &&
-                            suitChips().count { chip -> chip.isChecked } == 1
+                    cardChips().count { it.isChecked } == 1 &&
+                            suitChips().count { it.isChecked } == 1
 
         }
     }
 
     private fun checkSelectedCards() {
         cardChips().forEach { chip ->
-            chip.isChecked = input.cardsSelected.contains(Integer.valueOf(chip.tag.toString()))
+            chip.isChecked = input.cardsSelected.contains(chip.tag.toString().toIntOrNull() ?: -1)
         }
     }
 
     private fun cardChips() =
-        binding.chipGroup.children.filter { child -> child is Chip }.map { child -> child as Chip }
+        binding.chipGroup.children.filterIsInstance<Chip>()
 
-    private fun suitChips() = binding.suitChipGroup.children.filter { child -> child is Chip }
-        .map { child -> child as Chip }
+    private fun suitChips() = binding.suitChipGroup.children.filterIsInstance<Chip>()
 }
 
 /**
@@ -183,7 +187,7 @@ class CardsSelectionActivity : CustomActivity() {
  * @property cardsScope                 indicates which cards must be accessible for selection
  */
 class CardsSelectionExchange : Serializable {
-    var source: Int = Constants.CARD_LIST_SOURCE_MANUAL
+    var source: Int = CARD_LIST_SOURCE_MANUAL
     var selectionMode: Int = Constants.CARD_LIST_SELECTION_MODE_DEFAULT
     var label: String? = null
     var cardInitiator: Int? = null

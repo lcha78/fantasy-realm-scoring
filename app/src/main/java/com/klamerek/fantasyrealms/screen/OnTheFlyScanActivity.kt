@@ -20,6 +20,7 @@ import com.klamerek.fantasyrealms.databinding.ChipDetectedItemBinding
 import com.klamerek.fantasyrealms.game.CardDefinitions
 import com.klamerek.fantasyrealms.ocr.CardTitleRecognizer
 import com.klamerek.fantasyrealms.util.*
+import androidx.camera.core.Camera as CameraX
 
 
 /**
@@ -34,7 +35,7 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
     private lateinit var recognizer: CardTitleRecognizer
     private lateinit var binding: ActivityOnTheFlyScanBinding
     private lateinit var adapter: ChipsDetectedAdapter
-    private var camera: androidx.camera.core.Camera? = null
+    private var camera: CameraX? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,10 +55,9 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
         binding.chipsView.layoutManager = LinearLayoutManager(this)
         val bindingForChips = ActivityCardsSelectionBinding.inflate(layoutInflater)
         val tagToChip = bindingForChips.chipGroup.children
-            .map { element -> element as? Chip }
-            .filterNotNull()
+            .filterIsInstance<Chip>()
             .onEach { it.isCheckable = false }
-            .map { chip -> chip.tag.toString() to chip }.toMap()
+            .associateBy { it.tag.toString() }
         adapter = ChipsDetectedAdapter(tagToChip, cardsDetected)
         binding.chipsView.adapter = adapter
 
@@ -131,7 +131,7 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
         return imageAnalysis
     }
 
-    override fun onCameraReady(camera: androidx.camera.core.Camera) {
+    override fun onCameraReady(camera: CameraX) {
         this.camera = camera
     }
 
@@ -161,7 +161,7 @@ class ChipsDetectedAdapter(
     override fun getItemCount(): Int = chipTags.size
 
     override fun onBindViewHolder(holder: ChipHolder, position: Int) {
-        chipByTag[chipTags.elementAt(position).toString()]?.let { holder.bindPlayer(it) }
+        chipByTag[chipTags.elementAt(position)]?.let { holder.bindPlayer(it) }
     }
 
     class ChipHolder(v: ChipDetectedItemBinding) :
