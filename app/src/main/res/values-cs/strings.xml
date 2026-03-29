@@ -19,12 +19,16 @@
     <string name="scan_help_label">Tip: pouze nadpis je povinný</string>
     <string name="base">Základní síla</string>
     <string name="done">Hotovo</string>
+    <string name="scan_mode_label">Režim skenování:</string>
     <string name="language_label">Jazyk:</string>
     <string name="display_card_number_label">Zobraz číslo karty:</string>
     <string name="remove_already_selected_label">Vymaž již zvolené karty:</string>
     <string name="display_chip_color_on_search_label">Zobrazit barevně typy karet:</string>
+    <string name="deluxe_edition_label">Deluxe edice:</string>
     <string name="buildings_outsiders_undead_label">Budovy, cizinci a nemrtví:</string>
     <string name="cursed_items_label">Prokleté předměty:</string>
+    <string name="ocr_matching_score_threshold_label">Práh skóre shody OCR:</string>
+    <string name="ocr_difference_length_threshold_label">Práh rozdílu délky OCR:</string>
     <string name="discard_area">Odhazovací balíček</string>
     <!-- Effects and Suits -->
     <string name="effect_bonus">BONUS</string>
@@ -162,6 +166,7 @@
     <string name="forge_rules">BONUS: +9 za každou Zbraň nebo Artefakt</string>
     <string name="lightning_rules">BONUS: +30,máš-li Bouři</string>
     <string name="wildfire_rules">VYMAŽE všechny karty kromě Ohňů,Čarodějů,Počasí,Zbraní,Artefaktů,Hory,Stoleté vody,Ostrova,Jednorožce a Draka</string>
+    <string name="wildfire_rules_deluxe_edition">VYMAŽE všechny karty kromě Artefaktů, Ohňů, Cizinců, Zbraní, Počasí, Čarodějů, Stoleté vody, Ostrova, Hory, Jednorožce a Draka.</string>
     <string name="fountain_of_life_rules">BONUS: Přidej základní sílu jakékoli Zbraně,Potopy,Ohně,Země nebo Počasí.</string>
     <string name="water_elemental_rules">BONUS: +15 za každou další Potopu.</string>
     <string name="island_rules">ODSTRAŇUJE postih z jedné Potopy nebo Ohně.</string>
@@ -184,11 +189,11 @@
     <string name="war_dirigible_rules">POSTIH: VYMAZÁNA, nemáš-li alespoň jednu Armádu; VYMAZÁNA, máš-li jakékoli Počasí.</string>
     <string name="air_elemental_rules">BONUS: +15 za každé další Počasí</string>
     <string name="rainstorm_rules">BONUS: +10 za každou Potopu.; POSTIH: VYMAŽE všechny Ohně kromě Blesku.</string>
-    <string name="whirlwind_rules">BONUS: +40,máš-li Bouři a k ní buď Sněhovou vánici nebo Stoletou vodu.</string>
+    <string name="whirlwind_rules">BONUS: +40,máš-li Bouři and k ní buď Sněhovou vánici nebo Stoletou vodu.</string>
     <string name="smoke_rules">POSTIH: Tato karta je VYMAZÁNA, nemáš-li alespoň jeden Oheň</string>
     <string name="blizzard_rules">POSTIH: VYMAŽE všechny Potopy; -5 za každou Armádu,Vůdce,Tvora a Oheň</string>
     <string name="shapeshifter_rules">Může kopírovat jméno a barvu jakéhokoli Artefaktu, Vůdce,Čaroděje,Zbraně nebo Tvora ve hře.Základní síla, bonusy ani postihy se nekopírují.</string>
-    <string name="mirage_rules">Může kopírovat jméno a barvu jakéhokoli Počasí,Armády,Země,Potopy nebo Ohně ve hře.Základní síla, bonusy ani postihy se nekopírují.</string>
+    <string name="mirage_rules">Může kopírovat jméno a barvu jakékoli Armády, Stavby,Země,Počasí,Potopy nebo Ohně ve hře. Základní síla,bonusy ani postihy se nekopírují.</string>
     <string name="doppelganger_rules">Může kopírovat jméno,barvu,základní sílu a postih,ALE NIKOLI BONUS jakékoli jiné karty ve tvé ruce.</string>
     <string name="necromancer_rules">BONUS: Na konci hry si z odkládacího prostoru můžeš vzít jakoukoli Armádu,Vůdce,Čaroděje nebo Tvora a přidat si ho do ruky jako osmou kartu.</string>
     <string name="enchantress_rules">BONUS: +5 za každou Zemi,Počasí,Potopu a Oheň.</string>
@@ -243,5 +248,6 @@
     <string name="portal_rules">KDYKOLI: V tomto tahu vynechej odkládání karty.(Od tohoto okamžiku budeš mít v ruce o jednu kartu více). </string>
     <string name="wishing_ring_rules">KDYKOLI: Prohledej balíček karet a libovolnou kartu z něj polož navrch.(Toto můžeš provést těsně před tím, než si vezmeš kartu).Na konci svého tahu balíček zamíchej. </string>
     <string name="jester_rules">BONUS: +3 za každou další kartu ve tvé ruce s lichou základní silou NEBO +50, mají-li všechny karty ve tvé ruce lichou základní sílu.</string>
-    <string name="phoenix_rules">BONUS: also counts as a Flame and Weather card. POSTIH: BLANKED with any Flood card. If this card is BLANKED for any reason, its base strength is reduced to 0 but it retains its suits.</string>
+    <string name="phoenix_rules">BONUS: také se počítá jako karta Ohně a Počasí. POSTIH: VYMAZÁNA s jakoukoli kartou Potopy. Pokud je tato karta z jakéhokoli důvodu VYMAZÁNA, její základní síla se sníží na 0, ale zachová si své barvy.</string>
+    <string name="phoenix_rules_deluxe_edition">BONUS: také se počítá jako karta Ohně a Počasí. POSTIH: VYMAZÁNA jakoukoli kartou Potopy. Fénix je imunní vůči Knize proměn a nemůže vymazat ani být vymazán žádnou jinou kartou.</string>
 </resources>

@@ -18,6 +18,7 @@
     <string name="scan_help_label">Tipp: Nur die Kartennamen sind notwendig</string>
     <string name="base">Basisstärke</string>
     <string name="done">Fertig</string>
+    <string name="scan_mode_label">Scan-Modus:</string>
     <string name="language_label">Sprache:</string>
     <string name="display_card_number_label">Kartennummer anzeigen:</string>
     <string name="remove_already_selected_label">Bereits ausgewählte Karten entfernen:</string>
@@ -103,77 +104,7 @@
     <string name="beastmaster">Herr der Bestien</string>
     <string name="warlock_lord">Hexenmeister</string>
     <string name="jester">Hofnarr</string>
-    <!-- Card rules -->
-    <string name="rangers_rules">BONUS: +10 für jedes Land; HEBT das Wort Armee von allen Strafen AUF.
-    </string>
-    <string name="elven_archers_rules">BONUS: +5 wenn ohne Wetter</string>
-    <string name="dwarvish_infantry_rules">STRAFE: -2 für jede andere Armee</string>
-    <string name="light_cavalry_rules">STRAFE: -2 für jedes Land</string>
-    <string name="celestial_knights_rules">STRAFE: -8 wenn ohne Anführer</string>
-    <string name="protection_rune_rules">HEBT die Strafen auf allen Karten AUF.</string>
-    <string name="world_tree_rules">BONUS: +50 wenn jede Nicht-BLOCKIERTE Karte eine unterschiedliche Farbe hat.</string>
-    <string name="book_of_changes_rules">BONUS: Du darfst die Farbe einer anderen Karte verändern. Name, BONUS, Strafe und Basisstärke bleiben unverändert.
-    </string>
-    <string name="shield_of_keth_rules">BONUS: +15 mit mindestens einem Anführer ODER +40 mit Anführer und Schwert von Keth</string>
-    <string name="gem_of_order_rules">BONUS: +10 für eine "Straße" mit 3 Karten, +30 für eine "Straße" mit 4 Karten, +60 für eine "Straße" mit 5 Karten, +100 für eine "Straße" mit 6 Karten, +150 für eine "Straße" mit 7 Karten
-    </string>
-    <string name="warhorse_rules">BONUS: +14 mit mindestens einem Anführer oder Zauberer</string>
-    <string name="unicorn_rules">BONUS: +30 mit Prinzessin ODER +15 mit Kaiserin, Königin, oder Magierin</string>
-    <string name="hydra_rules">BONUS: +28 mit Sumpf</string>
-    <string name="dragon_rules">STRAFE: -40 wenn ohne Zauberer</string>
-    <string name="basilisk_rules">STRAFE: BLOCKIERT alle Armeen, Anführer und andere Bestien</string>
-    <string name="candle_rules">BONUS: +100 mit Buch der Veränderung und Glockenturm sowie mindestens einem Zauberer</string>
-    <string name="fire_elemental_rules">BONUS: +15 für jede andere Flamme</string>
-    <string name="forge_rules">BONUS: +9 für jede Waffe und/oder jedes Artefakt</string>
-    <string name="lightning_rules">BONUS: +30 mit Regensturm</string>
-    <string name="wildfire_rules">BLOCKIERT alle Karten außer Flammen, Zauberer, Wetter, Waffen, Artefakte, Gebirge, Große Flut, Insel, Einhorn und Drachen.
-    </string>
-    <string name="fountain_of_life_rules">BONUS: Addiere die Basisstärke einer beliebigen Waffe, Flut, Flamme, Land oder Wetter.
-    </string>
-    <string name="water_elemental_rules">BONUS: +15 für jede andere Flut</string>
-    <string name="island_rules">HEBT die Strafe auf einer beliebigen Flut oder Flamme AUF.</string>
-    <string name="swamp_rules">"STRAFE: -3 für jede Armee und/oder Flamme"</string>
-    <string name="great_flood_rules">STRAFE: BLOCKIERT alle Armeen, alle Länder außer Gebirge, und alle Flammen, außer Blitz.
-    </string>
-    <string name="earth_elemental_rules">BONUS: +15 für jedes andere Land</string>
-    <string name="cavern_rules">BONUS: +25 mit Zwergeninfanterie oder Drache; HEBT die Strafen auf allen Wettern AUF.
-    </string>
-    <string name="forest_rules">BONUS: +12 für jede Bestie und/oder Elbenschützen</string>
-    <string name="bell_tower_rules">BONUS: +15 mit mindestens einem Zauberer</string>
-    <string name="mountain_rules">BONUS: +50 mit Rauch und Buschfeuer; Hebt die Strafen auf allen Fluten AUF.</string>
-    <string name="princess_rules">BONUS: +8 für jede Armee, Zauberer und/oder andere Anführer</string>
-    <string name="warlord_rules">BONUS: Die Summe der Basisstärke aller Armeen.</string>
-    <string name="queen_rules">BONUS: +5 für jede Armee, +20 für jede Armee wenn zusammen mit dem König</string>
-    <string name="king_rules">BONUS: +5 für jede Armee, +20 für jede Armee wenn zusammen mit der Königin</string>
-    <string name="empress_rules">BONUS: +10 für jede Armee; STRAFE: -5 für jeden anderen Anführer</string>
-    <string name="magic_wand_rules">BONUS: +25 mit mindestens einem Zauberer</string>
-    <string name="elven_longbow_rules">BONUS: +30 mit Elbenschüttzen, Kriegsherr oder Herr der Bestien.</string>
-    <string name="sword_of_keth_rules">BONUS: +10 mit mindestens einem Anführer ODER +40 mit Anführer und Schild von Keth</string>
-    <string name="warship_rules">STRAFE: Ist BLOCKIERT wenn ohne Flut. HEBT das Wort Armee von allen Strafen auf allen Fluten AUF.
-    </string>
-    <string name="war_dirigible_rules">STRAFE: Ist BLOCKIERT wenn ohne Armee. Ist BLOCKIERT wenn zusammen mit Wetter.
-    </string>
-    <string name="air_elemental_rules">BONUS: +15 für jedes andere Wetter</string>
-    <string name="rainstorm_rules">BONUS: +10 für jede Flut; STRAFE: BLOCKIERT alle Flammen, außer Blitz.</string>
-    <string name="whirlwind_rules">BONUS: +40 mit Regensturm und entweder Blizzard oder Große Flut</string>
-    <string name="smoke_rules">STRAFE: Ist BLOCKIERT wenn ohne Flamme</string>
-    <string name="blizzard_rules">STRAFE: -5 für jede Armee, Anführer, Bestie und/oder Flamme. BLOCKIERT alle Futen.</string>
-    <string name="shapeshifter_rules">Kann Namen und Farbe eines beliebigen Artefakts, Anführers, Zauberers, Waffe oder Bestie des Spiels kopieren. Übernimmt nicht Bonus, Strafen oder Basisstärke der entsprechenden Karte.
-    </string>
-    <string name="mirage_rules">Kann Namen und Farbe einer beliebigen Armee, Land, Wetter, Flut oder Flamme im Spiel kopieren. Übernimmt nicht Bonus, Strafen oder Basisstärke der entsprechenden Karte.
-    </string>
-    <string name="doppelganger_rules">Kann Namen, Basisstärke, Farbe und Strafe ABER NICHT DEN BONUS einer anderen Karte in Deiner Hand kopieren.
-    </string>
-    <string name="necromancer_rules">BONUS: Du darfst am Spielende eine Armee, Anführer, Zauberer oder Bestie aus dem Ablagebereich nehmen und sie als 8. Karte Deiner Hand werten.
-    </string>
-    <string name="enchantress_rules">BONUS: +5 für jedes Land, Wetter, Flut und/oder Flamme</string>
-    <string name="collector_rules">BONUS: +10 für drei unterschiedliche Karten der gleichen Farbe, +40 für vier unterschiedliche Karten der gleichen Farbe, +100
-        für fünf unterschiedliche Karten der gleichen Farbe
-    </string>
-    <string name="beastmaster_rules">BONUS: +9 für jede Bestie; HEBT die Strafe auf allen Bestien AUF.</string>
-    <string name="warlock_lord_rules">STRAFE: -10 für jeden Anführer und/oder anderen Zauberer</string>
-    <string name="jester_rules">BONUS: +3 für jede andere Karte mit ungerader Basisstärke ODER +50 wenn alle Karten eine ungerade Basisstärke haben</string>
-    <string name="clear_button">Löschen</string>
+    <string name="phoenix">Phönix</string>
     <string name="dungeon">Verlies</string>
     <string name="castle">Burg</string>
     <string name="crypt">Gruft</string>
@@ -213,6 +144,61 @@
     <string name="lantern">Laterne</string>
     <string name="portal">Portal</string>
     <string name="wishing_ring">Wunschring</string>
+    <!-- Card rules -->
+    <string name="rangers_rules">BONUS: +10 für jedes Land; HEBT das Wort Armee von allen Strafen AUF.</string>
+    <string name="elven_archers_rules">BONUS: +5 wenn ohne Wetter</string>
+    <string name="dwarvish_infantry_rules">STRAFE: -2 für jede andere Armee</string>
+    <string name="light_cavalry_rules">STRAFE: -2 für jedes Land</string>
+    <string name="celestial_knights_rules">STRAFE: -8 wenn ohne Anführer</string>
+    <string name="protection_rune_rules">HEBT die Strafen auf allen Karten AUF.</string>
+    <string name="world_tree_rules">BONUS: +50 wenn jede Nicht-BLOCKIERTE Karte eine unterschiedliche Farbe hat.</string>
+    <string name="book_of_changes_rules">BONUS: Du darfst die Farbe einer anderen Karte verändern. Name, BONUS, Strafe und Basisstärke bleiben unverändert.</string>
+    <string name="shield_of_keth_rules">BONUS: +15 mit mindestens einem Anführer ODER +40 mit Anführer und Schwert von Keth</string>
+    <string name="gem_of_order_rules">BONUS: +10 für eine "Straße" mit 3 Karten, +30 für eine "Straße" mit 4 Karten, +60 für eine "Straße" mit 5 Karten, +100 für eine "Straße" mit 6 Karten, +150 für eine "Straße" mit 7 Karten</string>
+    <string name="warhorse_rules">BONUS: +14 mit mindestens einem Anführer oder Zauberer</string>
+    <string name="unicorn_rules">BONUS: +30 mit Prinzessin ODER +15 mit Kaiserin, Königin, oder Magierin</string>
+    <string name="hydra_rules">BONUS: +28 mit Sumpf</string>
+    <string name="dragon_rules">STRAFE: -40 wenn ohne Zauberer</string>
+    <string name="basilisk_rules">STRAFE: BLOCKIERT alle Armeen, Anführer und andere Bestien</string>
+    <string name="candle_rules">BONUS: +100 mit Buch der Veränderung und Glockenturm sowie mindestens einem Zauberer</string>
+    <string name="fire_elemental_rules">BONUS: +15 für jede andere Flamme</string>
+    <string name="forge_rules">BONUS: +9 für jede Waffe und/oder jedes Artefakt</string>
+    <string name="lightning_rules">BONUS: +30 mit Regensturm</string>
+    <string name="wildfire_rules">BLOCKIERT alle Karten außer Flammen, Zauberer, Wetter, Waffen, Artefakte, Gebirge, Große Flut, Insel, Einhorn und Drachen.</string>
+    <string name="wildfire_rules_deluxe_edition">BLOCKIERT alle Karten außer Artefakte, Flammen, Outsider, Waffen, Wetter, Zauberer, Große Flut, Insel, Gebirge, Einhorn und Drachen.</string>
+    <string name="fountain_of_life_rules">BONUS: Addiere die Basisstärke einer beliebigen Waffe, Flut, Flamme, Land oder Wetter.</string>
+    <string name="water_elemental_rules">BONUS: +15 für jede andere Flut</string>
+    <string name="island_rules">HEBT die Strafe auf einer beliebigen Flut oder Flamme AUF.</string>
+    <string name="swamp_rules">"STRAFE: -3 für jede Armee und/oder Flamme"</string>
+    <string name="great_flood_rules">STRAFE: BLOCKIERT alle Armeen, alle Länder außer Gebirge, und alle Flammen, außer Blitz.</string>
+    <string name="earth_elemental_rules">BONUS: +15 für jedes andere Land</string>
+    <string name="cavern_rules">BONUS: +25 mit Zwergeninfanterie oder Drache; HEBT die Strafen auf allen Wettern AUF.</string>
+    <string name="forest_rules">BONUS: +12 für jede Bestie und/oder Elbenschützen</string>
+    <string name="bell_tower_rules">BONUS: +15 mit mindestens einem Zauberer</string>
+    <string name="mountain_rules">BONUS: +50 mit Rauch und Buschfeuer; Hebt die Strafen auf allen Fluten AUF.</string>
+    <string name="princess_rules">BONUS: +8 für jede Armee, Zauberer und/oder andere Anführer</string>
+    <string name="warlord_rules">BONUS: Die Summe der Basisstärke aller Armeen.</string>
+    <string name="queen_rules">BONUS: +5 für jede Armee, +20 für jede Armee wenn zusammen mit dem König</string>
+    <string name="king_rules">BONUS: +5 für jede Armee, +20 für jede Armee wenn zusammen mit der Königin</string>
+    <string name="empress_rules">BONUS: +10 für jede Armee; STRAFE: -5 für jeden anderen Anführer</string>
+    <string name="magic_wand_rules">BONUS: +25 mit mindestens einem Zauberer</string>
+    <string name="elven_longbow_rules">BONUS: +30 mit Elbenschüttzen, Kriegsherr oder Herr der Bestien.</string>
+    <string name="sword_of_keth_rules">BONUS: +10 mit mindestens einem Anführer ODER +40 mit Anführer and Schild von Keth</string>
+    <string name="warship_rules">STRAFE: Ist BLOCKIERT wenn ohne Flut. HEBT das Wort Armee von allen Strafen auf allen Fluten AUF.</string>
+    <string name="war_dirigible_rules">STRAFE: Ist BLOCKIERT wenn ohne Armee. Ist BLOCKIERT wenn zusammen mit Wetter.</string>
+    <string name="air_elemental_rules">BONUS: +15 für jedes andere Wetter</string>
+    <string name="rainstorm_rules">BONUS: +10 für jede Flut; STRAFE: BLOCKIERT alle Flammen, außer Blitz.</string>
+    <string name="whirlwind_rules">BONUS: +40 mit Regensturm und entweder Blizzard oder Große Flut</string>
+    <string name="smoke_rules">STRAFE: Ist BLOCKIERT wenn ohne Flamme</string>
+    <string name="blizzard_rules">STRAFE: -5 für jede Armee, Anführer, Bestie und/oder Flamme. BLOCKIERT alle Futen.</string>
+    <string name="shapeshifter_rules">Kann Namen und Farbe eines beliebigen Artefakts, Anführers, Zauberers, Waffe oder Bestie des Spiels kopieren. Übernimmt nicht Bonus, Strafen oder Basisstärke der entsprechenden Karte.</string>
+    <string name="mirage_rules">Kann Namen und Farbe einer beliebigen Armee, Land, Wetter, Flut oder Flamme im Spiel kopieren. Übernimmt nicht Bonus, Strafen oder Basisstärke der entsprechenden Karte.</string>
+    <string name="doppelganger_rules">Kann Namen, Basisstärke, Farbe und Strafe ABER NICHT DEN BONUS einer anderen Karte in Deiner Hand kopieren.</string>
+    <string name="necromancer_rules">BONUS: Du darfst am Spielende eine Armee, Anführer, Zauberer oder Bestie aus dem Ablagebereich nehmen und sie als 8. Karte Deiner Hand werten.</string>
+    <string name="enchantress_rules">BONUS: +5 für jedes Land, Wetter, Flut und/oder Flamme</string>
+    <string name="collector_rules">BONUS: +10 für drei unterschiedliche Karten der gleichen Farbe, +40 für vier unterschiedliche Karten der gleichen Farbe, +100 für fünf unterschiedliche Karten der gleichen Farbe</string>
+    <string name="beastmaster_rules">BONUS: +9 für jede Bestie; HEBT die Strafe auf allen Bestien AUF.</string>
+    <string name="warlock_lord_rules">STRAFE: -10 für jeden Anführer und/oder anderen Zauberer</string>
     <string name="dungeon_rules">BONUS: +10 für jeweils den ersten Untoten, Bestie und Artefakt. \n+5 für jede weitere Karte dieser Farben sowie Totenbeschwörer, Hexenmeister, Dämon.</string>
     <string name="castle_rules">BONUS: +10 für jeweils den ersten Anführer, Armee, Land und andere Gebäude. \n+5 jedes weitere Gebäude.</string>
     <string name="crypt_rules">BONUS: Die Summe der Basisstärken aller Untoten. STRAFE: BLOCKIERT alle Anführer.</string>
@@ -260,4 +246,7 @@
     <string name="lantern_rules">ERSETZT ZUG: Wähle eine Farbe. Ziehe solange vom Stapel, bis Du eine Karte dieser Farbe (Joker zählen nicht als diese Farbe) oder insgesamt 10 Karten gezogen hast. \nWenn Du eine Karte der Farbe gezogen hast, behalte sie und lege eine andere Karte aus Deiner Hand ab. Zeige die anderen gezogenen Karten und mische sie zurück in den Stapel.</string>
     <string name="portal_rules">JEDERZEIT: Lege in diesem Zug keine Karte ab. \n(Ab sofort hast Du eine zusätzliche Karte auf der Hand)</string>
     <string name="wishing_ring_rules">JEDERZEIT: Schau Dir die Karten des Nachziehstapels an und lege eine beliebige Karte als oberste auf den Stapel. (Du darfst dies auch direkt bevor Du eine Karte ziehst tun.) \n Mische den Stapel am Ende Deines Zugs.</string>
+    <string name="jester_rules">BONUS: +3 für jede andere Karte mit ungerader Basisstärke ODER +50 wenn alle Karten eine ungerade Basisstärke haben</string>
+    <string name="phoenix_rules">BONUS: Zählt auch als Flamme und Wetter. STRAFE: BLOCKIERT durch jede Flut. Wenn diese Karte aus irgendeinem Grund BLOCKIERT wird, reduziert sich ihre Basisstärke auf 0, aber sie behält ihre Farben.</string>
+    <string name="phoenix_rules_deluxe_edition">BONUS: Zählt auch als Flamme und Wetter. STRAFE: BLOCKIERT durch jede Flut. Der Phönix ist immun gegen das Buch der Veränderung und kann keine andere Karte blockieren oder von einer anderen Karte blockiert werden.</string>
 </resources>

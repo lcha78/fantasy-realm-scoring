@@ -175,6 +175,7 @@
     <string name="forge_rules">BONUS : + 9 pour chaque Arme et chaque Artefact.</string>
     <string name="lightning_rules">BONUS : + 30 avec l\'Orage.</string>
     <string name="wildfire_rules">MALUS : MASQUE toutes les cartes sauf les Flammes, les Sorciers, les Climats, les Armes, les Artefacts, la Montagne, l\'Inondation, l\'Île, La Licorne et le Dragon.</string>
+    <string name="wildfire_rules_deluxe_edition">MALUS : MASQUE toutes les cartes sauf les Artefacts, les Flammes, les Extérieurs, les Armes, les Climats, les Sorciers, l\'Inondation, l\'Île, la Montagne, la Licorne et le Dragon.</string>
     <string name="fountain_of_life_rules">BONUS : Ajoutez la force de base de n\'importe quel Terrain, Arme, Vague, Flamme ou Climat de votre main.</string>
     <string name="water_elemental_rules">BONUS : + 15 pour chaque autre Vague.</string>
     <string name="island_rules">BONUS : EFFACE les malus de n\'importe quelle Vague ou Flamme.</string>

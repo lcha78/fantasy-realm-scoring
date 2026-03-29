@@ -19,12 +19,16 @@
     <string name="scan_help_label">Tylko tytuły kart są obowiązkowe</string>
     <string name="base">Baza</string>
     <string name="done">Zrobione</string>
+    <string name="scan_mode_label">Tryb skanowania:</string>
     <string name="language_label">Język:</string>
     <string name="display_card_number_label">Wyświetl kartę numer:</string>
     <string name="remove_already_selected_label">Usuń już wybrane karty:</string>
     <string name="display_chip_color_on_search_label">Wyświetl kolory żetonów przy wyszukiwaniu:</string>
+    <string name="deluxe_edition_label">Edycja Deluxe:</string>
     <string name="buildings_outsiders_undead_label">Budynki, Obcy i Nieumarli:</string>
     <string name="cursed_items_label">Przeklęte przedmioty:</string>
+    <string name="ocr_matching_score_threshold_label">Próg dopasowania OCR:</string>
+    <string name="ocr_difference_length_threshold_label">Próg różnicy długości OCR:</string>
     <string name="discard_area">Obszar kart odrzuconych</string>
     <string name="effect_penalty">KARA</string>
     <string name="effect_bonus">PREMIA</string>
@@ -99,6 +103,7 @@
     <string name="beastmaster">Władca bestii</string>
     <string name="warlock_lord">Czanoksiężnik</string>
     <string name="jester">Błazen</string>
+    <string name="phoenix">Feniks</string>
     <string name="dungeon">Loch</string>
     <string name="castle">Zamek</string>
     <string name="crypt">Krypta</string>
@@ -106,7 +111,7 @@
     <string name="garden">Ogród</string>
     <string name="genie">Dżinn</string>
     <string name="judge">Sędzia</string>
-    <string name="angel">Aniol</string>
+    <string name="angel">Anioł</string>
     <string name="leprechaun">Skrzat</string>
     <string name="demon">Demon</string>
     <string name="dark_queen">Królowa mroku</string>
@@ -138,7 +143,7 @@
     <string name="lantern">Latarenka</string>
     <string name="portal">Portal</string>
     <string name="wishing_ring">Pierścień życzeń</string>
-    <string name="rangers_rules">PREMIA: +10 za każdą  kartę Krziny; USUWA słowo \"Armia\\ z kar wszystkich kart</string>
+    <string name="rangers_rules">PREMIA: +10 za każdą  kartę Krziny; USUWA słowo \"Armia\" z kar wszystkich kart</string>
     <string name="elven_archers_rules">PREMIA: +5, jeżli nie masz żadnej karty Pogody</string>
     <string name="dwarvish_infantry_rules">KARA: -2 za każdą inną kartę Armii</string>
     <string name="light_cavalry_rules">KARA: -2 za każdą kartę Krainy</string>
@@ -158,6 +163,7 @@
     <string name="forge_rules">PREMIA: +9 za każdą kartę Broni i Artefaktu</string>
     <string name="lightning_rules">PREMIA: +30 z Burzą</string>
     <string name="wildfire_rules">KARA: ANULUJE wszystkie karty z wyjątkiem Płomienia, Czarodzieja, Pogody, Broni, Artefaktu, Gór, Ptopu, Wyspy, Jednorożca i Smoka</string>
+    <string name="wildfire_rules_deluxe_edition">ANULUJE wszystkie karty z wyjątkiem Artefaktów, Płomieni, Obcych, Broni, Pogody, Czarodziejów, Potopu, Wyspy, Gór, Jednorożca i Smoka.</string>
     <string name="fountain_of_life_rules">PREMIA: Dodaj podstawową siłę dowolnej karty Broni, Powodzi, Płomienia, Krainy albo Pogody</string>
     <string name="water_elemental_rules">PREMIA: +15 za każdą inną kartę Powodzi</string>
     <string name="island_rules">PREMIA: USUWA karę z dowolnej karty Powodzi albo Płomienia</string>
@@ -239,4 +245,6 @@
     <string name="portal_rules">W DOWOLNYM MOMENCIE: W tej turze opuść fazę odrzucania karty na obszar kart odrzuconych. (Od tej chwili masz na ręce 1 dodatkową kartę).</string>
     <string name="wishing_ring_rules">W DOWOLNYM MOMENCIE: Przejrzyj talę i połóż na wierzchu dowolną kartę. (Możesz skorzystać z tej zdolności tuż przed dobraniem karty). Na koniec swojej tury potasuj talię.</string>
     <string name="jester_rules">PREMIA: +3 za każdą inną kartę pojsiadającą nieparzystą podstawową siłę ALBO +50, jeśli każda karta na Twojej ręce posiada nieparzystą podstawową siłę.</string>
+    <string name="phoenix_rules">PREMIA: Liczy się także jako karta Płomienia i Pogody. KARA: ANULOWANY z dowolną kartą Powodzi. Jeśli ta karta zostanie ANULOWANA z jakiegokolwiek powodu, jej podstawowa siła zostaje zredukowana do 0, ale zachowuje swoje zestawy.</string>
+    <string name="phoenix_rules_deluxe_edition">PREMIA: Liczy się także jako karta Płomienia i Pogody. KARA: ANULOWANY z dowolną kartą Powodzi. Feniks jest odporny na Księgę Zmian i nie może zostać ANULOWANY ani ANULOWAĆ żadnej innej karty.</string>
 </resources>
