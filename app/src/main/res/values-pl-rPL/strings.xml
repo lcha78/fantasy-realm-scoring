@@ -18,6 +18,8 @@
     <string name="clear_button">Wyczyść</string>
     <string name="scan_help_label">Tylko tytuły kart są obowiązkowe</string>
     <string name="base">Baza</string>
+    <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Wersja %1$s</string>
     <string name="done">Zrobione</string>
     <string name="scan_mode_label">Tryb skanowania:</string>
     <string name="language_label">Język:</string>
@@ -25,15 +27,20 @@
     <string name="remove_already_selected_label">Usuń już wybrane karty:</string>
     <string name="display_chip_color_on_search_label">Wyświetl kolory żetonów przy wyszukiwaniu:</string>
     <string name="deluxe_edition_label">Edycja Deluxe:</string>
+    <string name="wildfire_with_outsiders_label">Pożar bez anulowania Obcych:</string>
+    <string name="phoenix_deluxe_edition_label">Feniks (Edycja Deluxe):</string>
     <string name="buildings_outsiders_undead_label">Budynki, Obcy i Nieumarli:</string>
     <string name="cursed_items_label">Przeklęte przedmioty:</string>
     <string name="ocr_matching_score_threshold_label">Próg dopasowania OCR:</string>
     <string name="ocr_difference_length_threshold_label">Próg różnicy długości OCR:</string>
     <string name="discard_area">Obszar kart odrzuconych</string>
-    <string name="effect_penalty">KARA</string>
+    <!-- Effects and Suits -->
     <string name="effect_bonus">PREMIA</string>
     <string name="effect_clear">USUŃ</string>
+    <string name="effect_penalty">KARA</string>
     <string name="effect_blank">ANULUJ</string>
+    <string name="effect_unbankable" translatable="false">UNBLANKABLE</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">REDUCE_BASE_STRENTGH_TO_ZERO</string>
     <string name="suit_army">Armia</string>
     <string name="suit_artifact">Artefakt</string>
     <string name="suit_beast">Bestia</string>
@@ -49,6 +56,7 @@
     <string name="suit_outsider">Obcy</string>
     <string name="suit_undead">Nieumarły</string>
     <string name="suit_cursed_item">Przeklęty przedmiot</string>
+    <!-- Card names -->
     <string name="rangers">Zwiadowcy</string>
     <string name="elven_archers">Elfi Łucznicy</string>
     <string name="dwarvish_infantry">Krasnoludzka piechota</string>
@@ -143,7 +151,8 @@
     <string name="lantern">Latarenka</string>
     <string name="portal">Portal</string>
     <string name="wishing_ring">Pierścień życzeń</string>
-    <string name="rangers_rules">PREMIA: +10 za każdą  kartę Krziny; USUWA słowo \"Armia\" z kar wszystkich kart</string>
+    <!-- Card rules -->
+    <string name="rangers_rules">PREMIA: +10 za każdą kartę Krziny; USUWA słowo \"Armia\" z kar wszystkich kart</string>
     <string name="elven_archers_rules">PREMIA: +5, jeżli nie masz żadnej karty Pogody</string>
     <string name="dwarvish_infantry_rules">KARA: -2 za każdą inną kartę Armii</string>
     <string name="light_cavalry_rules">KARA: -2 za każdą kartę Krainy</string>
@@ -155,6 +164,8 @@
     <string name="gem_of_order_rules">PRZEMIA: Odnosi się do podstawowej wartości siły; +10 za 3 karty z rzędu; +30 za 4 karty z rzędy: +60 za 5 kart z rzędu; +100 za 6 kart z rzędu; +150 za 7 kart z rzędu</string>
     <string name="warhorse_rules">PEMIA: +14 z dowolną kartą Przywódcy lub Czarodzieeja</string>
     <string name="unicorn_rules">PREMIA: +30 z księniczą ALBO +15 z Cesarzową, Królową albo Zaklinaczką</string>
+    <string name="wildfire_rules">KARA: ANULUJE wszystkie karty z wyjątkiem Płomienia, Czarodzieja, Pogody, Broni, Artefaktu, Gór, Ptopu, Wyspy, Jednorożca i Smoka</string>
+    <string name="wildfire_rules_with_outsiders">ANULUJE wszystkie karty z wyjątkiem Artefaktów, Płomieni, Obcych, Broni, Pogody, Czarodziejów, Potopu, Wyspy, Gór, Jednorożca i Smoka.</string>
     <string name="hydra_rules">PREMIA: +28 z Bagnem</string>
     <string name="dragon_rules">KARA: -40, chyba że masz przynajmniej 1 kartę Czarodzieja</string>
     <string name="basilisk_rules">KARA: ANULUJE wszystkie karty Armii, Przywódców i innych Bestii</string>
@@ -162,8 +173,6 @@
     <string name="fire_elemental_rules">PREMIA: +15 za każdą inną kartę Płomienia</string>
     <string name="forge_rules">PREMIA: +9 za każdą kartę Broni i Artefaktu</string>
     <string name="lightning_rules">PREMIA: +30 z Burzą</string>
-    <string name="wildfire_rules">KARA: ANULUJE wszystkie karty z wyjątkiem Płomienia, Czarodzieja, Pogody, Broni, Artefaktu, Gór, Ptopu, Wyspy, Jednorożca i Smoka</string>
-    <string name="wildfire_rules_deluxe_edition">ANULUJE wszystkie karty z wyjątkiem Artefaktów, Płomieni, Obcych, Broni, Pogody, Czarodziejów, Potopu, Wyspy, Gór, Jednorożca i Smoka.</string>
     <string name="fountain_of_life_rules">PREMIA: Dodaj podstawową siłę dowolnej karty Broni, Powodzi, Płomienia, Krainy albo Pogody</string>
     <string name="water_elemental_rules">PREMIA: +15 za każdą inną kartę Powodzi</string>
     <string name="island_rules">PREMIA: USUWA karę z dowolnej karty Powodzi albo Płomienia</string>
@@ -188,7 +197,7 @@
     <string name="rainstorm_rules">PREMIA: +10 za każdą kartę Powodzi; KARA: ANULUJE wszystkie karty Płomienia z wyjątkiem Błyskawicy</string>
     <string name="whirlwind_rules">PREMIA: +40 z Burzą i Śnieżycą albo Burzą i Potopem</string>
     <string name="smoke_rules">KARA: ANULOWANY, chyba że masz przynajmniej 1 kartę Płomienia.</string>
-    <string name="blizzard_rules">KARA: ANULUJE wszystkie karty Powodzi. -5 za każdą kartę Armii, Przywódcy, Bestii i Płomienia</string>
+    <string name="blizzard_rules">KARA: ANULUJE wszystkie karty Powodzi. -5 za każdą kartę Armii, Przywódcę, Bestii i Płomienia</string>
     <string name="shapeshifter_rules">Może duplikować nazwę i zestaw dowolnej karty Artefaktu, Przywódcy, Czarodzieja, Broni albo Bestii w grze. Nie otrzymuje premii, kar ani podstawowej siły duplikowanej karty.</string>
     <string name="mirage_rules">Może zduplikować nazwę i zestaw, do którego należy dowolna karta Armii, Krainy, Pogody, Powodzi albo Płomienia w grze. Nie otrzymuje premii, kar ani podstawowej siły zduplikowanej karty.</string>
     <string name="doppelganger_rules">Może zduplikować nazwę, podstawową siłę, zestaw i karę, ALE NIE PREMIĘ dowolnej innej karty z Twojej ręki.</string>

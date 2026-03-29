@@ -17,6 +17,8 @@
     <string name="scan_button">Einscannen</string>
     <string name="scan_help_label">Tipp: Nur die Kartennamen sind notwendig</string>
     <string name="base">Basisstärke</string>
+    <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Version %1$s</string>
     <string name="done">Fertig</string>
     <string name="scan_mode_label">Scan-Modus:</string>
     <string name="language_label">Sprache:</string>
@@ -24,8 +26,10 @@
     <string name="remove_already_selected_label">Bereits ausgewählte Karten entfernen:</string>
     <string name="display_chip_color_on_search_label">Kartenfarbe anzeigen:</string>
     <string name="deluxe_edition_label">Deluxe-Edition:</string>
-    <string name="buildings_outsiders_undead_label">Gebäude/Outsider/Untote</string>
-    <string name="cursed_items_label">Verfluchte Gegenstände</string>
+    <string name="wildfire_with_outsiders_label">Buschfeuer ohne Blockieren der Outsider:</string>
+    <string name="phoenix_deluxe_edition_label">Phönix (Deluxe-Edition):</string>
+    <string name="buildings_outsiders_undead_label">Gebäude, Outsider und Untote:</string>
+    <string name="cursed_items_label">Verfluchte Gegenstände:</string>
     <string name="ocr_matching_score_threshold_label">OCR-Übereinstimmungsschwellenwert:</string>
     <string name="ocr_difference_length_threshold_label">OCR-Längenunterschiedsschwellenwert:</string>
     <string name="discard_area">Ablagebereich</string>
@@ -34,6 +38,8 @@
     <string name="effect_clear">AUFHEBEN</string>
     <string name="effect_penalty">STRAFE</string>
     <string name="effect_blank">BLOCKIERT</string>
+    <string name="effect_unbankable" translatable="false">UNBLANKABLE</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">REDUCE_BASE_STRENTGH_TO_ZERO</string>
     <string name="suit_army">Armee</string>
     <string name="suit_artifact">Artefakt</string>
     <string name="suit_beast">Bestie</string>
@@ -165,7 +171,7 @@
     <string name="forge_rules">BONUS: +9 für jede Waffe und/oder jedes Artefakt</string>
     <string name="lightning_rules">BONUS: +30 mit Regensturm</string>
     <string name="wildfire_rules">BLOCKIERT alle Karten außer Flammen, Zauberer, Wetter, Waffen, Artefakte, Gebirge, Große Flut, Insel, Einhorn und Drachen.</string>
-    <string name="wildfire_rules_deluxe_edition">BLOCKIERT alle Karten außer Artefakte, Flammen, Outsider, Waffen, Wetter, Zauberer, Große Flut, Insel, Gebirge, Einhorn und Drachen.</string>
+    <string name="wildfire_rules_with_outsiders">BLOCKIERT alle Karten außer Artefakte, Flammen, Outsider, Waffen, Wetter, Zauberer, Große Flut, Insel, Gebirge, Einhorn und Drachen.</string>
     <string name="fountain_of_life_rules">BONUS: Addiere die Basisstärke einer beliebigen Waffe, Flut, Flamme, Land oder Wetter.</string>
     <string name="water_elemental_rules">BONUS: +15 für jede andere Flut</string>
     <string name="island_rules">HEBT die Strafe auf einer beliebigen Flut oder Flamme AUF.</string>
@@ -222,7 +228,7 @@
     <string name="world_tree_rules2">BONUS: +70 wenn jede Nicht-BLOCKIERTE Karte eine unterschiedliche Farbe hat.</string>
     <string name="shapeshifter_rules2">BONUS: Kann Namen und Farbe eines beliebigen Artefakts, Anführers, Zauberers, Waffe, Bestie oder Untoten des Spiels kopieren. \nÜbernimmt nicht Bonus, Strafen oder Basisstärke der entsprechenden Karte.</string>
     <string name="mirage_rules2">BONUS: Kann Namen und Farbe eines beliebigen Armee, Gebäude, Land, Wetter, Flut oder Flamme des Spiels kopieren\nÜbernimmt nicht Bonus, Strafen oder Basisstärke der entsprechenden Karte.</string>
-    <string name="spyglass_rules">JEDERZEIT: Schau Dir die Handkarten eines Mitspielers an. STRIFE: (*Der Basiswert dieses Gegenstands beträgt -10 in einem Zwei-Spieler-Spiel)</string>
+    <string name="spyglass_rules">JEDERZEIT: Schau Dir die Handkarten eines Mitspielers an. (*Der Basiswert dieses Gegenstands beträgt -10 in einem Zwei-Spieler-Spiel)</string>
     <string name="sarcophagus_rules">ERSETZT ZUG: Nimm die oberste Karte des Nachzieh-stapels und lege sie direkt in den Ablage-bereich, danach endet Dein Zug sofort. \n(Deine Kartenhand bleibt in diesem Zug unverändert.)</string>
     <string name="blindfold_rules">ERSETZT ZUG: Drehe die normale Reihenfolge Deines Zugs um: Lege zuerst eine Karte ab und ziehe danach eine Karte vom Nachziehstapel.</string>
     <string name="book_of_prophecy_rules">JEDERZEIT: Schau Dir die untersten sieben Karten des Nachziehstapels an. Lege sie danach dorthin zurück.</string>

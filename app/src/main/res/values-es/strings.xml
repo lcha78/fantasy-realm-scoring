@@ -18,6 +18,8 @@
     <string name="clear_button">Borrar</string>
     <string name="scan_help_label">Consejo: solo los nombres de las cartas son obligatorios</string>
     <string name="base">BASE</string>
+    <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Versión %1$s</string>
     <string name="done">Hecho</string>
     <string name="scan_mode_label">Modo de escaneo:</string>
     <string name="language_label">Idioma:</string>
@@ -34,6 +36,8 @@
     <string name="remove_already_selected_label">Eliminar tarjetas ya seleccionadas:</string>
     <string name="display_chip_color_on_search_label">Mostrar color en la búsqueda:</string>
     <string name="deluxe_edition_label">Edición Deluxe:</string>
+    <string name="wildfire_with_outsiders_label">Incendio sin anulación de Visitantes:</string>
+    <string name="phoenix_deluxe_edition_label">Fénix (Edición Deluxe):</string>
     <string name="buildings_outsiders_undead_label">Edificios, visitantes y no-muertos:</string>
     <string name="cursed_items_label">Objetos malditos:</string>
     <string name="ocr_matching_score_threshold_label">Umbral de puntuación de coincidencia OCR:</string>
@@ -44,6 +48,8 @@
     <string name="effect_clear">IGNORA</string>
     <string name="effect_penalty">PENALIZACIÓN</string>
     <string name="effect_blank">ANULA</string>
+    <string name="effect_unbankable" translatable="false">INANULABLE</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">REDUCIR_FUERZA_BASE_A_CERO</string>
     <string name="suit_army">Ejército</string>
     <string name="suit_artifact">Artefacto</string>
     <string name="suit_beast">Bestia</string>
@@ -175,7 +181,7 @@
     <string name="forge_rules">Bonus: +9 por cada Arma y Artefacto</string>
     <string name="lightning_rules">Bonus: +30 con Tormenta</string>
     <string name="wildfire_rules">Anula todas las cartas excepto las de Fuego, Mago, Aire, Arma, Artefacto, Montaña, Inundación, Isla, Unicornio y Dragón</string>
-    <string name="wildfire_rules_deluxe_edition">Anula todas las cartas excepto Artefactos, Llamas, Visitantes, Armas, Aire, Magos, Inundación, Isla, Montaña, Unicornio y Dragón.</string>
+    <string name="wildfire_rules_with_outsiders">Anula todas las cartas excepto Artefactos, Llamas, Visitantes, Armas, Aire, Magos, Inundación, Isla, Montaña, Unicornio y Dragón.</string>
     <string name="fountain_of_life_rules">Bonus: Añade la fuerza base de cualquier Arma, Agua, Fuego, Tierra o Aire de tu mano.</string>
     <string name="water_elemental_rules">Bonus: +15 por cada otra carta de Agua</string>
     <string name="island_rules">Ignora la Penalización de una carta de Agua o de una carta de Fuego</string>

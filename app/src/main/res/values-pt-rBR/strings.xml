@@ -18,6 +18,8 @@
     <string name="clear_button">Limpar</string>
     <string name="scan_help_label">Dica: apenas os títulos das cartas são necessários.</string>
     <string name="base">BASE</string>
+    <string name="disclaimer" translatable="false">Contato : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Versão %1$s</string>
     <string name="done">CONCLUÍDO</string>
     <string name="scan_mode_label">Modo de escaneamento:</string>
     <string name="language_label">Idioma:</string>
@@ -25,15 +27,20 @@
     <string name="remove_already_selected_label">Remover cartas já selecionadas:</string>
     <string name="display_chip_color_on_search_label">Forçar cor na seleção:</string>
     <string name="deluxe_edition_label">Edição Deluxe:</string>
+    <string name="wildfire_with_outsiders_label">Incêndio sem anulação de Forasteiros:</string>
+    <string name="phoenix_deluxe_edition_label">Fênix (Edição Deluxe):</string>
     <string name="buildings_outsiders_undead_label">Edificações, Forasteiros e Mortos-vivos:</string>
     <string name="cursed_items_label">Itens Amaldiçoados:</string>
     <string name="ocr_matching_score_threshold_label">Limiar de pontuação de correspondência OCR:</string>
     <string name="ocr_difference_length_threshold_label">Limiar de diferença de comprimento OCR:</string>
     <string name="discard_area">Área de Descarte</string>
+    <!-- Effects and Suits -->
     <string name="effect_bonus">BÔNUS</string>
     <string name="effect_clear">ANULA</string>
     <string name="effect_penalty">PENALIDADE</string>
     <string name="effect_blank">ZERA</string>
+    <string name="effect_unbankable" translatable="false">INANULÁVEL</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">REDUZIR_FORÇA_BASE_A_CERO</string>
     <string name="suit_army">Exército</string>
     <string name="suit_artifact">Artefato</string>
     <string name="suit_beast">Animal</string>
@@ -49,6 +56,7 @@
     <string name="suit_outsider">Forasteiro</string>
     <string name="suit_undead">Morto-vivo</string>
     <string name="suit_cursed_item">Item Amaldiçoado</string>
+    <!-- Card names -->
     <string name="rangers">Patrulheiros</string>
     <string name="elven_archers">Arqueiros Élficos</string>
     <string name="dwarvish_infantry">Infantaria Anã</string>
@@ -143,6 +151,7 @@
     <string name="lantern">Lanterna</string>
     <string name="portal">Portal</string>
     <string name="wishing_ring">Anel dos Desejos</string>
+    <!-- Card rules -->
     <string name="rangers_rules">BÔNUS: +10 para cada Terreno. ANULA a palavra Exército de todas as penalidades.</string>
     <string name="elven_archers_rules">BÔNUS: +5 se você não tiver nenhum Clima.</string>
     <string name="dwarvish_infantry_rules">PENALIDADE: -2 para cada outro Exército.</string>
@@ -163,7 +172,7 @@
     <string name="forge_rules">BÔNUS: +9 para cada Arma e Artefato.</string>
     <string name="lightning_rules">BÔNUS: +30 com a Tempestade.</string>
     <string name="wildfire_rules">PENALIDADE: ZERA todas as cartas exceto Fogos, Magos, Climas, Armas, Artefatos, a Montanha, a Grande Dilúvio, a Ilha, o Unicórnio e o Dragão.</string>
-    <string name="wildfire_rules_deluxe_edition">ZERA todas as cartas exceto Artefatos, Chamas, Forasteiros, Armas, Clima, Magos, Grande Inundação, Ilha, Montanha, Unicórnio e Dragão.</string>
+    <string name="wildfire_rules_with_outsiders">ZERA todas as cartas exceto Artefato, Chamas, Forasteiros, Armas, Clima, Magos, Grande Inundação, Ilha, Montanha, Unicórnio e Dragão.</string>
     <string name="fountain_of_life_rules">BÔNUS: Adicione a força base de qualquer Terreno, Arma, Inundação, Fogo ou Clima da sua mão.</string>
     <string name="water_elemental_rules">BÔNUS: +15 para cada outra Inundação.</string>
     <string name="island_rules">BÔNUS: ANULA as penalidades de qualquer Inundação ou Fogo.</string>
@@ -198,7 +207,7 @@
     <string name="beastmaster_rules">BÔNUS: +9 para cada Fera. ANULA as penalidades de todas as Feras.</string>
     <string name="warlock_lord_rules">PENALIDADE: -10 para cada Líder e cada outro Mago.</string>
     <string name="dungeon_rules">BÔNUS: +10 para a primeira carta de Morto-vivo, Fera e Artefato. +5 para cada carta adicional desses naipes e para o Necromante, Lorde Bruxo e Demônio.</string>
-    <string name="castle_rules">BÔNUS: +10 para a primeira carta de Líder, Exército, Terreno e para a primeira Edificação adicional. +5 para cada outra Edificação adicional.</string>
+    <string name="castle_rules">BÔNUS: +10 para la primeira carta de Líder, Exército, Terreno e para a primeira Edificação adicional. +5 para cada outra Edificação adicional.</string>
     <string name="crypt_rules">BÔNUS: A soma da força base de todos os Mortos-vivos.\nPENALIDADE: ZERA todos os Líderes.</string>
     <string name="chapel_rules">BÔNUS: +40 se você tiver exatamente 2 cartas de um destes naipes: Líder, Mago, Forasteiro e Morto-vivo.</string>
     <string name="garden_rules">BÔNUS: +11 para cada Líder e Fera.\nPENALIDADE: ZERADO por qualquer Morto-vivo, o Necromante ou o Demônio.</string>
@@ -228,7 +237,7 @@
     <string name="market_wagon_rules">SUBSTITUA SEU TURNO: Revele uma carta da sua mão. Qualquer outro jogador pode revelar até 3 cartas para oferecer em troca. Você pode escolher trocar sua carta por uma delas; se nenhuma oferta for aceitável, mantenha sua carta ou descarte-a e compre uma do baralho.</string>
     <string name="backpack_rules">A QUALQUER MOMENTO: Compre 3 Itens Amaldiçoados e coloque-os de lado com a face para cima. Nas próximas 3 vezes que você deveria comprar um novo Item Amaldiçoado, pegue uma dessas cartas em vez disso.</string>
     <string name="shovel_rules">A QUALQUER MOMENTO: Coloque uma carta da área de descarte no fundo do baralho.</string>
-    <string name="sealed_vault_rules">A QUALQUER MOMENTO: Cubra duas cartas do descarte com esta. Elas ainda contam para o fim do jogo e dão bônus aos Mortos-vivos, mas ninguém além de você pode pegá-las, e elas estão imunes à Pá e ao Espelho Dourado.</string>
+    <string name="sealed_vault_rules">A QUALQUER MOMENTO: Cubre duas cartas do descarte com esta. Elas ainda contam para o fim do jogo e dão bônus aos Mortos-vivos, mas ninguém além de você pode pegá-las, e elas estão imunes à Pá e ao Espelho Dourado.</string>
     <string name="crystal_lens_rules">A QUALQUER MOMENTO: Você pode olhar a carta do topo do baralho antes de decidir comprá-la ou pegar uma da área de descarte.</string>
     <string name="larcenous_gloves_rules">A QUALQUER MOMENTO: Roube o Item Amaldiçoado com a face para cima de outro jogador. Use-o imediatamente.\nO jogador de quem você roubou compra imediatamente outro do baralho de Itens Amaldiçoados.</string>
     <string name="junkyard_map_rules">A QUALQUER MOMENTO: Pegue uma das 3 últimas cartas de Item Amaldiçoado descartadas e jogue-a imediatamente.</string>

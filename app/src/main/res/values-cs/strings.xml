@@ -18,6 +18,8 @@
     <string name="clear_button">Vymaž</string>
     <string name="scan_help_label">Tip: pouze nadpis je povinný</string>
     <string name="base">Základní síla</string>
+    <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Verze %1$s</string>
     <string name="done">Hotovo</string>
     <string name="scan_mode_label">Režim skenování:</string>
     <string name="language_label">Jazyk:</string>
@@ -25,6 +27,8 @@
     <string name="remove_already_selected_label">Vymaž již zvolené karty:</string>
     <string name="display_chip_color_on_search_label">Zobrazit barevně typy karet:</string>
     <string name="deluxe_edition_label">Deluxe edice:</string>
+    <string name="wildfire_with_outsiders_label">Požár bez vymazání Cizinců:</string>
+    <string name="phoenix_deluxe_edition_label">Fénix (Deluxe edice):</string>
     <string name="buildings_outsiders_undead_label">Budovy, cizinci a nemrtví:</string>
     <string name="cursed_items_label">Prokleté předměty:</string>
     <string name="ocr_matching_score_threshold_label">Práh skóre shody OCR:</string>
@@ -35,6 +39,8 @@
     <string name="effect_clear">ODSTRANÍ</string>
     <string name="effect_penalty">POSTIH</string>
     <string name="effect_blank">VYMAŽE</string>
+    <string name="effect_unbankable" translatable="false">UNBLANKABLE</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">REDUCE_BASE_STRENTGH_TO_ZERO</string>
     <string name="suit_army">Armáda</string>
     <string name="suit_artifact">Artefakt</string>
     <string name="suit_beast">Tvor</string>
@@ -154,7 +160,7 @@
     <string name="protection_rune_rules">ODSTRANÍ postihy ze všech karet v ruce</string>
     <string name="world_tree_rules">BONUS: +50,pokud mají všechny NEVYMAZANÉ karty rozdílné barvy</string>
     <string name="book_of_changes_rules">BONUS: Můžeš změnit barvu jedné karty ve své ruce.Její jméno,bonusy a postihy zůstávájí</string>
-    <string name="shield_of_keth_rules">BONUS: +15, máš-li alespoň jednoho Vůdce NEBO +40, máš-li Kethský meč a k němu Vůdce</string>
+    <string name="shield_of_keth_rules">BONUS: +15, máš-li alespoň jednoho Vůdce NEBO +40, máš-li Kethský štít a k němu Vůdce</string>
     <string name="gem_of_order_rules">BONUS: +10 za postupku ze 3 karet, +30 ze 4 karet, +60 z 5 karet, +100 z 6 karet, +150 ze 7 karet</string>
     <string name="warhorse_rules">BONUS: +14,máš-li jakéhokoliv Vůdce nebo Čaroděje</string>
     <string name="unicorn_rules">BONUS: +30,máš-li Princeznu. NEBO +15,máš-li Císařovnu,Královnu nebo Kouzelnici</string>
@@ -166,7 +172,7 @@
     <string name="forge_rules">BONUS: +9 za každou Zbraň nebo Artefakt</string>
     <string name="lightning_rules">BONUS: +30,máš-li Bouři</string>
     <string name="wildfire_rules">VYMAŽE všechny karty kromě Ohňů,Čarodějů,Počasí,Zbraní,Artefaktů,Hory,Stoleté vody,Ostrova,Jednorožce a Draka</string>
-    <string name="wildfire_rules_deluxe_edition">VYMAŽE všechny karty kromě Artefaktů, Ohňů, Cizinců, Zbraní, Počasí, Čarodějů, Stoleté vody, Ostrova, Hory, Jednorožce a Draka.</string>
+    <string name="wildfire_rules_with_outsiders">VYMAŽE všechny karty kromě Artefaktů, Ohňů, Cizinců, Zbraní, Počasí, Čarodějů, Stoleté vody, Ostrova, Hory, Jednorožce a Draka.</string>
     <string name="fountain_of_life_rules">BONUS: Přidej základní sílu jakékoli Zbraně,Potopy,Ohně,Země nebo Počasí.</string>
     <string name="water_elemental_rules">BONUS: +15 za každou další Potopu.</string>
     <string name="island_rules">ODSTRAŇUJE postih z jedné Potopy nebo Ohně.</string>
@@ -184,7 +190,7 @@
     <string name="empress_rules">BONUS: +10 za každou Armádu; POSTIH: -5 za každého dalšího Vůdce.</string>
     <string name="magic_wand_rules">BONUS: +25, máš-li alespoň jednoho Čaroděje.</string>
     <string name="elven_longbow_rules">BONUS: +30, máš-li Elfí lučištníky,Velitele nebo Pána šelem</string>
-    <string name="sword_of_keth_rules">BONUS: +10,máš-li alespoň jednoho Vůdce NEBO +40,máš-li Kethský štít a k němu Vůdce.</string>
+    <string name="sword_of_keth_rules">BONUS: +10,máš-li alespoň jednoho Vůdce NEBO +40,máš-li Kethský štít and k němu Vůdce.</string>
     <string name="warship_rules">POSTIH: Je VYMAZÁNA, nemáš-li alespoň jednu Potopu; ODSTRAŇUJE slovo Armáda ze všech postihů na všech Potopách</string>
     <string name="war_dirigible_rules">POSTIH: VYMAZÁNA, nemáš-li alespoň jednu Armádu; VYMAZÁNA, máš-li jakékoli Počasí.</string>
     <string name="air_elemental_rules">BONUS: +15 za každé další Počasí</string>
@@ -195,7 +201,7 @@
     <string name="shapeshifter_rules">Může kopírovat jméno a barvu jakéhokoli Artefaktu, Vůdce,Čaroděje,Zbraně nebo Tvora ve hře.Základní síla, bonusy ani postihy se nekopírují.</string>
     <string name="mirage_rules">Může kopírovat jméno a barvu jakékoli Armády, Stavby,Země,Počasí,Potopy nebo Ohně ve hře. Základní síla,bonusy ani postihy se nekopírují.</string>
     <string name="doppelganger_rules">Může kopírovat jméno,barvu,základní sílu a postih,ALE NIKOLI BONUS jakékoli jiné karty ve tvé ruce.</string>
-    <string name="necromancer_rules">BONUS: Na konci hry si z odkládacího prostoru můžeš vzít jakoukoli Armádu,Vůdce,Čaroděje nebo Tvora a přidat si ho do ruky jako osmou kartu.</string>
+    <string name="necromancer_rules">BONUS: Na konci hry si z odkládacího prostoru můžeš vzít jakoukoli Armádu,Vůdce,Čaroděje nebo Tvora and přidat si ho do ruky jako osmou kartu.</string>
     <string name="enchantress_rules">BONUS: +5 za každou Zemi,Počasí,Potopu a Oheň.</string>
     <string name="collector_rules">BONUS: +10 za tři různé karty stejné barvy, +40 za čtyři různé karty stejné barvy, +100 za pět různých karet stejné barvy</string>
     <string name="beastmaster_rules">BONUS: +9 za každého Tvora; ODSTRAŇUJE postihy na všech Tvorech</string>
@@ -208,46 +214,46 @@
     <string name="genie_rules">BONUS: +10 za každého jiného hráče.Na konci hry si vyber jednu kartu z dobírajícího balíčku a přidej si ji do ruky. (Vyhodnocuje se po Leprikonovi)</string>
     <string name="judge_rules">BONUS: +10 za každou další kartu s NEODSTRANĚNÝM POSTIHEM.</string>
     <string name="angel_rules">Zabrání VYMAZÁNÍ jedné jiné karty. Tato karta nemůže být nikdy  VYMAZÁNA.</string>
-    <string name="leprechaun_rules">BONUS: Na konci hry si z dobíracího balíčku dober horní kartu a přidej si jí do ruky. (Vyhodnocuje se před džinem)</string>
+    <string name="leprechaun_rules">BONUS: Na konci hry si z dobíracího balíčku dober horní kartu and přidej si jí do ruky. (Vyhodnocuje se před džinem)</string>
     <string name="demon_rules">POSTIH: Pro každou další kartu,kromě Cizinců: Je-li to jediný jarty svojí barvy, je VYMAZÁNA. Tento efekt vyhodnoť před ostatními VYMAZÁNÍMI.</string>
     <string name="dark_queen_rules">BONUS: +5 za každou Zemi,Potopu,Oheň,Počasí a za Jednorožce v odkládací oblasti.</string>
     <string name="ghoul_rules">BONUS: +4 za každého Čaroděje, Vůdce,Armádu,Tvora a Nemrtvého v odkládací oblasti.</string>
-    <string name="specter_rules">BONUS: +6 za každého Čaroděje, Artefakt a Cizince v odkládací oblasti.</string>
+    <string name="specter_rules">BONUS: +6 za každého Čaroděje, Artefakt and Cizince v odkládací oblasti.</string>
     <string name="lich_rules">BONUS: +10 za Nekromanta a každého dalšího Nemrtvého.Nemrtví nemohou být VYMAZÁNI.</string>
-    <string name="death_knight_rules">BONUS: +7 za každou Zbraň a Armádu v odkládací oblasti.</string>
+    <string name="death_knight_rules">BONUS: +7 za každou Zbraň and Armádu v odkládací oblasti.</string>
     <string name="bell_tower_rules2">BONUS: +15 máš-li alespoň jednoho Čaroděje nebo Nemrtvého</string>
     <string name="fountain_of_life_rules2">BONUS: Přidej základní sílu jakékoli Stavby,Zbraně,Potopy,Ohně,Země nebo Počasí.</string>
     <string name="great_flood_rules2">POSTIH: VYMAŽE všechny Armády,všechny Stavby, všechny Země kromě Hory a všechny Ohně kromě Blesku.</string>
     <string name="rangers_rules2">BONUS: +10 za každou Zemi a Stavbu. ODSTRAŇUJE slovo Armáda ze všech postihů.</string>
-    <string name="necromancer_rules2">BONUS: Na konci hry si z odkládacího prostoru můžeš vzít jakoukoli Armádu,Vůdce,Čaroděje,Tvora nebo Nemrtvého a přidat si ho do ruky. Nemrtví nemohou být VYMAZÁNI.</string>
+    <string name="necromancer_rules2">BONUS: Na konci hry si z odkládacího prostoru můžeš vzít jakoukoli Armádu,Vůdce,Čaroděje,Tvora nebo Nemrtvého and přidat si ho do ruky. Nemrtví nemohou být VYMAZÁNI.</string>
     <string name="world_tree_rules2">BONUS: +70 , pokud mají všechny NEVYMAZANÉ karty rozdílné barvy.</string>
     <string name="shapeshifter_rules2">BONUS: Může kopírovat jméno a barvu jakéhokoli Artefaktu,Vůdce,Čaroděje,Zbraně,Tvora nebo Nemrtvého ve hře. Základní síla,bonusy ani postihy se nekopírují.</string>
     <string name="mirage_rules2">BONUS: Může kopírovat jméno a barvu jakékoli Armády, Stavby,Země,Počasí,Potopy nebo Ohně ve hře. Základní síla,bonusy ani postihy se nekopírují.</string>
     <string name="spyglass_rules">KDYKOLI: Podívej se na karty v ruce jiného hráče. *Při hře dvou hráčů je hodnota tohoto předmětu -10.</string>
     <string name="sarcophagus_rules">MÍSTO TAHU: Vezmi vrchní kartu z balíčku a odlož ji do odkladacího prostoru. V tomto tahu ti v ruce zůstanou stejné karty.</string>
-    <string name="blindfold_rules">MÍSTO TAHU: Otoč běžný průběh tahu - nejprve odlož kartu a poté si z balíčku jednu vezmi.</string>
+    <string name="blindfold_rules">MÍSTO TAHU: Otoč běžný průběh tahu - nejprve odlož kartu and poté si z balíčku jednu vezmi.</string>
     <string name="book_of_prophecy_rules">KDYKOLIPodívej se na sedm spodních karet v balíčku, poté je vrať zpět.</string>
     <string name="crystal_ball_rules">KDYKOLI: Jmenuj barvu.Všichni ostatní hráči musí z ruky odhalit všechny své karty zvolené barvy.</string>
-    <string name="market_wagon_rules">MÍSTO TAHU: Odhal kartu ze své ruky. Všichni ostatní hráči mohou odhalit a nabídnout na výměnu až tři karty.Svoji kartu můžeš vyměnit za jednu z nabízených - pokud si žádnou kartu nevybereš, nech si svoji kartu v ruce nebo ji odlož a vezmi si z balíčku novou.</string>
-    <string name="backpack_rules">KDYKOLI: Dober si tři prokleté předměty a polož je před sebe lícem nahoru. Při třech následujících dobíráních prokletých předmětů si jej nebereš z balíčku, ale musíš si vybrat jednu z těchto karet.</string>
-    <string name="shovel_rules">KDYKOLI: Vezmi kartu z odkládacího prostoru a dej ji dospodu balíčku.</string>
-    <string name="sealed_vault_rules">KDYKOLI: Překryj touto kartou dvě karty v odkládacím prostoru.Stále se počítají do počtu karet pro ukončení hry a poskytují bonusy Nemrtvým, nikdo kromě tebe si je však nesmí vzít a jsou imunní vůči Lopatě a Zlatému zrcadlu.</string>
+    <string name="market_wagon_rules">MÍSTO TAHU: Odhal kartu ze své ruky. Všichni ostatní hráči mohou odhalit a nabídnout na výměnu až tři karty.Svoji kartu můžeš vyměnit za jednu z nabízených - pokud si žádnou kartu nevybereš, nech si svoji kartu v ruce nebo ji odlož and vezmi si z balíčku novou.</string>
+    <string name="backpack_rules">KDYKOLI: Dober si tři prokleté předměty and polož je před sebe lícem nahoru. Při třech následujících dobíráních prokletých předmětů si jej nebereš z balíčku, ale musíš si vybrat jednu z těchto karet.</string>
+    <string name="shovel_rules">KDYKOLI: Vezmi kartu z odkládacího prostoru and dej ji dospodu balíčku.</string>
+    <string name="sealed_vault_rules">KDYKOLI: Překryj touto kartou dvě karty v odkládacím prostoru.Stále se počítají do počtu karet pro ukončení hry and poskytují bonusy Nemrtvým, nikdo kromě tebe si je však nesmí vzít and jsou imunní vůči Lopatě a Zlatému zrcadlu.</string>
     <string name="crystal_lens_rules">KDYKOLINež se rozhodneš,odkud si vezmeš kartu, můžeš se podívat na horní kartu v balíčku.</string>
     <string name="larcenous_gloves_rules">KDYKOLI: Ukradni jinému hráči lícem nahoru otočený prokletý předmět. Musíš jej ihned použít. Okradený hráč si ihned dobere nový prokletý předmět z balíčku prokletých předmětů.</string>
     <string name="junkyard_map_rules">KDYKOLI: Ze tří vrchních odložených prokletých předmětů si jeden vezmi. Ihned ho použij.</string>
     <string name="winged_boots_rules">KDYKOLI: Polož vrchní kartu z balíčku do odkládacího prostoru.</string>
-    <string name="staff_of_transmutation_rules">MÍSTO TAHU: Vrať 3–8 karet ze své ruky dospodu balíčku a vezmi si stejný počet nových karet svrchu balíčku.</string>
+    <string name="staff_of_transmutation_rules">MÍSTO TAHU: Vrať 3–8 karet ze své ruky dospodu balíčku and nahraď je stejným počtem nových karet svrchu balíčku.</string>
     <string name="rake_rules">MÍSTO TAHU: Vezmi si dvě karty z odkládacího prostoru, poté dvě karty odlož.</string>
     <string name="treasure_chest_rules">KDYKOLI: +25 na konci hry, máš-li alespoň tři další použité prokleté předměty.</string>
     <string name="fishhook_rules">MÍSTO TAHU: Vezmi si dvě karty z balíčku, poté dvě libovolné karty odlož.</string>
     <string name="repair_kit_rules">STEJNÉ JAKO KOPÍROVANÁ KARTA: Zkopíruj schopnost jednoho z prokletých předmětů, které jsi již použil, kromě Batohu, Sarkofágu,Šátku nebo Truhlice. Odlož a dober si novou, nemáš-li žádný použitý prokletý předmět.</string>
     <string name="hourglass_rules">PO TAHU: Proveď ještě jeden tah. Tuto kartu nahraď novou kartou z balíčku prokletých předmětů až po druhém tahu.</string>
-    <string name="gold_mirror_rules">KDYKOLI: Vezmi tři karty z odkládacího prostoru a dej je dospodu balíčku.Místo nich odlož tři karty svrchu balíčku.</string>
-    <string name="cauldron_rules">MÍSTO TAHU: Místo jedné karty z balíčku si vezmi tři,dvě z nich polož dospodu nebo navrch balíčku(nebo jednu navrch a druhou dospodu)Poté jednu kartu z ruky běžným způsobem odlož.</string>
-    <string name="lantern_rules">MÍSTO TAHU: Jmenuj barvu.Ber si z balíčku karty, dokud nevezmeš kartu jmenované barvy nebo jich nebude deset.Divoké karty se nepočítají. Pokud si vezmeš kartu jmenované barvy, nech si ji a odlož jinou kartu z ruky. Zbývající karty ukaž ostatním a zamíchej je zpět do balíčku.</string>
+    <string name="gold_mirror_rules">KDYKOLI: Vezmi tři karty z odkládacího prostoru and dej je dospodu balíčku.Místo nich odlož tři karty svrchu balíčku.</string>
+    <string name="cauldron_rules">MÍSTO TAHU: Místo jedné karty z balíčku si vezmi tři,dvě z nich polož dospodu nebo navrch balíčku(nebo jednu navrch and druhou dospodu)Poté jednu kartu z ruky běžným způsobem odlož.</string>
+    <string name="lantern_rules">MÍSTO TAHU: Jmenuj barvu.Ber si z balíčku karty, dokud nevezmeš kartu jmenované barvy nebo jich nebude deset.Divoké karty se nepočítají. Pokud si vezmeš kartu jmenované barvy, nech si ji and odlož jinou kartu z ruky. Zbývající karty ukaž ostatním and zamíchej je zpět do balíčku.</string>
     <string name="portal_rules">KDYKOLI: V tomto tahu vynechej odkládání karty.(Od tohoto okamžiku budeš mít v ruce o jednu kartu více). </string>
-    <string name="wishing_ring_rules">KDYKOLI: Prohledej balíček karet a libovolnou kartu z něj polož navrch.(Toto můžeš provést těsně před tím, než si vezmeš kartu).Na konci svého tahu balíček zamíchej. </string>
+    <string name="wishing_ring_rules">KDYKOLI: Prohledej balíček karet and libovolnou kartu z něj polož navrch.(Toto můžeš provést těsně před tím, než si vezmeš kartu).Na konci svého tahu balíček zamíchej. </string>
     <string name="jester_rules">BONUS: +3 za každou další kartu ve tvé ruce s lichou základní silou NEBO +50, mají-li všechny karty ve tvé ruce lichou základní sílu.</string>
     <string name="phoenix_rules">BONUS: také se počítá jako karta Ohně a Počasí. POSTIH: VYMAZÁNA s jakoukoli kartou Potopy. Pokud je tato karta z jakéhokoli důvodu VYMAZÁNA, její základní síla se sníží na 0, ale zachová si své barvy.</string>
-    <string name="phoenix_rules_deluxe_edition">BONUS: také se počítá jako karta Ohně a Počasí. POSTIH: VYMAZÁNA jakoukoli kartou Potopy. Fénix je imunní vůči Knize proměn a nemůže vymazat ani být vymazán žádnou jinou kartou.</string>
+    <string name="phoenix_rules_deluxe_edition">BONUS: také se počítá jako karta Ohně a Počasí. POSTIH: VYMAZÁNA jakoukoli kartou Potopy. Fénix je imunní vůči Knize proměn and nemůže vymazat ani být vymazán žádnou jinou kartou.</string>
 </resources>

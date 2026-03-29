@@ -129,7 +129,7 @@ class HandSelectionActivity : CustomActivity() {
                     Player(
                         Player.generateNextPlayerName(),
                         Game(
-                            wildfireDeluxe = Preferences.getWildfireDeluxeEdition(baseContext),
+                            wildfireWithOutsiders = Preferences.getwildfireWithOutsiders(baseContext),
                             phoenixDeluxe = Preferences.getPhoenixDeluxeEdition(baseContext)
                         )
                     )

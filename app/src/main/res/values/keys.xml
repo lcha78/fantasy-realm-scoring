@@ -8,7 +8,7 @@
     <string name="cursed_items" translatable="false">cursed_items</string>
     <string name="buildings_outsiders_undead" translatable="false">buildings_outsiders_undead</string>
     <string name="display_chip_color_on_search" translatable="false">display_chip_color_on_search</string>
-    <string name="wildfire_deluxe_edition" translatable="false">wildfire_deluxe_edition</string>
+    <string name="wildfire_with_outsiders" translatable="false">wildfire_with_outsiders</string>
     <string name="phoenix_deluxe_edition" translatable="false">phoenix_deluxe_edition</string>
     <string name="ocr_matching_score_threshold" translatable="false">ocr_matching_score_threshold</string>
     <string name="ocr_difference_length_threshold" translatable="false">ocr_difference_length_threshold</string>

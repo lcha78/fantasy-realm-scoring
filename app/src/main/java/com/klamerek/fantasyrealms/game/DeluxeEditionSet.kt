@@ -5,13 +5,13 @@ import com.klamerek.fantasyrealms.R
 // Looking at the other card definitions, I'm guessing that ids have to be unique, so I'm just adding 1000 to the id of the original card
 
 @Suppress("MagicNumber")
-val wildfireDeluxeEdition by lazy {
+val wildfireWithOutsiders by lazy {
     CardDefinition(
         id = 1016,
         keyName = R.string.wildfire,
         value = 40,
         suit = Suit.FLAME,
-        keyRule = R.string.wildfire_rules_deluxe_edition,
+        keyRule = R.string.wildfire_rules_with_outsiders,
         cardSet = CardSet.DELUXE_EDITION
     )
 }

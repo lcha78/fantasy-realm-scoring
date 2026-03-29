@@ -18,12 +18,16 @@
     <string name="clear_button">Очистити</string>
     <string name="scan_help_label">Порада: назва карти обов\'язково повинна бути видна</string>
     <string name="base">Основна сила</string>
+    <string name="disclaimer" translatable="false">Контакт : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Версія %1$s</string>
     <string name="done">Зберегти</string>
     <string name="language_label">Мова:</string>
     <string name="display_card_number_label">Відобразити номер карти</string>
     <string name="remove_already_selected_label">Не показувати вже вибрані карти \nу інших гравців</string>
     <string name="display_chip_color_on_search_label">Поміняти місцями колір\nкнопок невибрані/вибрані</string>
     <string name="deluxe_edition_label">Делюкс видання:</string>
+    <string name="wildfire_with_outsiders_label">Пожежа без очищення Аутсайдерів:</string>
+    <string name="phoenix_deluxe_edition_label">Фенікс (Делюкс видання):</string>
     <string name="buildings_outsiders_undead_label">Будівлі, аутсайдери\nта нежить (доповнення)</string>
     <string name="cursed_items_label">Прокляті речі (доповнення)</string>
     <string name="discard_area">Ігнорувати карти</string>
@@ -32,6 +36,8 @@
     <string name="effect_clear">ОЧИЩЕННЯ</string>
     <string name="effect_penalty">ШТРАФ</string>
     <string name="effect_blank">СКАСУВАННЯ</string>
+    <string name="effect_unbankable" translatable="false">UNBLANKABLE</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">REDUCE_BASE_STRENTGH_TO_ZERO</string>
     <string name="suit_army">Військо</string>
     <string name="suit_artifact">Артефакт</string>
     <string name="suit_beast">Звірюка</string>
@@ -162,8 +168,8 @@
     <string name="fire_elemental_rules">БОНУС: +15 за кожну іншу карту полум\'я.</string>
     <string name="forge_rules">БОНУС: +9 за кожну карту зброї та артефакту.</string>
     <string name="lightning_rules">БОНУС: +30 разом зі "Зливою".</string>
-    <string name="wildfire_rules">ОЧИЩАЄ всі карти, крім полум\'я, чарівників, погоди, зброї, артефактів, гори, великої повені, острова, однорога та дракона.</string>
-    <string name="wildfire_rules_deluxe_edition">ОЧИЩАЄ всі карти, крім Артефактів, Полум\'я, Аутсайдерів, Зброї, Погоди, Чарівників, Великої повені, Острова, Гори, Однорога та Дракона.</string>
+    <string name="wildfire_rules">ОЧИЩАЄ всі карти, крім полум\'я, чарівників, погоди, зброї, артефактов, гори, великої повені, острова, однорога та дракона.</string>
+    <string name="wildfire_rules_with_outsiders">ОЧИЩАЄ всі карти, крім Артефактів, Полум\'я, Аутсайдерів, Зброї, Погоди, Чарівників, Великої повені, Острова, Гори, Однорога та Дракона.</string>
     <string name="fountain_of_life_rules">БОНУС: Додайте основну силу будь-якої з карт зброї, повені, полум\'я, землі чи погоди на вашій руці.</string>
     <string name="water_elemental_rules">БОНУС: +15 за кожну іншу карту повені.</string>
     <string name="island_rules">СКАСОВУЄ ШТРАФ на будь-якій карті повені АБО полум\'я.</string>
@@ -205,7 +211,7 @@
     <string name="genie_rules">БОНУС: +10 за кожного іншого гравця. Наприкінці гри перегляньте колоду та покладіть одну карту собі в руку. (Вирішується після Лепрекона.)</string>
     <string name="judge_rules">БОНУС: +10 за кожну карту, що містить ШТРАФ, який не був СКАСОВАНИЙ.</string>
     <string name="angel_rules">Запобігає ОЧИЩЕННЮ однієї іншої карти. Ця карта ніколи не може бути ОЧИЩЕНА.</string>
-    <string name="leprechaun_rules">БОНУС: Візьміть верхню карту з колоди наприкінці гри та додайте її в руку. (Вирішується перед Джинном.)</string>
+    <string name="leprechaun_rules">БОНУС: Візьміть верхнюю карту з колоди наприкінці гри та додайте її в руку. (Вирішується перед Джинном.)</string>
     <string name="demon_rules">ШТРАФ: Для кожної карти, що не є Аутсайдером: якщо ця карта - єдина карта цієї масті у вас, то вона ОЧИЩАЄТЬСЯ. Це відбувається перед будь-яким іншим ОЧИЩЕННЯМ.</string>
     <string name="dark_queen_rules">БОНУС: +5 за кожну карту Землі, Повені, Полум\'я, Погоди та Однорога в стопці скиду.</string>
     <string name="ghoul_rules">БОНУС: +4 за кожного Чарівника, Правителя, Військо, Звірюку та Нежить в стопці скиду.</string>
@@ -221,7 +227,7 @@
     <string name="shapeshifter_rules2">БОНУС: Перевертень може скопіювати назву та масть будь-якого Артефакту, Правителя, Чарівника, Зброї, Звірюки або Нежиті у грі. Не отримує бонусу, штрафу чи основної сили скопійованої карти.</string>
     <string name="mirage_rules2">БОНУС: Марево може скопіювати назву та масть будь-якого Війська, Будівлі, Землі, Погоди, Повені або Полум\'я у грі. Не отримує бонусу, штрафу чи основної сили скопійованої карти.</string>
     <string name="spyglass_rules">У БУДЬ-ЯКИЙ ЧАС: Подивіться в руку іншого гравця. (*Базова вартість цього предмета -10 у грі на двох)</string>
-    <string name="sarcophagus_rules">ЗАМІНА ХОДУ: Візьміть верхню карту з колоди та помістіть її прямо в стопку скиду, потім закінчіть свій хід. \n(Склад вашої руки не зміниться в цей хід.)</string>
+    <string name="sarcophagus_rules">ЗАМІНА ХОДУ: Візьміть верхнюю карту з колоди та помістіть її прямо в стопку скиду, потім закінчіть свій хід. \n(Склад вашої руки не зміниться в цей хід.)</string>
     <string name="blindfold_rules">ЗАМІНА ХОДУ: Зворотний порядок ходу: спочатку скиньте карту, потім візьміть карту з колоди.</string>
     <string name="book_of_prophecy_rules">У БУДЬ-ЯКИЙ ЧАС: Подивіться сім нижніх карт колоди, потім поверніть їх на місце.</string>
     <string name="crystal_ball_rules">У БУДЬ-ЯКИЙ ЧАС: Назвіть масть. Всі інші гравці повинні розкрити всі карти цієї масті, що у них є.</string>
@@ -229,10 +235,10 @@
     <string name="backpack_rules">У БУДЬ-ЯКИЙ ЧАС: Візьміть три Прокляті речі та відкладіть їх убік лицьовою стороною вгору. \nНаступні три рази, коли ви маєте взяти нову Прокляту річ з колоди, ви повинні взяти одну з цих карт замість цього.</string>
     <string name="shovel_rules">У БУДЬ-ЯКИЙ ЧАС: Покладіть карту зі стопки скиду на дно колоди.</string>
     <string name="sealed_vault_rules">У БУДЬ-ЯКИЙ ЧАС: Накрийте дві карти в стопці скиду цією картою. Вони все ще враховуються наприкінці гри та дають бонуси Нежиті, але ніхто, крім вас, не може їх взяти, і вони несприйнятливі до Лопати та Золотого дзеркала.</string>
-    <string name="crystal_lens_rules">У БУДЬ-ЯКИЙ ЧАС: Ви можете поглянути на верхню карту колоди, перш ніж вирішити, чи брати карту з колоди чи зі стопки скиду.</string>
+    <string name="crystal_lens_rules">У БУДЬ-ЯКИЙ ЧАС: Ви можете поглянути на верхнюю карту колоди, перш ніж вирішити, чи брати карту з колоди чи зі стопки скиду.</string>
     <string name="larcenous_gloves_rules">У БУДЬ-ЯКИЙ ЧАС: Вкрадіть відкриту Прокляту річ у іншого гравця. Ви повинні використати її негайно. \nГравець, у якого ви вкрали, повинен негайно взяти заміну з колоди Проклятих речей.</string>
     <string name="junkyard_map_rules">У БУДЬ-ЯКИЙ ЧАС: Візьміть одну з трьох верхніх скинутих карт Проклятих речей і негайно розіграйте її.</string>
-    <string name="winged_boots_rules">У БУДЬ-ЯКИЙ ЧАС: Помістіть верхню карту колоди прямо в стопку скиду.</string>
+    <string name="winged_boots_rules">У БУДЬ-ЯКИЙ ЧАС: Помістіть верхнюю карту колоди прямо в стопку скиду.</string>
     <string name="staff_of_transmutation_rules">ЗАМІНА ХОДУ: Поверніть 3–8 карт зі своєї руки на дно колоди та замініть їх на таку ж кількість карт зверху колоди.</string>
     <string name="rake_rules">ЗАМІНА ХОДУ: Візьміть дві карти зі стопки скиду, потім скиньте дві карти.</string>
     <string name="treasure_chest_rules">У БУДЬ-ЯКИЙ ЧАС: Дає +25 очок наприкінці гри, якщо у вас є як мінімум три інші Прокляті речі лицьовою стороною вниз.</string>

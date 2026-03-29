@@ -209,7 +209,7 @@ object AllRules {
                 }
             }
         ),
-        wildfireDeluxeEdition to listOf(
+        wildfireWithOutsiders to listOf(
             RuleAboutCard(listOf(Effect.PENALTY, Effect.BLANK)) {
                 it.filterNotBlankedHandCards { card ->
                     !(card.isOneOf(Suit.FLAME) || card.isOneOf(Suit.WEATHER) || card.isOneOf(Suit.WIZARD) ||

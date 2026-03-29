@@ -12,7 +12,7 @@ class DiscardArea(private val displayId: Int, private val game: Game) : WithGame
     companion object {
         val instance: DiscardArea = DiscardArea(
             R.string.discard_area,
-            Game(wildfireDeluxe = false, phoenixDeluxe = false, noScoring = true)
+            Game(wildfireWithOutsiders = false, phoenixDeluxe = false, noScoring = true)
         )
     }
 }

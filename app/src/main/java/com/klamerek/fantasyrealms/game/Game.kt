@@ -13,7 +13,7 @@ import kotlin.math.max
  *
  */
 class Game(
-    val wildfireDeluxe: Boolean,
+    val wildfireWithOutsiders: Boolean,
     val phoenixDeluxe: Boolean,
     val noScoring: Boolean = false
 ) {

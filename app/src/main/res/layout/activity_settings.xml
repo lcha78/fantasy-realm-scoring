@@ -153,17 +153,17 @@
                 android:layout_height="wrap_content"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/wildfireDeluxeEditionLayout"
+                android:id="@+id/wildfireWithOutsidersLayout"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
 
                 <TextView
-                    android:id="@+id/wildfireDeluxeEditionLabel"
+                    android:id="@+id/wildfireWithOutsidersLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:labelFor="@id/wildfireDeluxeEditionCheckBox"
-                    android:text="@string/wildfire_deluxe_edition_label"
+                    android:labelFor="@id/wildfireWithOutsidersCheckBox"
+                    android:text="@string/wildfire_with_outsiders_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -172,16 +172,16 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Space
-                    android:id="@+id/spaceWildfireDeluxeEdition"
+                    android:id="@+id/spacewildfireWithOutsiders"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/wildfireDeluxeEditionCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/wildfireDeluxeEditionLabel"
+                    app:layout_constraintEnd_toStartOf="@id/wildfireWithOutsidersCheckBox"
+                    app:layout_constraintStart_toEndOf="@id/wildfireWithOutsidersLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
-                    android:id="@+id/wildfireDeluxeEditionCheckBox"
+                    android:id="@+id/wildfireWithOutsidersCheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="25dp"

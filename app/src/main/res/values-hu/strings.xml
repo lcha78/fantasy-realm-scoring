@@ -18,6 +18,8 @@
     <string name="clear_button">Törlés</string>
     <string name="scan_help_label">Tipp: csak a kártyák címe kötelező</string>
     <string name="base">Alaperő</string>
+    <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Verzió %1$s</string>
     <string name="done">Ment</string>
     <string name="scan_mode_label">Beolvasási mód:</string>
     <string name="language_label">Nyelv:</string>
@@ -25,6 +27,8 @@
     <string name="remove_already_selected_label">Már kiválasztott kártyák eltávolítása:</string>
     <string name="display_chip_color_on_search_label">Mutasd a kártyák típusát keresésnél:</string>
     <string name="deluxe_edition_label">Deluxe kiadás:</string>
+    <string name="wildfire_with_outsiders_label">Futótűz a Kívülállók eltörlése nélkül:</string>
+    <string name="phoenix_deluxe_edition_label">Főnix (Deluxe kiadás):</string>
     <string name="buildings_outsiders_undead_label">Épületek, kívülállók és élőholtak:</string>
     <string name="cursed_items_label">Elátkozott tárgyak:</string>
     <string name="ocr_matching_score_threshold_label">OCR egyezési pontszám küszöb:</string>
@@ -35,6 +39,8 @@
     <string name="effect_clear">Megszüntet</string>
     <string name="effect_penalty">HÁTRÁNYOK</string>
     <string name="effect_blank">Eltöröl</string>
+    <string name="effect_unbankable" translatable="false">ELTÖRÖLHETETLEN</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">ALAPERŐ_NULLÁRA_CSÖKKENTÉSE</string>
     <string name="suit_army">Sereg</string>
     <string name="suit_artifact">Varázstárgy</string>
     <string name="suit_beast">Szörnyeteg</string>
@@ -166,7 +172,7 @@
     <string name="forge_rules">ELŐNYÖK: +9 minden Fegyver és Varázstárgy után.</string>
     <string name="lightning_rules">ELŐNYÖK: +30, ha zivatar van mellette.</string>
     <string name="wildfire_rules">HÁTRÁNYOK: Eltöröl minden kártyát, kivéve: Lángot, Varázslót, Időjárást, Fegyvert, Varázstárgyat, hegységet, özönvizet, szigetet, unikornist és sárkányt.</string>
-    <string name="wildfire_rules_deluxe_edition">Eltöröl minden kártyát, kivéve: Varázstárgyat, Lángot, Kívülállót, Fegyvert, Időjárást, Varázslót, Özönvizet, Szigetet, Hegységet, Unikornist és Sárkányt.</string>
+    <string name="wildfire_rules_with_outsiders">Eltöröl minden kártyát, kivéve: Varázstárgyat, Lángot, Kívülállót, Fegyvert, Időjárást, Varázslót, Özönvizet, Szigetet, Hegységet, Unikornist és Sárkányt.</string>
     <string name="fountain_of_life_rules">ELŐNYÖK: Add hozzá egy bármely Fegyver, Áradás, Láng, Föld vagy Időjárás alaperejét!</string>
     <string name="water_elemental_rules">ELŐNYÖK: +15 fminden másik Áradás után.</string>
     <string name="island_rules">ELŐNYÖK: Megszünteti egy Áradás vagy Láng hátrányát.</string>
@@ -244,7 +250,7 @@
     <string name="hourglass_rules">KÖR UTÁN: Vegyél egy extra kört. Ne cseréld le ezt a kártyát új Elátkozott tárgyra a második köröd végéig.</string>
     <string name="gold_mirror_rules">BÁRMIKOR: Tegyél három kártyát a dobópakliból a pakli aljára. Cseréld le őket a pakli felső három lapjával.</string>
     <string name="cauldron_rules">KÖR KIVÁLTÁSA: Egy lap helyett húzz hármat, majd tegyél kettőt a pakli tetejére vagy aljára (vagy egyet-egyet), mielőtt a szokásos módon eldobnál egy lapot.</string>
-    <string name="lantern_rules">KÖR KIVÁLTÁSA: Nevezz meg egy típust. Húzz a pakliból, amíg ilyen típusú lapot nem húzol, vagy amíg tíz lapot nem húztál. (A Vad kártyák nem számítanak.) Ha húztál ilyen lapot, tartsd meg és dobj el egy másikat. Mutasd meg a többi lapot és keverd vissza őket a pakliba.</string>
+    <string name="lantern_rules">KÖR KIVÁLTÁSA: Nevezz meg egy típust. Húzz a pakliból, amíg ilyen típusú lapot nem húzol, vagy amíg tíz lapot nem húztál. (A Vad kártyák nem számítanak.) Ha húztál ilyen lapot, tartsd meg és dobj el egy másikat. Mutasd meg a többi lapot és keverd vissza őket a pakiba.</string>
     <string name="portal_rules">BÁRMIKOR: Hagyd ki a kör végi lapdobást. (Ezentúl egy extra lap lesz a kezedben.)</string>
     <string name="wishing_ring_rules">BÁRMIKOR: Nézd át a paklit és tegyél egy tetszőleges lapot a tetejére. (Húzás előtt is megteheted.) Keverd meg a paklit a köröd végén.</string>
     <string name="jester_rules">BONUSZ: +3 minden más olyan kártya után, amelynek az alapereje páratlan VAGY +50, ha az egész kéz alapereje páratlan.</string>

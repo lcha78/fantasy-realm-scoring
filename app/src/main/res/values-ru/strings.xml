@@ -18,12 +18,16 @@
     <string name="clear_button">Очистить</string>
     <string name="scan_help_label">Совет: обязательны только названия карт</string>
     <string name="base">Основная сила</string>
+    <string name="disclaimer" translatable="false">Контакт : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Версия %1$s</string>
     <string name="done">Готово</string>
     <string name="language_label">Язык:</string>
     <string name="display_card_number_label">Показать номер карты:</string>
     <string name="remove_already_selected_label">Удалить уже выбранные карты:</string>
     <string name="display_chip_color_on_search_label">Показать цвет при поиске:</string>
     <string name="deluxe_edition_label">Делюкс издание:</string>
+    <string name="wildfire_with_outsiders_label">Пожар без блокировки Аутсайдеров:</string>
+    <string name="phoenix_deluxe_edition_label">Феникс (Делюкс издание):</string>
     <string name="buildings_outsiders_undead_label">Здания, аутсайдеры и нежить:</string>
     <string name="cursed_items_label">Проклятые предметы:</string>
     <string name="discard_area">Область сброса</string>
@@ -32,6 +36,8 @@
     <string name="effect_clear">ОЧИСТКА</string>
     <string name="effect_penalty">ШТРАФ</string>
     <string name="effect_blank">БЛОКИРОВКА</string>
+    <string name="effect_unbankable" translatable="false">НЕБЛОКИРУЕМЫЙ</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">REDUCE_BASE_STRENTGH_TO_ZERO</string>
     <string name="suit_army">Войско</string>
     <string name="suit_artifact">Артефакт</string>
     <string name="suit_beast">Зверь</string>
@@ -163,7 +169,7 @@
     <string name="forge_rules">Бонус: +9 за каждое оружие и артефакт.</string>
     <string name="lightning_rules">Бонус: +30 вместе с ливнем.</string>
     <string name="wildfire_rules">БЛОКИРУЕТ все карты, кроме пламени, колдунов, погоды, оружия, артефактов, горы, великого потопа, острова, единорога и дракона.</string>
-    <string name="wildfire_rules_deluxe_edition">БЛОКИРУЕТ все карты, кроме Артефактов, Пламени, Аутсайдеров, Оружия, Погоды, Колдунов, Великого потопа, Острова, Горы, Единорога и Дракона.</string>
+    <string name="wildfire_rules_with_outsiders">БЛОКИРУЕТ все карты, кроме Артефактов, Пламени, Аутсайдеров, Оружия, Погоды, Колдунов, Великого потопа, Острова, Горы, Единорога и Дракона.</string>
     <string name="fountain_of_life_rules">Бонус: Прибавьте основную силу любого оружия, потопа, пламени, земли или погоды.</string>
     <string name="water_elemental_rules">Бонус: +15 за каждый потоп.</string>
     <string name="island_rules">ОТМЕНЯЕТ штраф на любом потопе или пламени.</string>
@@ -199,7 +205,7 @@
     <string name="warlock_lord_rules">Штраф: -10 за каждого правителя и других колдунов.</string>
     <string name="dungeon_rules">БОНУС: +10 за каждого первого Нежить, Зверя и Артефакт. +5 за каждую дополнительную карту этих мастей и за Некроманта, Чернокнижника, Демона.</string>
     <string name="castle_rules">БОНУС: +10 за первого Правителя, Войско, Землю и другое Здание. +5 за каждое дополнительное Здание.</string>
-    <string name="crypt_rules">БОНУС: Сумма основной силы всей Нежити. ШТРАФ: БЛОКИРУЕТ всех Правителей.</string>
+    <string name="crypt_rules">БОНУС: Сума основной силы всей Нежити. ШТРАФ: БЛОКИРУЕТ всех Правителей.</string>
     <string name="chapel_rules">БОНУС: +40, если у вас ровно две карты среди этих мастей: Правитель, Колдун, Аутсайдер и Нежить.</string>
     <string name="garden_rules">БОНУС: +11 за каждого Правителя и Зверя. БЛОКИРУЕТСЯ любой Нежитью, Некромантом или Демоном.</string>
     <string name="genie_rules">БОНУС: +10 за каждого другого игрока. В конце игры просмотрите колоду и положите одну карту себе в руку. (Разрешается после Лепрекона.)</string>

@@ -16,8 +16,10 @@
     <string name="add_card_button">Ajouter</string>
     <string name="scan_button">Scanner</string>
     <string name="clear_button">Effacer</string>
-    <string name="scan_help_label">Conseil : seuls les titres des cartes doivent être obligatoires.</string>
+    <string name="scan_help_label">Conseil : seuls les titres des cartes sont obligatoires.</string>
     <string name="base">BASE</string>
+    <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
+    <string name="version_label">Version %1$s</string>
     <string name="done">Terminé</string>
     <string name="scan_mode_label">Mode de scan :</string>
     <string name="language_label">Langue :</string>
@@ -34,7 +36,7 @@
     <string name="remove_already_selected_label">Retirer les cartes déjà sélectionnées :</string>
     <string name="display_chip_color_on_search_label">Afficher la couleur pour sélection :</string>
     <string name="deluxe_edition_label">Édition Deluxe :</string>
-    <string name="wildfire_deluxe_edition_label">Feu de forêt (Édition Deluxe) :</string>
+    <string name="wildfire_with_outsiders_label">Feu de forêt sans masquage des Extérieurs :</string>
     <string name="phoenix_deluxe_edition_label">Phénix (Édition Deluxe) :</string>
     <string name="buildings_outsiders_undead_label">Bâtiments, Extérieurs et Morts-vivants :</string>
     <string name="cursed_items_label">Objets Maudits :</string>
@@ -46,6 +48,8 @@
     <string name="effect_clear">EFFACE</string>
     <string name="effect_penalty">MALUS</string>
     <string name="effect_blank">MASQUE</string>
+    <string name="effect_unbankable" translatable="false">INCASSABLE</string>
+    <string name="effect_reduce_base_strength_to_zero" translatable="false">RÉDUIRE_FORCE_BASE_À_ZÉRO</string>
     <string name="suit_army">Armée</string>
     <string name="suit_artifact">Artefact</string>
     <string name="suit_beast">Créature</string>
@@ -100,7 +104,7 @@
     <string name="magic_wand">Baguette Magique</string>
     <string name="elven_longbow">Arc Elfique</string>
     <string name="sword_of_keth">Épée de Keth</string>
-    <string name="warship">Navire  de Guerre</string>
+    <string name="warship">Navire de Guerre</string>
     <string name="war_dirigible">Dirigeable</string>
     <string name="air_elemental">Élémental d\'Air</string>
     <string name="rainstorm">Orage</string>
@@ -166,7 +170,7 @@
     <string name="world_tree_rules">BONUS : + 50 si toutes les cartes non MASQUÉES appartiennent à des familles différentes.</string>
     <string name="book_of_changes_rules">BONUS : Vous pouvez changer la famille d\'une autre carte. Son nom ainsi que ses bonus et malus restent les mêmes.</string>
     <string name="shield_of_keth_rules">BONUS : + 15 avec n\'importe quel Seigneur. OU + 40 avec un Seigneur et l\'Épée de Keth.</string>
-    <string name="dqem_of_order_rules">BONUS : + 10 pour une suite de 3 cartes, + 30 pour une suite de 4 cartes, + 60 pour une suite de 5 cartes, + 100 pour une suite de 6 cartes, + 150 pour une suite de 7 cartes. (En référence à la force de base des cartes.)</string>
+    <string name="gem_of_order_rules">BONUS : + 10 pour une suite de 3 cartes, + 30 pour une suite de 4 cartes, + 60 pour une suite de 5 cartes, + 100 pour une suite de 6 cartes, + 150 pour une suite de 7 cartes. (En référence à la force de base des cartes.)</string>
     <string name="warhorse_rules">BONUS : + 14 avec n\'importe quel Seigneur ou Sorcier.</string>
     <string name="unicorn_rules">BONUS : + 30 avec la Princesse. OU + 15 avec l\'Impératrice, la Reine, ou l\'Enchanteresse.</string>
     <string name="hydra_rules">BONUS : + 28 avec le Marécage.</string>
@@ -177,7 +181,7 @@
     <string name="forge_rules">BONUS : + 9 pour chaque Arme et chaque Artefact.</string>
     <string name="lightning_rules">BONUS : + 30 avec l\'Orage.</string>
     <string name="wildfire_rules">MALUS : MASQUE toutes les cartes sauf les Flammes, les Sorciers, les Climats, les Armes, les Artefacts, la Montagne, l\'Inondation, l\'Île, La Licorne et le Dragon.</string>
-    <string name="wildfire_rules_deluxe_edition">MALUS : MASQUE toutes les cartes sauf les Artefacts, les Flammes, les Extérieurs, les Armes, les Climats, les Sorciers, l\'Inondation, l\'Île, la Montagne, la Licorne et le Dragon.</string>
+    <string name="wildfire_rules_with_outsiders">MALUS : MASQUE toutes les cartes sauf les Artefacts, les Flammes, les Extérieurs, les Armes, les Climats, les Sorciers, l\'Inondation, l\'Île, la Montagne, la Licorne et le Dragon.</string>
     <string name="fountain_of_life_rules">BONUS : Ajoutez la force de base de n\'importe quel Terrain, Arme, Vague, Flamme ou Climat de votre main.</string>
     <string name="water_elemental_rules">BONUS : + 15 pour chaque autre Vague.</string>
     <string name="island_rules">BONUS : EFFACE les malus de n\'importe quelle Vague ou Flamme.</string>
@@ -218,7 +222,7 @@
     <string name="garden_rules">BONUS : + 11 pour chaque Seigneur et chaque Créature. \nMALUS : MASQUÉ par tout Mort-vivant, le Nécromancien ou le Démon.</string>
     <string name="genie_rules">BONUS : + 10 par autre joueur. À la fin de la partie, regardez les cartes de la pioche et prenez-en une dans votre main (se résout après le Leprechaun).</string>
     <string name="judge_rules">BONUS : + 10 pour chaque carte contenant un malus n\'ayant pas été EFFACÉ.</string>
-    <string name="angel_rules">BONS : Évite à une autre carte d\'être MASQUÉE. Cette carte ne peut jamais être MASQUÉE.</string>
+    <string name="angel_rules">BONUS : Évite à une autre carte d\'être MASQUÉE. Cette carte ne peut jamais être MASQUÉE.</string>
     <string name="leprechaun_rules">BONUS : À la fin de la partie, tirez la première carte de la pioche et rajoutez-la à votre main (se résout avant le Génie).</string>
     <string name="demon_rules">MALUS : Pour chaque carte n\'étant pas un Extérieur : si cette carte est la seule que vous avez de cette famille, alors elle est MASQUÉE. Ceci est résolu avant tout autre MASQUE.</string>
     <string name="dark_queen_rules">BONUS : + 5 pour chaque carte Terrain, Vague, Flamme, Climat et Licorne dans le zone de défausse.</string>
@@ -247,17 +251,17 @@
     <string name="larcenous_gloves_rules">N\'IMPORTE QUAND : Volez l\'Objet Maudit face visible d\'un autre joueur. Utilisez-le immédiatement. \nLe joueur à qui vous l\'avez volé en pioche immédiatement un autre dans la pioche des Objets Maudits.</string>
     <string name="junkyard_map_rules">N\'IMPORTE QUAND : Prenez une des 3 dernières cartes Objet Maudit défaussées et jouez-la immédiatement.</string>
     <string name="winged_boots_rules">N\'IMPORTE QUAND : Mettez la première carte de la pioche directement dans la zone de défausse.</string>
-    <string name="staff_of_transmutation_rules">REMPLACEZ VOTRE TOUR : Remettez en tre 3 et 8 cartes de votre main en dessous de la pioche et remplacez-les par autant de cartes du dessus de la pioche.</string>
+    <string name="staff_of_transmutation_rules">REMPLACEZ VOTRE TOUR : Remettez entre 3 et 8 cartes de votre main en dessous de la pioche et remplacez-les par autant de cartes du dessus de la pioche.</string>
     <string name="rake_rules">REMPLACEZ VOTRE TOUR : Prenez 2 cartes de la zone de défausse puis défaussez 2 cartes.</string>
-    <string name="treasure_chest_rules">N\'IMPORTE QUAND : Vaut + 25 point à la fin de la partie si vous avez au moins 3 autres cartes Objet Maudit face cachée.</string>
+    <string name="treasure_chest_rules">N\'IMPORTE QUAND : Vaut + 25 points à la fin de la partie si vous avez au moins 3 autres cartes Objet Maudit face cachée.</string>
     <string name="fishhook_rules">REMPLACEZ VOTRE TOUR : Tirez 2 cartes de la pioche, puis défaussez 2 cartes de votre choix.</string>
     <string name="repair_kit_rules">SE JOUE COMME LA CARTE COPIÉE : Copiez la capacité d\'un Objet Maudit que vous avez déjà joué sauf le Sac à dos, le Sarcophage, le Bandeau et le coffre au trésor. Défaussez cette carte et piochez-en une autre si vous n\'avez aucun Objet Maudit face cachée.</string>
     <string name="hourglass_rules">APRÈS VOTRE TOUR : Jouez un autre tour. Ne remplacez pas cette carte par un autre Objet Maudit avant d\'avoir terminé votre second tour.</string>
     <string name="gold_mirror_rules">N\'IMPORTE QUAND : Mettez 3 cartes de la zone de défausse en dessous de la pioche. Remplacez-les par les 3 premières cartes de la pioche.</string>
     <string name="cauldron_rules">REMPLACEZ VOTRE TOUR : Au lieu de tirer une carte de la pioche, tirez 3 cartes, puis placez-en 2 en dessous ou au-dessus (ou une de chaque) de la pioche avant de défausser une carte comme d\'habitude.</string>
-    <string name="lantern_rules">REMPLACEZ VOTRE TOUR : Choisissez une famille. Tirez des cartes de la pioche jusqu\'à ce que vous obteniez une carte de cette famille ou bien que vous ayez pioché 10 cartes (les cartes Joker ne comptent pas). Si vous piochez une carte de la famille choisie, gardez-la et défaussez une  autre carte de votre main. Révélez les autres cartes que vous avez tirées et remélangez-les dans la pioche.</string>
+    <string name="lantern_rules">REMPLACEZ VOTRE TOUR : Choisissez une famille. Tirez des cartes de la pioche jusqu\'à ce que vous obteniez une carte de cette famille ou bien que vous ayez pioché 10 cartes (les cartes Joker ne comptent pas). Si vous piochez une carte de la famille choisie, gardez-la et défaussez une autre carte de votre main. Révélez les autres cartes que vous avez tirées et remélangez-les dans la pioche.</string>
     <string name="portal_rules">N\'IMPORTE QUAND : Ne défaussez pas de carte ce tour-ci (vous aurez une carte de plus dans votre main à partir de maintenant).</string>
-    <string name="wishing_ring_rules">N\'IMPORTE QUAND : Regardez dans la pioche et mettez la carte de votre choix sur le dessus (vous pouvez faire ceci avec de piocher). \nRemélangez la pioche à la fin de votre tour.</string>
+    <string name="wishing_ring_rules">N\'IMPORTE QUAND : Regardez dans la pioche et mettez la carte de votre choix sur le dessus (vous pouvez faire ceci avant de piocher). \nRemélangez la pioche à la fin de votre tour.</string>
     <string name="jester_rules">BONUS : + 3 pour chaque autre carte ayant une force de base impaire. OU + 50 si toute votre main est composée de cartes ayant une force de base impaire.</string>
     <string name="phoenix_rules">BONUS : compte aussi comme une carte Flamme et Climat. MALUS : MASQUÉ avec n\'importe quelle Vague. Si cette carte est MASQUÉE pour n\'importe quelle raison, sa force de base est réduite à 0 mais elle conserve ses familles.</string>
     <string name="phoenix_rules_deluxe_edition">BONUS : compte aussi comme une carte Flamme et Climat. MALUS : MASQUÉ avec n\'importe quelle Vague. Le Phénix est immunisé contre le Livre des Mutations et ne peut pas masquer ou être masqué par une autre carte.</string>
