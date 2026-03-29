@@ -16,12 +16,9 @@ import com.klamerek.fantasyrealms.util.Preferences
 
 
 /**
- * Settings activity
- *
+ * Activity for managing application settings.
  */
 class SettingsActivity : CustomActivity() {
-
-
 
     private lateinit var binding: ActivitySettingsBinding
 
@@ -29,19 +26,24 @@ class SettingsActivity : CustomActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySettingsBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
 
-        binding.displayCardNumberCheckBox.isChecked = Preferences.getDisplayCardNumber(baseContext)
-        binding.removeAlreadySelectedCheckBox.isChecked = Preferences.getRemoveAlreadySelected(baseContext)
-        binding.withBuildingsOutsidersUndeadCheckBox.isChecked =
-            Preferences.getBuildingsOutsidersUndead(baseContext)
-        binding.withCursedItemsCheckBox.isChecked = Preferences.getCursedItems(baseContext)
-        binding.displayChipColorOnSearchCheckBox.isChecked =
-            Preferences.getDisplayChipColorOnSearch(baseContext)
-        binding.deluxeEditionCheckBox.isChecked = Preferences.getDeluxeEdition(baseContext)
-        binding.ocrMatchingScoreEditText.setText(Preferences.getMatchingCardScoreThreshold(baseContext).toString())
-        binding.ocrDifferenceLengthEditText.setText(Preferences.getDifferenceLengthInNameThreshold(baseContext).toString())
+        binding.apply {
+            displayCardNumberCheckBox.isChecked = Preferences.getDisplayCardNumber(baseContext)
+            removeAlreadySelectedCheckBox.isChecked = Preferences.getRemoveAlreadySelected(baseContext)
+            withBuildingsOutsidersUndeadCheckBox.isChecked =
+                Preferences.getBuildingsOutsidersUndead(baseContext)
+            withCursedItemsCheckBox.isChecked = Preferences.getCursedItems(baseContext)
+            displayChipColorOnSearchCheckBox.isChecked =
+                Preferences.getDisplayChipColorOnSearch(baseContext)
+            deluxeEditionCheckBox.isChecked = Preferences.getDeluxeEdition(baseContext)
+            ocrMatchingScoreEditText.setText(
+                Preferences.getMatchingCardScoreThreshold(baseContext).toString()
+            )
+            ocrDifferenceLengthEditText.setText(
+                Preferences.getDifferenceLengthInNameThreshold(baseContext).toString()
+            )
+        }
 
         val initialValue = getCardScopeId()
 
@@ -49,51 +51,53 @@ class SettingsActivity : CustomActivity() {
         languageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.languageSpinner.adapter = languageAdapter
 
-        val scanModeAdapter = ArrayAdapter(this, R.layout.custom_spinner_list_item, Preferences.scanModes)
+        val scanModeAdapter =
+            ArrayAdapter(this, R.layout.custom_spinner_list_item, Preferences.scanModes)
         scanModeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.scanModeSpinner.adapter = scanModeAdapter
 
         binding.doneButton.setOnClickListener {
-            val language =
-                binding.languageSpinner.adapter.getItem(binding.languageSpinner.selectedItemPosition) as Language
+            val language = binding.languageSpinner.selectedItem as Language
             LocaleManager.saveLanguageInPreferences(baseContext, language)
 
-            Preferences.saveScanModeInPreferences(
-                baseContext,
-                binding.scanModeSpinner.adapter.getItem(binding.scanModeSpinner.selectedItemPosition).toString()
-            )
-            Preferences.saveDisplayCardNumberInPreferences(
-                baseContext,
-                binding.displayCardNumberCheckBox.isChecked
-            )
-            Preferences.saveBuildingsOutsidersUndeadInPreferences(
-                baseContext,
-                binding.withBuildingsOutsidersUndeadCheckBox.isChecked
-            )
-            Preferences.saveCursedItemsInPreferences(
-                baseContext,
-                binding.withCursedItemsCheckBox.isChecked
-            )
-            Preferences.saveDisplayChipColorOnSearchInPreferences(
-                baseContext,
-                binding.displayChipColorOnSearchCheckBox.isChecked
-            )
-            Preferences.saveRemoveAlreadySelectedInPreferences(
-                baseContext,
-                binding.removeAlreadySelectedCheckBox.isChecked
-            )
-            Preferences.saveDeluxeEditionInPreferences(
-                baseContext,
-                binding.deluxeEditionCheckBox.isChecked
-            )
-            Preferences.saveMatchingCardScoreThresholdInPreferences(
-                baseContext,
-                binding.ocrMatchingScoreEditText.text.toString().toIntOrNull() ?: 90
-            )
-            Preferences.saveDifferenceLengthInNameThresholdInPreferences(
-                baseContext,
-                binding.ocrDifferenceLengthEditText.text.toString().toIntOrNull() ?: 0
-            )
+            Preferences.apply {
+                saveScanModeInPreferences(
+                    baseContext,
+                    binding.scanModeSpinner.selectedItem.toString()
+                )
+                saveDisplayCardNumberInPreferences(
+                    baseContext,
+                    binding.displayCardNumberCheckBox.isChecked
+                )
+                saveBuildingsOutsidersUndeadInPreferences(
+                    baseContext,
+                    binding.withBuildingsOutsidersUndeadCheckBox.isChecked
+                )
+                saveCursedItemsInPreferences(
+                    baseContext,
+                    binding.withCursedItemsCheckBox.isChecked
+                )
+                saveDisplayChipColorOnSearchInPreferences(
+                    baseContext,
+                    binding.displayChipColorOnSearchCheckBox.isChecked
+                )
+                saveRemoveAlreadySelectedInPreferences(
+                    baseContext,
+                    binding.removeAlreadySelectedCheckBox.isChecked
+                )
+                saveDeluxeEditionInPreferences(
+                    baseContext,
+                    binding.deluxeEditionCheckBox.isChecked
+                )
+                saveMatchingCardScoreThresholdInPreferences(
+                    baseContext,
+                    binding.ocrMatchingScoreEditText.text.toString().toIntOrNull() ?: 90
+                )
+                saveDifferenceLengthInNameThresholdInPreferences(
+                    baseContext,
+                    binding.ocrDifferenceLengthEditText.text.toString().toIntOrNull() ?: 0
+                )
+            }
             removeCardOutOfScope(initialValue)
             finishAfterTransition()
         }

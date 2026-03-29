@@ -9,15 +9,20 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.provider.Settings
 import android.text.method.LinkMovementMethod
+import androidx.activity.result.contract.ActivityResultContracts
 import com.klamerek.fantasyrealms.BuildConfig
 import com.klamerek.fantasyrealms.R
 import com.klamerek.fantasyrealms.databinding.ActivityMainBinding
-import com.klamerek.fantasyrealms.util.Constants
 
 
 class MainActivity : CustomActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val settingsResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            recreate()
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +42,7 @@ class MainActivity : CustomActivity() {
 
         binding.settingsButton.setOnClickListener {
             val settingIntent = Intent(this, SettingsActivity::class.java)
-            startActivityForResult(settingIntent, Constants.SELECT_SETTINGS)
+            settingsResultLauncher.launch(settingIntent)
         }
 
         val animationActivated = Settings.Global.getFloat(
@@ -66,12 +71,6 @@ class MainActivity : CustomActivity() {
             bookColorAnimation?.start()
         }
 
-    }
-
-    @Deprecated(message = "Have to migrate onActivityResult usage")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        recreate()
     }
 
 }
