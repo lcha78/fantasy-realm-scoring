@@ -36,7 +36,7 @@ class SettingsActivity : CustomActivity() {
             withCursedItemsCheckBox.isChecked = Preferences.getCursedItems(baseContext)
             displayChipColorOnSearchCheckBox.isChecked =
                 Preferences.getDisplayChipColorOnSearch(baseContext)
-            wildfireWithOutsidersCheckBox.isChecked = Preferences.getwildfireWithOutsiders(baseContext)
+            wildfireWithOutsidersCheckBox.isChecked = Preferences.getWildfireWithOutsiders(baseContext)
             phoenixDeluxeEditionCheckBox.isChecked = Preferences.getPhoenixDeluxeEdition(baseContext)
             ocrMatchingScoreEditText.setText(
                 Preferences.getMatchingCardScoreThreshold(baseContext).toString()
@@ -86,7 +86,7 @@ class SettingsActivity : CustomActivity() {
                     baseContext,
                     binding.removeAlreadySelectedCheckBox.isChecked
                 )
-                savewildfireWithOutsidersInPreferences(
+                saveWildfireWithOutsidersInPreferences(
                     baseContext,
                     binding.wildfireWithOutsidersCheckBox.isChecked
                 )
@@ -107,12 +107,14 @@ class SettingsActivity : CustomActivity() {
             finishAfterTransition()
         }
 
+        @Suppress("UNCHECKED_CAST")
         binding.languageSpinner.setSelection(
             (binding.languageSpinner.adapter as ArrayAdapter<Language>).getPosition(
                 getLanguage(this)
             )
         )
 
+        @Suppress("UNCHECKED_CAST")
         binding.scanModeSpinner.setSelection(
             (binding.scanModeSpinner.adapter as ArrayAdapter<String>).getPosition(
                 Preferences.getScanMode(baseContext)
@@ -129,7 +131,7 @@ class SettingsActivity : CustomActivity() {
             val scope = CardDefinitions.get(baseContext)
             Player.all.plus(DiscardArea.instance).forEach { withGame ->
                 withGame.game().cards().map { it.definition }
-                    .filter { !scope.contains(it) }.toList()
+                    .filter { !scope.contains(it) }
                     .forEach { cardToRemove -> withGame.game().remove(cardToRemove) }
             }
         }

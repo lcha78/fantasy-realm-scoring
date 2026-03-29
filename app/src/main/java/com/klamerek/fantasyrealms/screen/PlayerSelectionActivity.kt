@@ -171,7 +171,7 @@ class PlayerSelectionActivity : CustomActivity() {
     fun addPlayer(event: PlayerCreationEvent) {
         runOnUiThread {
             Player.all.add(Player(event.name, Game(
-                wildfireWithOutsiders = Preferences.getwildfireWithOutsiders(baseContext),
+                wildfireWithOutsiders = Preferences.getWildfireWithOutsiders(baseContext),
                 phoenixDeluxe = Preferences.getPhoenixDeluxeEdition(baseContext)
             )))
             adapter.notifyDataSetChanged()

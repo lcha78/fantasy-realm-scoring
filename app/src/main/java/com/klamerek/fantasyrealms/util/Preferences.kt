@@ -2,6 +2,7 @@ package com.klamerek.fantasyrealms.util
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import com.klamerek.fantasyrealms.R
 
 object Preferences {
@@ -24,10 +25,8 @@ object Preferences {
     }
 
     fun saveRemoveAlreadySelectedInPreferences(context: Context, accept: Boolean) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putBoolean(context.getString(R.string.remove_already_selected), accept)
-            apply()
         }
     }
 
@@ -39,10 +38,8 @@ object Preferences {
     }
 
     fun saveDisplayCardNumberInPreferences(context: Context, display: Boolean) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putBoolean(context.getString(R.string.display_card_number), display)
-            apply()
         }
     }
 
@@ -54,10 +51,8 @@ object Preferences {
     }
 
     fun saveCursedItemsInPreferences(context: Context, activate: Boolean) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putBoolean(context.getString(R.string.cursed_items), activate)
-            apply()
         }
     }
 
@@ -69,25 +64,21 @@ object Preferences {
     }
 
     fun saveBuildingsOutsidersUndeadInPreferences(context: Context, activate: Boolean) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putBoolean(context.getString(R.string.buildings_outsiders_undead), activate)
-            apply()
         }
     }
 
-    fun getwildfireWithOutsiders(context: Context): Boolean {
+    fun getWildfireWithOutsiders(context: Context): Boolean {
         return sharedPreferences(context).getBoolean(
             context.getString(R.string.wildfire_with_outsiders),
             false
         )
     }
 
-    fun savewildfireWithOutsidersInPreferences(context: Context, activate: Boolean) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+    fun saveWildfireWithOutsidersInPreferences(context: Context, activate: Boolean) {
+        sharedPreferences(context).edit {
             putBoolean(context.getString(R.string.wildfire_with_outsiders), activate)
-            apply()
         }
     }
 
@@ -99,18 +90,14 @@ object Preferences {
     }
 
     fun savePhoenixDeluxeEditionInPreferences(context: Context, activate: Boolean) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putBoolean(context.getString(R.string.phoenix_deluxe_edition), activate)
-            apply()
         }
     }
 
     fun saveDisplayChipColorOnSearchInPreferences(context: Context, activate: Boolean) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putBoolean(context.getString(R.string.display_chip_color_on_search), activate)
-            apply()
         }
     }
 
@@ -122,10 +109,8 @@ object Preferences {
     }
 
     fun saveScanModeInPreferences(context: Context, mode: String) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putString(context.getString(R.string.scan_mode), mode)
-            apply()
         }
     }
 
@@ -144,10 +129,8 @@ object Preferences {
     }
 
     fun saveMatchingCardScoreThresholdInPreferences(context: Context, threshold: Int) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putInt(context.getString(R.string.ocr_matching_score_threshold), threshold)
-            apply()
         }
     }
 
@@ -159,39 +142,33 @@ object Preferences {
     }
 
     fun saveDifferenceLengthInNameThresholdInPreferences(context: Context, threshold: Int) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putInt(context.getString(R.string.ocr_difference_length_threshold), threshold)
-            apply()
         }
     }
 
     fun savePlayers(context: Context, players: List<com.klamerek.fantasyrealms.game.Player>) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putString(context.getString(R.string.saved_players), serializePlayers(players))
-            apply()
         }
     }
 
     fun loadPlayers(context: Context): List<com.klamerek.fantasyrealms.game.Player> {
         val sharedPref = sharedPreferences(context)
         val serialized = sharedPref.getString(context.getString(R.string.saved_players), null)
-        return if (serialized != null) deserializePlayers(context, serialized) else emptyList()
+        return if (serialized != null) deserializePlayers(serialized) else emptyList()
     }
 
     fun saveDiscardArea(context: Context, game: com.klamerek.fantasyrealms.game.Game) {
-        val sharedPref = sharedPreferences(context)
-        with(sharedPref.edit()) {
+        sharedPreferences(context).edit {
             putString(context.getString(R.string.saved_discard), serializeGame(game))
-            apply()
         }
     }
 
     fun loadDiscardArea(context: Context): com.klamerek.fantasyrealms.game.Game? {
         val sharedPref = sharedPreferences(context)
         val serialized = sharedPref.getString(context.getString(R.string.saved_discard), null)
-        return if (serialized != null) deserializeGame(context, serialized) else null
+        return if (serialized != null) deserializeGame(serialized) else null
     }
 
     private fun serializePlayers(players: List<com.klamerek.fantasyrealms.game.Player>): String {
@@ -205,7 +182,7 @@ object Preferences {
         return jsonArray.toString()
     }
 
-    private fun deserializePlayers(context: Context, serialized: String): List<com.klamerek.fantasyrealms.game.Player> {
+    private fun deserializePlayers(serialized: String): List<com.klamerek.fantasyrealms.game.Player> {
         val players = mutableListOf<com.klamerek.fantasyrealms.game.Player>()
         try {
             val jsonArray = org.json.JSONArray(serialized)
@@ -213,7 +190,7 @@ object Preferences {
                 val jsonPlayer = jsonArray.getJSONObject(i)
                 val name = jsonPlayer.getString("name")
                 val gameSerialized = jsonPlayer.getString("game")
-                val game = deserializeGame(context, gameSerialized)
+                val game = deserializeGame(gameSerialized)
                 players.add(com.klamerek.fantasyrealms.game.Player(name, game))
             }
         } catch (e: Exception) {
@@ -256,7 +233,7 @@ object Preferences {
         return jsonGame.toString()
     }
 
-    private fun deserializeGame(context: Context, serialized: String): com.klamerek.fantasyrealms.game.Game {
+    private fun deserializeGame(serialized: String): com.klamerek.fantasyrealms.game.Game {
         val jsonGame = org.json.JSONObject(serialized)
         val wildfireWithOutsiders = jsonGame.optBoolean("wildfireWithOutsiders", false)
         val phoenixDeluxe = jsonGame.optBoolean("phoenixDeluxe", false)

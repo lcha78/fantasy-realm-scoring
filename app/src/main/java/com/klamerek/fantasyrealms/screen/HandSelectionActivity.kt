@@ -4,11 +4,13 @@ import android.annotation.SuppressLint
 import android.app.ActivityOptions
 import android.content.Intent
 import android.graphics.Paint
+import android.os.Build
 import android.os.Bundle
 import android.util.Pair
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +24,7 @@ import com.klamerek.fantasyrealms.util.Preferences
 import com.klamerek.fantasyrealms.util.Preferences.SCAN_MODE_DEFAULT
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
+import java.io.Serializable
 
 
 class HandSelectionActivity : CustomActivity() {
@@ -40,7 +43,7 @@ class HandSelectionActivity : CustomActivity() {
     override fun onResume() {
         super.onResume()
         if (!isActivityTransitionRunning && !cancelOnResumeAnimation) {
-            binding.handView.scheduleLayoutAnimation();
+            binding.handView.scheduleLayoutAnimation()
         }
         cancelOnResumeAnimation = false
     }
@@ -60,6 +63,7 @@ class HandSelectionActivity : CustomActivity() {
             val request = CardsSelectionExchange()
             request.cardsSelected.addAll(withGame.game().cards().map { card -> card.definition.id })
             handSelectionIntent.putExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID, request)
+            @Suppress("DEPRECATION")
             startActivityForResult(
                 handSelectionIntent,
                 Constants.SELECT_CARDS,
@@ -72,6 +76,7 @@ class HandSelectionActivity : CustomActivity() {
                 if (Preferences.getScanMode(this) == SCAN_MODE_DEFAULT)
                     ScanActivity::class.java else OnTheFlyScanActivity::class.java
             )
+            @Suppress("DEPRECATION")
             startActivityForResult(handSelectionIntent, Constants.SELECT_CARDS)
         }
         binding.clearButton.setOnClickListener {
@@ -129,7 +134,7 @@ class HandSelectionActivity : CustomActivity() {
                     Player(
                         Player.generateNextPlayerName(),
                         Game(
-                            wildfireWithOutsiders = Preferences.getwildfireWithOutsiders(baseContext),
+                            wildfireWithOutsiders = Preferences.getWildfireWithOutsiders(baseContext),
                             phoenixDeluxe = Preferences.getPhoenixDeluxeEdition(baseContext)
                         )
                     )
@@ -171,8 +176,7 @@ class HandSelectionActivity : CustomActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         val allCardsById = CardDefinitions.getAllById()
         if (resultCode == Constants.RESULT_OK && requestCode == Constants.SELECT_CARDS) {
-            val answer =
-                data?.getSerializableExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID) as? CardsSelectionExchange
+            val answer = data?.getExtra<CardsSelectionExchange>(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID)
             val cardList =
                 answer?.cardsSelected?.mapNotNull { index -> allCardsById[index] }.orEmpty()
             if (answer?.source == Constants.CARD_LIST_SOURCE_MANUAL) {
@@ -181,8 +185,7 @@ class HandSelectionActivity : CustomActivity() {
                 withGame.game().addAll(cardList)
             }
         } else if (resultCode == Constants.RESULT_OK && requestCode == Constants.SELECT_RULE_EFFECT) {
-            val answer =
-                data?.getSerializableExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID) as? CardsSelectionExchange
+            val answer = data?.getExtra<CardsSelectionExchange>(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID)
             val cardDefinition = allCardsById[answer?.cardInitiator]
             val cardSelected = allCardsById[answer?.cardsSelected?.firstOrNull()]
             val suitSelected =
@@ -197,6 +200,7 @@ class HandSelectionActivity : CustomActivity() {
         save()
     }
 
+    @Suppress("UNUSED_PARAMETER")
     @SuppressLint("NotifyDataSetChanged")
     @Subscribe
     fun removeAllCards(event: AllCardsDeletionEvent) {
@@ -238,8 +242,19 @@ class HandSelectionActivity : CustomActivity() {
         request.cardsScope.addAll(
             withGame.game().ruleEffectCandidateAbout(cardDefinition).map { it.id })
         handSelectionIntent.putExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID, request)
+        @Suppress("DEPRECATION")
         startActivityForResult(handSelectionIntent, Constants.SELECT_RULE_EFFECT)
     }
+
+    private inline fun <reified T : Serializable> Intent.getExtra(name: String): T? {
+        @Suppress("DEPRECATION")
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getSerializableExtra(name, T::class.java)
+        } else {
+            getSerializableExtra(name) as? T
+        }
+    }
+
 }
 
 class HandSelectionAdapter(private val withGame: WithGame, private val displayCardNumber: Boolean) :
@@ -270,11 +285,11 @@ class HandSelectionAdapter(private val withGame: WithGame, private val displayCa
             updateDetailPart(card)
         }
 
-        fun getTransitionComponent(): android.util.Pair<View?, String?> {
-            return android.util.Pair.create<View?, String?>(
+        fun getTransitionComponent(): Pair<View?, String?> {
+            return Pair.create(
                 view.cardNameLabel,
                 view.cardNameLabel.transitionName
-            );
+            )
         }
 
         @SuppressLint("SetTextI18n")
@@ -298,12 +313,10 @@ class HandSelectionAdapter(private val withGame: WithGame, private val displayCa
                 EventBus.getDefault().post(RequestCardEffectSelectionEvent(card.definition.id))
             }
             view.cardNameLabel.setOnClickListener {
-                view.detailLinearLayout.visibility =
-                    if (view.detailLinearLayout.visibility == View.GONE) View.VISIBLE else View.GONE
+                view.detailLinearLayout.isGone = !view.detailLinearLayout.isGone
             }
             view.mainLinearLayout.setOnClickListener {
-                view.detailLinearLayout.visibility =
-                    if (view.detailLinearLayout.visibility == View.GONE) View.VISIBLE else View.GONE
+                view.detailLinearLayout.isGone = !view.detailLinearLayout.isGone
             }
         }
 

@@ -26,7 +26,7 @@ object CardDefinitions {
     fun get(context: Context): List<CardDefinition> {
         val buildingsOutsidersUndead = Preferences.getBuildingsOutsidersUndead(context)
         val cursedItems = Preferences.getCursedItems(context)
-        val wildfireWithOutsiders = Preferences.getwildfireWithOutsiders(context)
+        val wildfireWithOutsiders = Preferences.getWildfireWithOutsiders(context)
         val phoenixDeluxeEdition = Preferences.getPhoenixDeluxeEdition(context)
         return get(buildingsOutsidersUndead, cursedItems, wildfireWithOutsiders, phoenixDeluxeEdition)
     }
