@@ -26,35 +26,29 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/languageLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/languageLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/languageSpinner"
                     android:text="@string/language_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/languageSpinner"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spaceLanguage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/languageSpinner"
-                    app:layout_constraintStart_toEndOf="@id/languageLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
                     android:id="@+id/languageSpinner"
                     android:layout_width="180dp"
-                    android:layout_height="28dp"
+                    android:layout_height="48dp"
                     android:layout_marginEnd="25dp"
                     android:background="@drawable/layout_corners_shape"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -72,22 +66,24 @@
 
                 <TextView
                     android:id="@+id/scanModeLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/scanModeSpinner"
                     android:text="@string/scan_mode_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/scanModeSpinner"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Spinner
                     android:id="@+id/scanModeSpinner"
                     android:layout_width="180dp"
-                    android:layout_height="28dp"
+                    android:layout_height="48dp"
                     android:layout_marginEnd="25dp"
                     android:background="@drawable/layout_corners_shape"
                     app:layout_constraintBottom_toBottomOf="@+id/scanModeLabel"
@@ -99,11 +95,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="48dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/ocrMatchingScoreEditText"
                     android:text="@string/ocr_matching_score_threshold_label"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toStartOf="@+id/ocrMatchingScoreEditText"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/scanModeLabel" />
 
@@ -115,6 +113,7 @@
                     android:hint="0"
                     android:importantForAutofill="no"
                     android:inputType="number"
+                    android:minHeight="48dp"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/ocrMatchingScoreLabel"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -126,6 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/ocrDifferenceLengthEditText"
                     android:text="@string/ocr_difference_length_threshold_label"
                     android:textSize="12sp"
@@ -141,6 +141,7 @@
                     android:hint="0"
                     android:importantForAutofill="no"
                     android:inputType="number"
+                    android:minHeight="48dp"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/ocrDifferenceLengthLabel"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -155,29 +156,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/wildfireWithOutsidersLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/wildfireWithOutsidersLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/wildfireWithOutsidersCheckBox"
                     android:text="@string/wildfire_with_outsiders_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/wildfireWithOutsidersCheckBox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spacewildfireWithOutsiders"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/wildfireWithOutsidersCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/wildfireWithOutsidersLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
@@ -193,29 +188,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/phoenixDeluxeEditionLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/phoenixDeluxeEditionLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/phoenixDeluxeEditionCheckBox"
                     android:text="@string/phoenix_deluxe_edition_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/phoenixDeluxeEditionCheckBox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spacePhoenixDeluxeEdition"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/phoenixDeluxeEditionCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/phoenixDeluxeEditionLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
@@ -231,29 +220,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/withBuildingsOutsidersUndeadLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/withBuildingsOutsidersUndeadLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/withBuildingsOutsidersUndeadCheckBox"
                     android:text="@string/buildings_outsiders_undead_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/withBuildingsOutsidersUndeadCheckBox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spaceWithBuildingsOutsidersUndead"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/withBuildingsOutsidersUndeadCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/withBuildingsOutsidersUndeadLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
@@ -269,29 +252,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/withCursedItemsLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/withCursedItemsLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/withCursedItemsCheckBox"
                     android:text="@string/cursed_items_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/withCursedItemsCheckBox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spaceWithCursedItems"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/withCursedItemsCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/withCursedItemsLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
@@ -311,29 +288,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/removeAlreadySelectedLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/removeAlreadySelectedLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/removeAlreadySelectedCheckBox"
                     android:text="@string/remove_already_selected_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/removeAlreadySelectedCheckBox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spaceRemoveAlreadySelected"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/removeAlreadySelectedCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/removeAlreadySelectedLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
@@ -349,29 +320,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/displayCardNumberLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/displayCardNumberLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/displayCardNumberCheckBox"
                     android:text="@string/display_card_number_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/displayCardNumberCheckBox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spaceDisplayCardNumber"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/displayCardNumberCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/displayCardNumberLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox
@@ -387,29 +352,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/colorChipModeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
+                android:layout_height="wrap_content"
+                android:minHeight="60dp">
 
                 <TextView
                     android:id="@+id/displayChipColorOnSearchLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:labelFor="@id/displayChipColorOnSearchCheckBox"
                     android:text="@string/display_chip_color_on_search_label"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/displayChipColorOnSearchCheckBox"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Space
-                    android:id="@+id/spaceColorChipMode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/displayChipColorOnSearchCheckBox"
-                    app:layout_constraintStart_toEndOf="@id/displayChipColorOnSearchLabel"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <CheckBox

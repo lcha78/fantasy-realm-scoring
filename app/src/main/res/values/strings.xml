@@ -35,7 +35,6 @@
     <string name="display_card_number_label">Display card number:</string>
     <string name="remove_already_selected_label">Remove cards already selected:</string>
     <string name="display_chip_color_on_search_label">Display chip color on search:</string>
-    <string name="deluxe_edition_label">Deluxe Edition:</string>
     <string name="wildfire_with_outsiders_label">Wildfire without Outsiders blanking:</string>
     <string name="phoenix_deluxe_edition_label">Phoenix (Deluxe Edition):</string>
     <string name="buildings_outsiders_undead_label">Buildings, outsiders and undead:</string>
@@ -45,6 +44,7 @@
     <string name="saved_players" translatable="false">saved_players</string>
     <string name="saved_discard" translatable="false">saved_discard</string>
     <string name="discard_area">Discard area</string>
+    <string name="default_value_zero" translatable="false">0</string>
     <!-- Effects and Suits -->
     <string name="effect_bonus">BONUS</string>
     <string name="effect_clear">CLEAR</string>
@@ -247,6 +247,7 @@
     <string name="crystal_ball_rules">ANY TIME: Name a suit. All other players must reveal all cards they possess of that suit.</string>
     <string name="market_wagon_rules">REPLACE TURN: Reveal a card from your hand. Any other player may reveal up to 3 cards to offer in exchange. \n You may choose to trade your card for one of them; if no offer is acceptable, keep your card or discard it and draw from the deck.</string>
     <string name="backpack_rules">ANY TIME: Draw three Cursed Items and set them aside face up. \nThe next three times you would draw a new Cursed Item from the deck, you must take one of these cards instead.</string>
+    <string name="hourglass_rules">AFTER TURN: Take an extra turn. Do not replace this card with a new Cursed Item until after your second turn.</string>
     <string name="shovel_rules">ANY TIME: Put a card from the discard area on the bottom of the deck.</string>
     <string name="sealed_vault_rules">ANY TIME: Cover two cards in the discard area with this card. They still count towards the end of the game and give bonuses to Undead, but no one but you may take them, and they are immune to Shovel and Gold Mirror.</string>
     <string name="crystal_lens_rules">ANY TIME: You may peek at the top card of the deck before deciding whether to draw from the deck or discard area.</string>
@@ -258,7 +259,6 @@
     <string name="treasure_chest_rules">ANY TIME: Worth +25 points at the end of the game if you have at least three other Cursed Items facedown.</string>
     <string name="fishhook_rules">REPLACE TURN: Draw two cards from the deck, then discard any two cards.</string>
     <string name="repair_kit_rules">COPY TIMING OF COPIED CARD: Copy the ability of any Cursed Item you have already played other than Backpack, Sarcophagus, Blindfold, and Treasure Chest. \nDiscard and redraw if you have no facedown Cursed Items.</string>
-    <string name="hourglass_rules">AFTER TURN: Take an extra turn. Do not replace this card with a new Cursed Item until after your second turn.</string>
     <string name="gold_mirror_rules">ANY TIME: Put three cards from the discard area on the bottom of the deck. \nReplace them with the top three cards of the deck.</string>
     <string name="cauldron_rules">REPLACE TURN: Instead of drawing a card from the deck, draw three cards, then place two of them on the top or bottom of the deck (or one each) before you discard normally.</string>
     <string name="lantern_rules">REPLACE TURN: Name a suit. Draw from the deck until you draw a card from that suit, or until you have drawn ten cards. (Wild cards do not count.) \nIf you draw a card from the named suit, keep it and discard a different card from your hand. \nShow the other cards you drew and reshuffle them into the deck.</string>

@@ -25,8 +25,7 @@
     <string name="display_card_number_label">Kartennummer anzeigen:</string>
     <string name="remove_already_selected_label">Bereits ausgewählte Karten entfernen:</string>
     <string name="display_chip_color_on_search_label">Kartenfarbe anzeigen:</string>
-    <string name="deluxe_edition_label">Deluxe-Edition:</string>
-    <string name="wildfire_with_outsiders_label">Buschfeuer ohne Blockieren der Outsider:</string>
+    <string name="wildfire_with_outsiders_label">Buschfeuer ohne Blockieren Outsider:</string>
     <string name="phoenix_deluxe_edition_label">Phönix (Deluxe-Edition):</string>
     <string name="buildings_outsiders_undead_label">Gebäude, Outsider und Untote:</string>
     <string name="cursed_items_label">Verfluchte Gegenstände:</string>

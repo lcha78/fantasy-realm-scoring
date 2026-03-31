@@ -10,21 +10,25 @@
 
     <TextView
         android:id="@+id/titleLabel"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_width="348dp"
+        android:layout_height="68dp"
         android:layout_marginTop="144dp"
         android:layout_marginBottom="50dp"
         android:background="@drawable/my_border"
+        android:gravity="center"
         android:text="@string/app_name"
-        android:textAlignment="center"
         android:textColor="?android:attr/textColorPrimary"
-        android:textSize="24sp"
         android:textStyle="bold"
+        app:autoSizeMaxTextSize="30sp"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5" />
 
     <Space
         android:id="@+id/space3"
@@ -121,8 +125,8 @@
 
     <ImageView
         android:id="@+id/castleIcon"
-        android:layout_width="252dp"
-        android:layout_height="253dp"
+        android:layout_width="240dp"
+        android:layout_height="245dp"
         android:contentDescription="@null"
         app:layout_constraintBottom_toTopOf="@+id/versionLabel"
         app:layout_constraintEnd_toEndOf="parent"

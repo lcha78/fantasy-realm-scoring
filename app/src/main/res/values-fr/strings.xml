@@ -32,16 +32,15 @@
     <string name="language_label_polish">Polonais</string>
     <string name="language_label_czech">Tchèque</string>
     <string name="language_label_ukrainian">Ukrainien</string>
-    <string name="display_card_number_label">Afficher le numéro de la carte :</string>
-    <string name="remove_already_selected_label">Retirer les cartes déjà sélectionnées :</string>
-    <string name="display_chip_color_on_search_label">Afficher la couleur pour sélection :</string>
-    <string name="deluxe_edition_label">Édition Deluxe :</string>
-    <string name="wildfire_with_outsiders_label">Feu de forêt sans masquage des Extérieurs :</string>
-    <string name="phoenix_deluxe_edition_label">Phénix (Édition Deluxe) :</string>
-    <string name="buildings_outsiders_undead_label">Bâtiments, Extérieurs et Morts-vivants :</string>
-    <string name="cursed_items_label">Objets Maudits :</string>
-    <string name="ocr_matching_score_threshold_label">Seuil de score de correspondance OCR :</string>
-    <string name="ocr_difference_length_threshold_label">Seuil de différence de longueur OCR :</string>
+    <string name="display_card_number_label">Afficher le numéro de la carte:</string>
+    <string name="remove_already_selected_label">Retirer les cartes déjà sélectionnées:</string>
+    <string name="display_chip_color_on_search_label">Afficher la couleur pour sélection:</string>
+    <string name="wildfire_with_outsiders_label">Carte Feu de forêt sans masquage des Extérieurs:</string>
+    <string name="phoenix_deluxe_edition_label">Carte Phénix Édition Deluxe:</string>
+    <string name="buildings_outsiders_undead_label">Bâtiments, Extérieurs et Morts-vivants:</string>
+    <string name="cursed_items_label">Objets Maudits:</string>
+    <string name="ocr_matching_score_threshold_label">Seuil de score de correspondance OCR:</string>
+    <string name="ocr_difference_length_threshold_label">Seuil de différence de longueur OCR:</string>
     <string name="discard_area">Défausse</string>
     <!-- Effets et Familles -->
     <string name="effect_bonus">BONUS</string>
