@@ -99,7 +99,7 @@ class PlayerSelectionActivity : CustomActivity() {
     @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
     override fun onResume() {
         super.onResume()
-        adapter.notifyDataSetChanged()
+        updatePlayerList()
         binding.playersView.scheduleLayoutAnimation();
         binding.discardItem.scoreLabel.text =
             "" + DiscardArea.instance.game().actualHandSize() + " card(s)"
@@ -134,7 +134,11 @@ class PlayerSelectionActivity : CustomActivity() {
 
         val itemTouchHelper = ItemTouchHelper(SwipeToDeleteCallback(
             binding.playersView.context, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
-        ) { position: Int -> EventBus.getDefault().post(PlayerDeletionEvent(position)) })
+        ) { position: Int ->
+            val playerToDelete = adapter.playersList[position]
+            val originalIndex = Player.all.indexOf(playerToDelete)
+            EventBus.getDefault().post(PlayerDeletionEvent(originalIndex))
+        })
         itemTouchHelper.attachToRecyclerView(binding.playersView)
     }
 
@@ -167,6 +171,12 @@ class PlayerSelectionActivity : CustomActivity() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
+    private fun updatePlayerList() {
+        Player.all.forEach { it.game().calculate() }
+        adapter.updateList(Player.all.sortedByDescending { it.game().score() })
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
     @Subscribe
     fun addPlayer(event: PlayerCreationEvent) {
         runOnUiThread {
@@ -174,7 +184,7 @@ class PlayerSelectionActivity : CustomActivity() {
                 wildfireWithOutsiders = Preferences.getWildfireWithOutsiders(baseContext),
                 phoenixDeluxe = Preferences.getPhoenixDeluxeEdition(baseContext)
             )))
-            adapter.notifyDataSetChanged()
+            updatePlayerList()
             save()
         }
     }
@@ -184,7 +194,7 @@ class PlayerSelectionActivity : CustomActivity() {
     fun updatePlayer(event: PlayerUpdateEvent) {
         runOnUiThread {
             Player.all[event.index].setName(event.name)
-            adapter.notifyDataSetChanged()
+            updatePlayerList()
             save()
         }
     }
@@ -194,7 +204,7 @@ class PlayerSelectionActivity : CustomActivity() {
     fun removePlayer(event: PlayerDeletionEvent) {
         runOnUiThread {
             Player.all.removeAt(event.index)
-            adapter.notifyDataSetChanged()
+            updatePlayerList()
             save()
         }
     }
@@ -205,7 +215,7 @@ class PlayerSelectionActivity : CustomActivity() {
     fun removeAllPlayers(event: AllPlayersDeletionEvent) {
         runOnUiThread {
             Player.all.clear()
-            adapter.notifyDataSetChanged()
+            updatePlayerList()
             save()
         }
     }
@@ -215,7 +225,7 @@ class PlayerSelectionActivity : CustomActivity() {
     fun clearPlayers(event: ClearAllScoresEvent) {
         runOnUiThread {
             Player.all.forEach { it.game().clear() }
-            adapter.notifyDataSetChanged()
+            updatePlayerList()
             save()
         }
     }
@@ -238,8 +248,16 @@ class PlayerSelectionActivity : CustomActivity() {
 
 }
 
-class PlayerSelectionAdapter(private val players: Collection<Player>) :
+class PlayerSelectionAdapter(initialPlayers: Collection<Player>) :
     RecyclerView.Adapter<PlayerSelectionAdapter.PlayerHolder>() {
+
+    var playersList = initialPlayers.toList()
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(newList: List<Player>) {
+        playersList = newList
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlayerHolder {
         val itemBinding =
@@ -247,10 +265,10 @@ class PlayerSelectionAdapter(private val players: Collection<Player>) :
         return PlayerHolder(itemBinding)
     }
 
-    override fun getItemCount(): Int = players.size
+    override fun getItemCount(): Int = playersList.size
 
     override fun onBindViewHolder(holder: PlayerHolder, position: Int) {
-        holder.bindPlayer(players.elementAt(position), position)
+        holder.bindPlayer(playersList[position])
     }
 
     class PlayerHolder(v: PlayerListItemBinding) :
@@ -259,13 +277,13 @@ class PlayerSelectionAdapter(private val players: Collection<Player>) :
         private var view: PlayerListItemBinding = v
 
         @SuppressLint("ClickableViewAccessibility")
-        fun bindPlayer(player: Player, position: Int) {
+        fun bindPlayer(player: Player) {
             view.playerNameField.setOnLongClickListener {
                 playerNameDialog.field?.setText(player.name())
                 playerNameDialog.show {
                     EventBus.getDefault().post(
                         PlayerUpdateEvent(
-                            position,
+                            Player.all.indexOf(player),
                             playerNameDialog.field?.text?.toString()
                                 ?: player.name()
                         )
