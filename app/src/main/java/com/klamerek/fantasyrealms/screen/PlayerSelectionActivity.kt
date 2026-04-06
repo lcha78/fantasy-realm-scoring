@@ -3,6 +3,9 @@ package com.klamerek.fantasyrealms.screen
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,11 +15,13 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
+import com.klamerek.fantasyrealms.BuildConfig
 import com.klamerek.fantasyrealms.R
 import com.klamerek.fantasyrealms.databinding.ActivityPlayerSelectionBinding
 import com.klamerek.fantasyrealms.databinding.PlayerListItemBinding
@@ -28,6 +33,9 @@ import com.klamerek.fantasyrealms.util.Constants
 import com.klamerek.fantasyrealms.util.Preferences
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
+import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
 
 /**
  * Activity to add and remove players
@@ -162,6 +170,44 @@ class PlayerSelectionActivity : CustomActivity() {
         }
         binding.clearButton.setOnClickListener {
             EventBus.getDefault().post(ClearAllScoresEvent())
+        }
+        binding.shareButton.setOnClickListener {
+            shareScreenshot()
+        }
+    }
+
+    private fun shareScreenshot() {
+        val bitmap = Bitmap.createBitmap(
+            binding.playerSelectionLayout.width,
+            binding.playerSelectionLayout.height,
+            Bitmap.Config.ARGB_8888
+        )
+        val canvas = Canvas(bitmap)
+        binding.playerSelectionLayout.draw(canvas)
+
+        try {
+            val cachePath = File(cacheDir, "images")
+            cachePath.mkdirs()
+            val stream = FileOutputStream("$cachePath/screenshot.png")
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
+            stream.close()
+
+            val imagePath = File(cacheDir, "images")
+            val newFile = File(imagePath, "screenshot.png")
+            val contentUri: Uri = FileProvider.getUriForFile(
+                this,
+                "${BuildConfig.APPLICATION_ID}.fileprovider",
+                newFile
+            )
+
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            shareIntent.setDataAndType(contentUri, contentResolver.getType(contentUri))
+            shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri)
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.share_button)))
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
     }
 

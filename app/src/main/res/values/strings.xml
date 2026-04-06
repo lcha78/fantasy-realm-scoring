@@ -16,6 +16,7 @@
     <string name="x_cards">%1$d card(s)</string>
     <string name="scan_button">Scan</string>
     <string name="clear_button">Clear</string>
+    <string name="share_button">Share</string>
     <string name="scan_help_label">Tip: only card titles are mandatory</string>
     <string name="base">BASE</string>
     <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>

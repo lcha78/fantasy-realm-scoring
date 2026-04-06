@@ -16,6 +16,7 @@
     <string name="add_card_button">Ajouter</string>
     <string name="scan_button">Scanner</string>
     <string name="clear_button">Effacer</string>
+    <string name="share_button">Partager</string>
     <string name="scan_help_label">Conseil : seuls les titres des cartes sont obligatoires.</string>
     <string name="base">BASE</string>
     <string name="disclaimer" translatable="false">Contact : <a href="https://github.com/lcha78/fantasy-realm-scoring">github</a>\nIcons made by Freepik and Smashicons :<a href="www.flaticon.com">flaticon</a></string>
