@@ -37,6 +37,7 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
     private lateinit var adapter: ChipsDetectedAdapter
     private var camera: CameraX? = null
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         savedInstanceState?.getStringArrayList(cardDetectedSaveKey)
@@ -61,7 +62,6 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
         adapter = ChipsDetectedAdapter(tagToChip, cardsDetected)
         binding.chipsView.adapter = adapter
 
-        @SuppressLint("NotifyDataSetChanged")
         val itemTouchHelper = ItemTouchHelper(SwipeToDeleteCallback(
             binding.chipsView.context, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
         ) { position: Int ->
@@ -78,6 +78,12 @@ class OnTheFlyScanActivity : CustomActivity(), CameraUseCase {
             closingIntent.putExtra(Constants.CARD_SELECTION_DATA_EXCHANGE_SESSION_ID, answer)
             setResult(Constants.RESULT_OK, closingIntent)
             finishAfterTransition()
+        }
+
+        binding.buttonReset.setOnClickListener {
+            cardsDetected.clear()
+            adapter.notifyDataSetChanged()
+            updateNumberOfCardsLabel()
         }
 
         binding.flashButton.setOnClickListener {
