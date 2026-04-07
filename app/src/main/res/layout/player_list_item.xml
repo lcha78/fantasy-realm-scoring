@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="4dp">
 
     <TextView
-            android:layout_width="wrap_content"
+        android:id="@+id/playerNameField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
         android:textColor="?android:attr/textColorPrimary"
-            android:layout_height="wrap_content" android:id="@+id/playerNameField" android:layout_weight="7"
-            android:textSize="18sp" android:textStyle="bold"
-    />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/scoreLabel"
@@ -19,8 +24,14 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <Button
-            android:text="@string/edit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/editButton"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/editButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
+        android:clickable="true"
+        android:contentDescription="@string/edit_button"
+        android:src="@android:drawable/ic_menu_edit"
+        app:backgroundTint="@color/colorPrimary"
+        app:tint="?android:attr/textColorPrimaryInverse" />
 </LinearLayout>

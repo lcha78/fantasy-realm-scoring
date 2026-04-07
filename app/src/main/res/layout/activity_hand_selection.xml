@@ -14,88 +14,72 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="100dp"
         android:layoutAnimation="@anim/layout_animation"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutButtons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayoutButtonRange1"
+        android:id="@+id/linearLayoutButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutButtonRange2"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/handView">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/addCardsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:text="@string/add_card_button"
-            android:textAlignment="center"
-            android:textColor="?android:attr/textColorPrimaryInverse"
-            app:backgroundTint="@color/colorPrimary" />
+        app:layout_constraintStart_toStartOf="parent">
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addCardsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:contentDescription="@string/add_card_button"
+            android:src="@android:drawable/ic_menu_add"
+            app:backgroundTint="@color/colorPrimary"
+            app:tint="?android:attr/textColorPrimaryInverse" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/clearButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:text="@string/clear_button"
-            android:textAlignment="center"
-            android:textColor="?android:attr/textColorPrimaryInverse"
-            app:backgroundTint="@color/colorPrimary" />
+            android:src="@android:drawable/ic_menu_delete"
+            app:backgroundTint="@color/colorPrimary"
+            android:contentDescription="@string/clear_button"
+            app:tint="?android:attr/textColorPrimaryInverse" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2" />
-    </LinearLayout>
+            android:layout_weight="1" />
 
-    <LinearLayout
-        android:id="@+id/linearLayoutButtonRange2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutButtonRange1">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
-
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/scanButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:text="@string/scan_button"
-            android:textAlignment="center"
-            android:textColor="?android:attr/textColorPrimaryInverse"
-            app:backgroundTint="@color/colorPrimary" />
+            android:src="@android:drawable/ic_menu_camera"
+            app:backgroundTint="@color/colorPrimary"
+            android:contentDescription="@string/scan_button"
+            app:tint="?android:attr/textColorPrimaryInverse" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout

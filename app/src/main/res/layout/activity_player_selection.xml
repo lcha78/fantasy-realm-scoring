@@ -39,40 +39,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playersView">
+        app:layout_constraintStart_toStartOf="parent">
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addPlayerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:text="@string/add_player_button"
-            android:textAlignment="center"
-            android:textColor="?android:attr/textColorPrimaryInverse"
-            app:backgroundTint="@color/colorPrimary" />
+            android:contentDescription="@string/add_player_button"
+            android:src="@android:drawable/ic_menu_add"
+            app:backgroundTint="@color/colorPrimary"
+            app:tint="?android:attr/textColorPrimaryInverse" />
 
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/clearButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:text="@string/clear_button"
-            android:textAlignment="center"
-            android:textColor="?android:attr/textColorPrimaryInverse"
-            app:backgroundTint="@color/colorPrimary" />
+            android:src="@android:drawable/ic_menu_delete"
+            app:backgroundTint="@color/colorPrimary"
+            android:contentDescription="@string/clear_button"
+            app:tint="?android:attr/textColorPrimaryInverse" />
 
         <Space
             android:layout_width="wrap_content"
@@ -86,7 +86,8 @@
             android:clickable="true"
             android:src="@android:drawable/ic_menu_share"
             app:backgroundTint="@color/colorPrimary"
-            android:contentDescription="@string/share_button" />
+            android:contentDescription="@string/share_button"
+            app:tint="?android:attr/textColorPrimaryInverse" />
 
         <Space
             android:layout_width="wrap_content"

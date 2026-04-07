@@ -21,17 +21,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/cameraCaptureButton"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="100dp"
-            android:scaleType="fitCenter"
-            android:text="Scan"
+            android:src="@android:drawable/ic_menu_camera"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:elevation="2dp" />
+            app:backgroundTint="@color/colorPrimary"
+            app:tint="?android:attr/textColorPrimary"
+            android:elevation="2dp"
+            android:contentDescription="@string/scan_button" />
 
     <ImageButton
             android:id="@+id/flashButton"

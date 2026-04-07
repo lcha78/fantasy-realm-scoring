@@ -393,15 +393,15 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/doneButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:text="@string/done"
-            android:textAlignment="center"
-            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:src="@android:drawable/ic_menu_save"
+            android:contentDescription="@string/done"
+            app:tint="?android:attr/textColorPrimaryInverse"
             app:backgroundTint="@color/colorPrimary" />
 
     </LinearLayout>
