@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
@@ -183,6 +184,7 @@ class PlayerSelectionActivity : CustomActivity() {
             Bitmap.Config.ARGB_8888
         )
         val canvas = Canvas(bitmap)
+        canvas.drawColor(Color.WHITE)
         binding.playerSelectionLayout.draw(canvas)
 
         try {
